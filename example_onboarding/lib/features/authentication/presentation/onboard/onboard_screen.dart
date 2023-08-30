@@ -9,7 +9,7 @@ class OnboardScreen extends StatefulWidget {
 }
 
 class _OnboardScreenState extends State<OnboardScreen> {
-  late int index;
+  int index = 0;
   final onboardingPagesList = [
     PageModel(
       widget: DecoratedBox(
@@ -30,8 +30,8 @@ class _OnboardScreenState extends State<OnboardScreen> {
                   vertical: 90.0,
                 ),
                 child: Image.asset(
-                  'assets/images/lily.jpg',
-                  color: pageImageColor,
+                  'assets/images/onboard-1.png',
+                  // color: pageImageColor,
                 ),
               ),
               const Padding(
@@ -39,7 +39,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'blablabla',
+                    'Selamat Datang di Aplikasi Dcoll!',
                     style: pageTitleStyle,
                     textAlign: TextAlign.left,
                   ),
@@ -53,7 +53,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'keep your files in closed safe so you can\'t lose them.',
+                    'Pengalaman baru dalam mengatur kunjungan dan peminjaman dengan mudah dan efisien.',
                     style: pageInfoStyle,
                     textAlign: TextAlign.left,
                   ),
@@ -83,8 +83,8 @@ class _OnboardScreenState extends State<OnboardScreen> {
                   vertical: 90.0,
                 ),
                 child: Image.asset(
-                  'assets/images/sakura.jpg',
-                  color: pageImageColor,
+                  'assets/images/onboard-2.png',
+                  // color: pageImageColor,
                 ),
               ),
               const Padding(
@@ -92,18 +92,21 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'Change and Rise',
+                    'Kenali Fitur Utama Aplikasi Kami',
                     style: pageTitleStyle,
                     textAlign: TextAlign.left,
                   ),
                 ),
               ),
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 45.0),
+                padding: EdgeInsets.symmetric(
+                  horizontal: 45.0,
+                  vertical: 10.0,
+                ),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'Give others access to any file or folder you choose',
+                    'Pengalaman baru dalam mengatur kunjungan dan peminjaman dengan mudah dan efisien.',
                     style: pageInfoStyle,
                     textAlign: TextAlign.left,
                   ),
@@ -113,12 +116,85 @@ class _OnboardScreenState extends State<OnboardScreen> {
           ),
         ),
       ),
-    )
+    ),
+    PageModel(
+      widget: DecoratedBox(
+        decoration: BoxDecoration(
+          color: background,
+          border: Border.all(
+            width: 0.0,
+            color: background,
+          ),
+        ),
+        child: SingleChildScrollView(
+          controller: ScrollController(),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 45.0,
+                  vertical: 90.0,
+                ),
+                child: Image.asset(
+                  'assets/images/onboard-3.png',
+                  // color: pageImageColor,
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 45.0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Selamat Datang di Aplikasi Dcoll!',
+                    style: pageTitleStyle,
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 45.0,
+                  vertical: 10.0,
+                ),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Pelajari bagaimana aplikasi kami membantu mengelola aktivitas kunjungan anda.',
+                    style: pageInfoStyle,
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    ),
   ];
 
   @override
   void initState() {
     super.initState();
+  }
+
+  Material _nextButton({void Function(int)? setIndex}) {
+    final isLastPage = index == onboardingPagesList.length - 1;
+
+    return Material(
+        borderRadius: defaultSkipButtonBorderRadius,
+        color: isLastPage ? const Color(0xff00636C) : Colors.transparent,
+        child: InkWell(
+          borderRadius: defaultSkipButtonBorderRadius,
+          onTap: () {
+            if (setIndex != null && !isLastPage) {
+              setIndex(index + 1);
+            }
+          },
+          child: Icon(
+            Icons.chevron_right,
+            color: isLastPage ? Colors.white : const Color(0xff00636C),
+          ),
+        ));
   }
 
   @override
@@ -146,15 +222,17 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 child: Row(
                   children: [
                     CustomIndicator(
-                        netDragPercent: netDragDistance,
-                        indicator: Indicator(
-                          indicatorDesign: IndicatorDesign.polygon(
-                            polygonDesign: PolygonDesign(
-                              polygon: DesignType.polygon_circle,
-                            ),
+                      netDragPercent: netDragDistance,
+                      pagesLength: pagesLength,
+                      indicator: Indicator(
+                        indicatorDesign: IndicatorDesign.polygon(
+                          polygonDesign: PolygonDesign(
+                            polygon: DesignType.polygon_circle,
                           ),
                         ),
-                        pagesLength: pagesLength)
+                      ),
+                    ),
+                    index == pagesLength - 1 ? _nextButton() : const SizedBox()
                   ],
                 ),
               ),
