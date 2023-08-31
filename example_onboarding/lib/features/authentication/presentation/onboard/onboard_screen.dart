@@ -104,52 +104,44 @@ class _OnboardScreenState extends State<OnboardScreen> {
       ),
     ),
     PageModel(
-      widget: DecoratedBox(
-        decoration: BoxDecoration(
-          color: background,
-          border: Border.all(
-            width: 0.0,
-            color: background,
-          ),
-        ),
-        child: SingleChildScrollView(
-          controller: ScrollController(),
+      widget: SingleChildScrollView(
+        controller: ScrollController(),
+        child: Center(
           child: Column(
             children: [
-              const SizedBox(height: 90.0),
+              const SizedBox(height: 60),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 45.0,
                   vertical: 90.0,
                 ),
-                child: Image.asset(
-                  'assets/images/hd-3.png',
-                  // color: pageImageColor,
-                ),
+                child: Image.asset('assets/images/hd-3.png'),
               ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 45.0),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Selamat Datang di Aplikasi Dcoll!',
-                    style: pageTitleStyle,
-                    textAlign: TextAlign.left,
+                child: Text(
+                  'Selamat Datang di Aplikasi Dcoll!',
+                  style: TextStyle(
+                    fontFamily: 'Poppins-Medium',
+                    fontSize: 20,
+                    color: Color(0xff1F2A37),
                   ),
                 ),
               ),
+              const SizedBox(height: 20),
               const Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: 45.0,
                   vertical: 10.0,
                 ),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Pelajari bagaimana aplikasi kami membantu mengelola aktivitas kunjungan anda.',
-                    style: pageInfoStyle,
-                    textAlign: TextAlign.left,
+                child: Text(
+                  'Pelajari bagaimana aplikasi kami membantu mengelola aktivitas kunjungan anda.',
+                  style: TextStyle(
+                    fontFamily: 'Poppins-Regular',
+                    fontSize: 17,
+                    color: Color(0xff697586),
                   ),
+                  textAlign: TextAlign.center,
                 ),
               )
             ],
@@ -210,12 +202,33 @@ class _OnboardScreenState extends State<OnboardScreen> {
                     ),
                     indicatorDesign: IndicatorDesign.polygon(
                       polygonDesign: PolygonDesign(
+                        polygonSpacer: 30.0,
                         polygon: DesignType.polygon_circle,
                       ),
                     ),
                   ),
                 ),
-                index == pagesLength ? _nextButton() : const SizedBox()
+                const Spacer(flex: 1),
+                OutlinedButton(
+                  onPressed: () {},
+                  child: const Icon(
+                    Icons.chevron_right,
+                    color: Color(0xff00636C),
+                  ),
+                ),
+                // Container(
+                //   width: 48,
+                //   height: 48,
+                //   decoration: BoxDecoration(
+                //     borderRadius: BorderRadius.circular(24),
+                //     color: const Color(0xff00636C),
+                //   ),
+                //   child: const Icon(
+                //     Icons.chevron_right,
+                //     color: Color(0xff00636C),
+                //   ),
+                // ),
+                // index == pagesLength ? _nextButton() : const SizedBox()
               ],
             ),
           );
