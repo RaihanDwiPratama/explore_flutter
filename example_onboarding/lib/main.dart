@@ -14,7 +14,7 @@ class Initial extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Lato'),
+      theme: ThemeData(fontFamily: 'Poppins'),
       initialRoute: '/',
       routes: {
         '/': (context) => const OnboardScreen(),

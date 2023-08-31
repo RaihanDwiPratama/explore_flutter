@@ -9,54 +9,47 @@ class OnboardScreen extends StatefulWidget {
 }
 
 class _OnboardScreenState extends State<OnboardScreen> {
-  int index = 0;
+  int index = 1;
   final onboardingPagesList = [
     PageModel(
-      widget: DecoratedBox(
-        decoration: BoxDecoration(
-          color: background,
-          border: Border.all(
-            width: 0.0,
-            color: background,
-          ),
-        ),
-        child: SingleChildScrollView(
-          controller: ScrollController(),
+      widget: SingleChildScrollView(
+        controller: ScrollController(),
+        child: Center(
           child: Column(
             children: [
+              const SizedBox(height: 60),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 45.0,
                   vertical: 90.0,
                 ),
-                child: Image.asset(
-                  'assets/images/onboard-1.png',
-                  // color: pageImageColor,
-                ),
+                child: Image.asset('assets/images/hd-1.png'),
               ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 45.0),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Selamat Datang di Aplikasi Dcoll!',
-                    style: pageTitleStyle,
-                    textAlign: TextAlign.left,
+                child: Text(
+                  'Selamat Datang di Aplikasi Dcoll!',
+                  style: TextStyle(
+                    fontFamily: 'Poppins-Medium',
+                    fontSize: 20,
+                    color: Color(0xff1F2A37),
                   ),
                 ),
               ),
+              const SizedBox(height: 20),
               const Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: 45.0,
                   vertical: 10.0,
                 ),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Pengalaman baru dalam mengatur kunjungan dan peminjaman dengan mudah dan efisien.',
-                    style: pageInfoStyle,
-                    textAlign: TextAlign.left,
+                child: Text(
+                  'Pengalaman baru dalam mengatur kunjungan dan peminjaman dengan mudah dan efisien.',
+                  style: TextStyle(
+                    fontFamily: 'Poppins-Regular',
+                    fontSize: 17,
+                    color: Color(0xff697586),
                   ),
+                  textAlign: TextAlign.center,
                 ),
               )
             ],
@@ -83,7 +76,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                   vertical: 90.0,
                 ),
                 child: Image.asset(
-                  'assets/images/onboard-2.png',
+                  'assets/images/hd-2.png',
                   // color: pageImageColor,
                 ),
               ),
@@ -130,13 +123,14 @@ class _OnboardScreenState extends State<OnboardScreen> {
           controller: ScrollController(),
           child: Column(
             children: [
+              const SizedBox(height: 90.0),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 45.0,
                   vertical: 90.0,
                 ),
                 child: Image.asset(
-                  'assets/images/onboard-3.png',
+                  'assets/images/hd-3.png',
                   // color: pageImageColor,
                 ),
               ),
@@ -178,7 +172,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
   }
 
   Material _nextButton({void Function(int)? setIndex}) {
-    final isLastPage = index == onboardingPagesList.length - 1;
+    final isLastPage = index == onboardingPagesList.length;
 
     return Material(
         borderRadius: defaultSkipButtonBorderRadius,
@@ -207,35 +201,29 @@ class _OnboardScreenState extends State<OnboardScreen> {
         },
         startPageIndex: 0,
         footerBuilder: (context, netDragDistance, pagesLength, setIndex) {
-          return DecoratedBox(
-            decoration: BoxDecoration(
-              color: background,
-              border: Border.all(
-                width: 0.0,
-                color: background,
-              ),
-            ),
-            child: ColoredBox(
-              color: background,
-              child: Padding(
-                padding: const EdgeInsets.all(45.0),
-                child: Row(
-                  children: [
-                    CustomIndicator(
-                      netDragPercent: netDragDistance,
-                      pagesLength: pagesLength,
-                      indicator: Indicator(
-                        indicatorDesign: IndicatorDesign.polygon(
-                          polygonDesign: PolygonDesign(
-                            polygon: DesignType.polygon_circle,
-                          ),
-                        ),
+          return Padding(
+            padding: const EdgeInsets.all(45.0),
+            child: Row(
+              children: [
+                CustomIndicator(
+                  netDragPercent: netDragDistance,
+                  pagesLength: pagesLength,
+                  indicator: Indicator(
+                    activeIndicator: const ActiveIndicator(
+                      color: Color(0xffD9E8E9),
+                    ),
+                    closedIndicator: const ClosedIndicator(
+                      color: Color(0xff00636C),
+                    ),
+                    indicatorDesign: IndicatorDesign.polygon(
+                      polygonDesign: PolygonDesign(
+                        polygon: DesignType.polygon_circle,
                       ),
                     ),
-                    index == pagesLength - 1 ? _nextButton() : const SizedBox()
-                  ],
+                  ),
                 ),
-              ),
+                index == pagesLength ? _nextButton() : const SizedBox()
+              ],
             ),
           );
         },
