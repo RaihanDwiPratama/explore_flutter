@@ -58,51 +58,44 @@ class _OnboardScreenState extends State<OnboardScreen> {
       ),
     ),
     PageModel(
-      widget: DecoratedBox(
-        decoration: BoxDecoration(
-          color: background,
-          border: Border.all(
-            width: 0.0,
-            color: background,
-          ),
-        ),
-        child: SingleChildScrollView(
-          controller: ScrollController(),
+      widget: SingleChildScrollView(
+        controller: ScrollController(),
+        child: Center(
           child: Column(
             children: [
+              const SizedBox(height: 60),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 45.0,
                   vertical: 90.0,
                 ),
-                child: Image.asset(
-                  'assets/images/hd-2.png',
-                  // color: pageImageColor,
-                ),
+                child: Image.asset('assets/images/hd-2.png'),
               ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 45.0),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Kenali Fitur Utama Aplikasi Kami',
-                    style: pageTitleStyle,
-                    textAlign: TextAlign.left,
+                child: Text(
+                  'Kenali Fitur Utama Aplikasi Kami',
+                  style: TextStyle(
+                    fontFamily: 'Poppins-Medium',
+                    fontSize: 20,
+                    color: Color(0xff1F2A37),
                   ),
                 ),
               ),
+              const SizedBox(height: 20),
               const Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: 45.0,
                   vertical: 10.0,
                 ),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Pengalaman baru dalam mengatur kunjungan dan peminjaman dengan mudah dan efisien.',
-                    style: pageInfoStyle,
-                    textAlign: TextAlign.left,
+                child: Text(
+                  'Pengalaman baru dalam mengatur kunjungan dan peminjaman dengan mudah dan efisien.',
+                  style: TextStyle(
+                    fontFamily: 'Poppins-Regular',
+                    fontSize: 17,
+                    color: Color(0xff697586),
                   ),
+                  textAlign: TextAlign.center,
                 ),
               )
             ],
