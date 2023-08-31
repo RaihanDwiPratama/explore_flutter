@@ -13,6 +13,8 @@ class Initial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Poppins'),
       initialRoute: '/',
       routes: {
         '/': (context) => const OnboardScreen(),
