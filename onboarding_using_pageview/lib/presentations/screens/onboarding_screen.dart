@@ -2,53 +2,108 @@ import 'package:flutter/material.dart';
 import 'package:onboarding_using_pageview/presentations/widgets/splash_widget.dart';
 
 class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({super.key});
+  const OnboardingScreen({Key? key}) : super(key: key);
 
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  // setting controller
-  final _controller = PageController(
-    initialPage: 0,
-  );
+  late final PageController controller;
+  double currentPage = 0;
 
-  List<String> _image = [
-    'assets/images/splash1.png',
-    'assets/images/splash2.png',
-    'assets/images/splash3.png',
-  ];
-
-  List<String> _title = [
-    'Selamat Datang di Aplikasi Dcoll!',
-    'Kenali Fitur Utama Aplikasi Kami',
-    'Selamat Datang di Aplikasi Dcoll!',
-  ];
-
-  List<String> _subtitle = [
-    'Pengalaman baru dalam mengatur kunjungan dan peminjaman dengan mudah dan efisien.',
-    'Pengalaman baru dalam mengatur kunjungan dan peminjaman dengan mudah dan efisien.',
-    'Pelajari bagaimana aplikasi kami membantu mengelola aktivitas kunjungan anda.',
-  ];
+  @override
+  void initState() {
+    controller = PageController();
+    controller.addListener(() {
+      setState(() {
+        currentPage = controller.page!;
+      });
+    });
+    super.initState();
+  }
 
   @override
   void dispose() {
-    _controller.dispose();
+    controller.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return PageView.builder(
-      itemCount: _image.length,
-      itemBuilder: (context, index) {
-        return SplashWidget(
-          image: _image[index],
-          title: _title[index],
-          subtitle: _subtitle[index],
-        );
-      },
+    final List<String> image = [
+      'assets/images/splash1.png',
+      'assets/images/splash2.png',
+      'assets/images/splash3.png',
+    ];
+
+    final List<String> title = [
+      'Selamat Datang di Aplikasi Dcoll!',
+      'Kenali Fitur Utama Aplikasi Kami',
+      'Selamat Datang di Aplikasi Dcoll!',
+    ];
+
+    final List<String> subtitle = [
+      'Pengalaman baru dalam mengatur kunjungan dan peminjaman dengan mudah dan efisien.',
+      'Pengalaman baru dalam mengatur kunjungan dan peminjaman dengan mudah dan efisien.',
+      'Pelajari bagaimana aplikasi kami membantu mengelola aktivitas kunjungan anda.',
+    ];
+
+    final onboardWidget = List.generate(image.length, (index) {
+      return SplashWidget(
+        image: image[index],
+        title: title[index],
+        subtitle: subtitle[index],
+      );
+    });
+
+    return Scaffold(
+      body: PageView.builder(
+        controller: controller,
+        itemCount: image.length,
+        itemBuilder: (context, index) {
+          return onboardWidget[index];
+        },
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(45.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: List.generate(
+                image.length,
+                (index) => Container(
+                  margin: const EdgeInsets.only(right: 6),
+                  width: 8,
+                  height: 8,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    color: currentPage.round() == index
+                        ? const Color(0xff00636C)
+                        : const Color(0xffD9E8E9),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              width: 48,
+              height: 48,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(24),
+                border: Border.all(
+                  strokeAlign: 1,
+                  color: const Color(0xff00636C),
+                ),
+              ),
+              child: const Icon(
+                Icons.chevron_right,
+                color: Color(0xff00636C),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
