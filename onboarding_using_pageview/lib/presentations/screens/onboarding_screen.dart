@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onboarding_using_pageview/presentations/screens/login_screen.dart';
 import 'package:onboarding_using_pageview/presentations/widgets/splash_widget.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -86,19 +87,35 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
             ),
-            Container(
-              width: 48,
-              height: 48,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(24),
-                border: Border.all(
-                  strokeAlign: 1,
-                  color: const Color(0xff00636C),
+            GestureDetector(
+              onTap: () {
+                if (currentPage == image.length - 1) {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreen(),
+                    ),
+                  );
+                } else {
+                  controller.nextPage(
+                    duration: const Duration(milliseconds: 200),
+                    curve: Curves.easeInOut,
+                  );
+                }
+              },
+              child: Container(
+                width: 48,
+                height: 48,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(24),
+                  border: Border.all(
+                    strokeAlign: 1,
+                    color: const Color(0xff00636C),
+                  ),
                 ),
-              ),
-              child: const Icon(
-                Icons.chevron_right,
-                color: Color(0xff00636C),
+                child: const Icon(
+                  Icons.chevron_right,
+                  color: Color(0xff00636C),
+                ),
               ),
             ),
           ],
