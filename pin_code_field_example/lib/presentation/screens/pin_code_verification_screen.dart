@@ -14,8 +14,12 @@ class PinCodeVerificationScreen extends StatefulWidget {
 class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
   TextEditingController newTextEditingController = TextEditingController();
   FocusNode focusNode = FocusNode();
-
   bool _isButtonEnabled = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -125,7 +129,13 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                 borderRadius: BorderRadius.circular(8),
               ),
             ),
-            child: const Text('Selanjutnya'),
+            child: const Text(
+              'Selanjutnya',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
           ),
         ),
       ),
