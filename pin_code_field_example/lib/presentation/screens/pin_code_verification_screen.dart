@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:pin_code_field_example/presentation/screens/new_password.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class PinCodeVerificationScreen extends StatefulWidget {
@@ -13,6 +14,8 @@ class PinCodeVerificationScreen extends StatefulWidget {
 class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
   TextEditingController newTextEditingController = TextEditingController();
   FocusNode focusNode = FocusNode();
+
+  bool _isButtonEnabled = false;
 
   @override
   void dispose() {
@@ -87,6 +90,11 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
                 controller: newTextEditingController,
                 focusNode: focusNode,
                 onCompleted: (value) {},
+                onChanged: (value) {
+                  setState(() {
+                    _isButtonEnabled = value.length == 6;
+                  });
+                },
                 pinTheme: PinTheme(inactiveColor: const Color(0xff697586)),
               ),
             ],
@@ -99,9 +107,20 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
           height: 48,
           width: double.infinity,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              _isButtonEnabled
+                  ? Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const NewPassword(),
+                      ),
+                    )
+                  : null;
+            },
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xff00636C),
+              backgroundColor: _isButtonEnabled
+                  ? const Color(0xff00636C)
+                  : const Color(0xffCDD5DF),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
               ),
