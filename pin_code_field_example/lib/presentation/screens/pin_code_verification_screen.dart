@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
@@ -24,20 +25,56 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pin Code Fields Demo'),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.chevron_left,
+            color: Color(0xff292D32),
+            size: 30,
+          ),
+        ),
+        backgroundColor: Colors.transparent,
+        shadowColor: Colors.transparent,
       ),
-      body: Container(
-        margin: const EdgeInsets.only(left: 20, right: 20),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        physics: const NeverScrollableScrollPhysics(),
+        child: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               const SizedBox(height: 30.0),
               const Text(
-                'Default Pincode Fields',
-                textAlign: TextAlign.center,
+                'Masukkan Kode OTP',
                 style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              const SizedBox(height: 20),
+              RichText(
+                text: TextSpan(
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Color(0xff697586),
+                    fontWeight: FontWeight.w400,
+                  ),
+                  children: [
+                    const TextSpan(
+                      text:
+                          'Kode OTP sudah dikirim ke Email, Jika belum menerima OTP silahkan klik',
+                    ),
+                    TextSpan(
+                        text: ' Kirim Ulang.',
+                        style: const TextStyle(
+                          color: Color(0xff00636C),
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        recognizer: TapGestureRecognizer()..onTap = () {}),
+                  ],
                 ),
               ),
               const SizedBox(
@@ -45,78 +82,31 @@ class _PinCodeVerificationScreenState extends State<PinCodeVerificationScreen> {
               ),
               PinCodeTextField(
                 appContext: context,
-                length: 4,
+                length: 6,
+                keyboardType: TextInputType.number,
                 controller: newTextEditingController,
                 focusNode: focusNode,
                 onCompleted: (value) {},
-              ),
-              const SizedBox(height: 80.0),
-              const Text(
-                'Obscure Pincode Fields',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 10.0),
-              PinCodeTextField(
-                appContext: context,
-                length: 4,
-                obscureText: true,
-                // obscureCharacter: '❌',
-                onCompleted: (text) {
-                  // Your logic with pin code
-                  Text(text);
-                },
-              ),
-              const SizedBox(height: 80.0),
-              const Text(
-                'Custom Pincode Fields',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 10.0),
-              PinCodeTextField(
-                appContext: context,
-                length: 4,
-                keyboardType: TextInputType.number,
-                textStyle: const TextStyle(
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.bold,
-                ),
-                onCompleted: (value) {},
-              ),
-              const SizedBox(
-                height: 80.0,
-              ),
-              const Text(
-                'Animated Pincode Fields',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(
-                height: 10.0,
-              ),
-              PinCodeTextField(
-                appContext: context,
-                length: 4,
-                animationDuration: const Duration(milliseconds: 200),
-                animationCurve: Curves.easeInOut,
-                onCompleted: (value) {
-                  Text(value);
-                },
-              ),
-              const SizedBox(
-                height: 50.0,
+                pinTheme: PinTheme(inactiveColor: const Color(0xff697586)),
               ),
             ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SizedBox(
+          height: 48,
+          width: double.infinity,
+          child: ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xff00636C),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ),
+            child: const Text('Selanjutnya'),
           ),
         ),
       ),
