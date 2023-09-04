@@ -2,7 +2,9 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:my_online_shop/data/cart_items.dart';
 import 'package:my_online_shop/data/product_data.dart';
+import 'package:my_online_shop/data/wishlist_item.dart';
 import 'package:my_online_shop/features/home/models/product_data_model.dart';
 
 part 'home_event.dart';
@@ -52,6 +54,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       HomeProductWishlistButtonClickedEvent event, Emitter<HomeState> emit) {
         print('Wishlist Product Clicked');
         // state yang menangani ketika pengguna menekan icon wishlist, dan akan menyimpan kedalam list
+        wishlistItems.add(event.clickedProduct);
         emit(HomeProductItemCartActionState());
       }
 
@@ -59,6 +62,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       HomeProductCartButtonClickedEvent event, Emitter<HomeState> emit) {
         print('Cart Product Clicked');
         // state yang menangani ketika pengguna menekan icon cart, dan akan menyimpan kedalam list
+        cartItems.add(event.clickedProduct);
         emit(HomeProductItemCartActionState());
       }
 
