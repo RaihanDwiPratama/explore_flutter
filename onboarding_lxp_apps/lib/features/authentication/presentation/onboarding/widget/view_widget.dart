@@ -55,22 +55,6 @@ class _ViewWidgetState extends State<ViewWidget> {
                 color: Color(0xff737373),
               ),
             ),
-            //   Row(
-            //   children: List.generate(
-            //     image.length,
-            //     (index) => Container(
-            //       margin: const EdgeInsets.only(right: 6),
-            //       width: 8,
-            //       height: 8,
-            //       decoration: BoxDecoration(
-            //         borderRadius: BorderRadius.circular(4),
-            //         color: currentPage.round() == index
-            //             ? const Color(0xffffffff)
-            //             : const Color(0xff123123),
-            //       ),
-            //     ),
-            //   ),
-            // ),
           ],
         ),
       ),
