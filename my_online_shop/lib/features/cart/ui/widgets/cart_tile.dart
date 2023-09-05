@@ -39,15 +39,15 @@ class CartTile extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-                          // memanggil attribut name dari data model yang sudah dibuat
+          // memanggil attribut name dari data model yang sudah dibuat
           Text(productDataModel.name),
-                          // memanggil attribut description dari data model yang sudah dibuat
+          // memanggil attribut description dari data model yang sudah dibuat
           Text(productDataModel.description),
           const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-                              // memanggil attribut price dari data model yang sudah dibuat
+              // memanggil attribut price dari data model yang sudah dibuat
               Text("\$${productDataModel.price}"),
               Row(
                 children: [

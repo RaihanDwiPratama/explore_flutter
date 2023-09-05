@@ -52,15 +52,15 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   // state ketika pengguna melakukan klik pada icon wishlist
   FutureOr<void> homeProductWishlistButtonClickedEvent(
       HomeProductWishlistButtonClickedEvent event, Emitter<HomeState> emit) {
-        print('Wishlist Product Clicked');
+        // print('Wishlist Product Clicked');
         // state yang menangani ketika pengguna menekan icon wishlist, dan akan menyimpan kedalam list
         wishlistItems.add(event.clickedProduct);
-        emit(HomeProductItemCartActionState());
+        emit(HomeProductItemWishlistActionState());
       }
 
   FutureOr<void> homeProductCartButtonClickedEvent(
       HomeProductCartButtonClickedEvent event, Emitter<HomeState> emit) {
-        print('Cart Product Clicked');
+        // print('Cart Product Clicked');
         // state yang menangani ketika pengguna menekan icon cart, dan akan menyimpan kedalam list
         cartItems.add(event.clickedProduct);
         emit(HomeProductItemCartActionState());
@@ -68,14 +68,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   FutureOr<void> homeWishlistButtonNavigateEvent(
       HomeWishlistButtonNavigateEvent event, Emitter<HomeState> emit) {
-        print('Wishlist Navigate Clicked');
+        // print('Wishlist Navigate Clicked');
         // state yang menangani ketika pengguna menekan icon wishlist dan akan diarahkan ke halaman detail wishlist
         emit(HomeNavigateToWishlistPageActionState());
       }
 
   FutureOr<void> homeCartButtonNavigateEvent(
       HomeCartButtonNavigateEvent event, Emitter<HomeState> emit) {
-        print('Cart Navigate Clicked');
+        // print('Cart Navigate Clicked');
         emit(HomeNavigateToCartPageActionState());
       }
 }
