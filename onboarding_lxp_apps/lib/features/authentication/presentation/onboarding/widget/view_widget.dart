@@ -18,6 +18,8 @@ class ViewWidget extends StatefulWidget {
 }
 
 class _ViewWidgetState extends State<ViewWidget> {
+  // final String assetName = 'assets/images/logo.svg';
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,15 +29,20 @@ class _ViewWidgetState extends State<ViewWidget> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(
-              'assets/images/logo.svg',
+            // SvgPicture.asset(
+            //   assetName,
+            //   width: 136,
+            // ),
+            Image.asset(
+              'assets/images/logo.png',
               width: 136,
             ),
+            const SizedBox(height: 128),
             SvgPicture.asset(
               widget.image,
-              width: 263,
+              height: 240,
             ),
-            const SizedBox(height: 67),
+            const SizedBox(height: 64),
             Text(
               widget.title,
               textAlign: TextAlign.center,
