@@ -1,5 +1,5 @@
 class ProductData {
-  static List<Map<String, dynamic>> groceryProducts = [
+  static List<Map<String, dynamic>> stockProducts = [
     {
       'id': '1',
       'name': 'White Elegan Long Dress',
