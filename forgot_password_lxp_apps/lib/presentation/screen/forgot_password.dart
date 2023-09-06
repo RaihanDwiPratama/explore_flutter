@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:forgot_password_lxp_apps/presentation/screen/confirm_password.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({super.key});
@@ -9,6 +10,30 @@ class ForgotPassword extends StatefulWidget {
 
 class _ForgotPasswordState extends State<ForgotPassword> {
   final _controllerEmail = TextEditingController();
+
+  bool _isButtonEnabled = false;
+
+  bool isEmailValid(String email) {
+    // Pola regex untuk alamat email yang valid
+    final RegExp emailRegex =
+        RegExp(r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$');
+
+    return emailRegex.hasMatch(email);
+  }
+
+  void checkInputField() {
+    String email = _controllerEmail.text.trim();
+    // mengecek inputan tidak boleh kosong dan email valid
+    if (_controllerEmail.text.isNotEmpty && isEmailValid(email)) {
+      setState(() {
+        _isButtonEnabled = true;
+      });
+    } else {
+      setState(() {
+        _isButtonEnabled = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +92,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               height: 44,
               child: TextField(
                 controller: _controllerEmail,
+                onChanged: (value) {
+                  checkInputField();
+                },
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(
@@ -92,7 +120,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               height: 48,
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: _isButtonEnabled
+                    ? () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const ConfirmPassword()));
+                      }
+                    : null,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xff3CBC13),
                   shape: RoundedRectangleBorder(
