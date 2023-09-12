@@ -97,4 +97,18 @@ void main() async {
   // Print the updated results.
   // ignore: avoid_print
   print(await dogs()); // print Fido with age 42.
+
+  Future<void> deleteDog(int id) async {
+    // Get a reference to the database.
+    final db = await database;
+
+    // Remove the Dog from the database.
+    await db.delete(
+      'dogs',
+      // Use a 'where' clause to delete a specific dog.
+      where: 'id = ? ',
+      // Pass the Dog's id as a whereArg to prevent SQL injection.
+      whereArgs: [id],
+    );
+  }
 }
