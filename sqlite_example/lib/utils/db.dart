@@ -40,16 +40,16 @@ void main() async {
       dog.toMap(),
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
-
-    // Create a Dog and add it to the dogs table
-    var fido = Dog(
-      id: 0,
-      name: 'Fido',
-      age: 35,
-    );
-
-    await insertDog(fido);
   }
+
+  // Create a Dog and add it to the dogs table
+  var fido = Dog(
+    id: 0,
+    name: 'Fido',
+    age: 35,
+  );
+
+  await insertDog(fido);
 
   Future<List<Dog>> dogs() async {
     // Get a reference to the database
@@ -68,5 +68,33 @@ void main() async {
   }
 
   // Now, use the method above to retrieve all the dogs.
-  print(await dogs());
+  // ignore: avoid_print
+  print(await dogs()); // prints a list that include Fido.
+
+  Future<void> updateDog(Dog dog) async {
+    // Get a reference to the database.
+    final db = await database;
+
+    // Update the given Dog.
+    await db.update(
+      'dogs',
+      dog.toMap(),
+      // Ensure that the Dog has a matching id.
+      where: 'id = ?',
+      // Pass the Dog's id as a whereArg to prevent SQL inject
+      whereArgs: [dog.id],
+    );
+  }
+
+  // Update Fido's age and save it to the database.
+  fido = Dog(
+    id: fido.id,
+    name: fido.name,
+    age: fido.age + 7,
+  );
+  await updateDog(fido);
+
+  // Print the updated results.
+  // ignore: avoid_print
+  print(await dogs()); // print Fido with age 42.
 }
