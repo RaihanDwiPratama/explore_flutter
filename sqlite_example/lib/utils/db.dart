@@ -50,4 +50,23 @@ void main() async {
 
     await insertDog(fido);
   }
+
+  Future<List<Dog>> dogs() async {
+    // Get a reference to the database
+    final db = await database;
+
+    // Query the table for all The Dogs.
+    final List<Map<String, dynamic>> maps = await db.query('dogs');
+
+    // Convert the List<Map<String, dynamic> into a List<Dog>.
+    return List.generate(maps.length, (index) {
+      return Dog(
+          id: maps[index]['id'],
+          name: maps[index]['name'],
+          age: maps[index]['age']);
+    });
+  }
+
+  // Now, use the method above to retrieve all the dogs.
+  print(await dogs());
 }
