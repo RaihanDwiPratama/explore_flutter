@@ -18,6 +18,7 @@ class TimerBloc extends Bloc<TimerEvent, TimerState> {
       : _ticker = ticker,
         super(const TimerInitial(_duration)) {
     on<TimerStarted>(_onStarted);
+    on<_TimerTicked>(_onTicked);
   }
 
   // method to close timer, then cancel all progress
@@ -27,11 +28,19 @@ class TimerBloc extends Bloc<TimerEvent, TimerState> {
     return super.close();
   }
 
-  FutureOr<void> _onStarted(TimerStarted event, Emitter<TimerState> emit) {
+  void _onStarted(TimerStarted event, Emitter<TimerState> emit) {
     emit(TimerRunInProgress(event.duration));
     _tickerSubscription?.cancel();
     _tickerSubscription = _ticker
         .tick(ticks: event.duration)
         .listen((duration) => add(_TimerTicked(duration: duration)));
+  }
+
+  void _onTicked(_TimerTicked event, Emitter<TimerState> emit) {
+    emit(
+      event.duration > 0
+          ? TimerRunInProgress(event.duration)
+          : const TimerRunComplete(),
+    );
   }
 }
