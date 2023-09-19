@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
 class BottomNavigationBarExample extends StatefulWidget {
   const BottomNavigationBarExample({super.key});
@@ -12,27 +13,22 @@ class _BottomNavigationBarExampleState
     extends State<BottomNavigationBarExample> {
   int _selectedIndex = 0;
 
-  static const TextStyle optionStyle = TextStyle(
-    fontSize: 30,
-    fontWeight: FontWeight.bold,
-  );
-
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
       'Beranda',
-      style: optionStyle,
+      style: Style.optionStyle,
     ),
     Text(
       'Pelatihan-ku',
-      style: optionStyle,
+      style: Style.optionStyle,
     ),
     Text(
       'Penugasan',
-      style: optionStyle,
+      style: Style.optionStyle,
     ),
     Text(
       'Akun',
-      style: optionStyle,
+      style: Style.optionStyle,
     ),
   ];
 
@@ -48,7 +44,7 @@ class _BottomNavigationBarExampleState
       appBar: AppBar(
         title: const Text(
           'Pelatihan-ku',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: Style.title,
         ),
         centerTitle: true,
         leading: const Icon(Icons.chevron_left),

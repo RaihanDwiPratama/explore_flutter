@@ -13,6 +13,7 @@ class Pelatihanku extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: 'Poppins',
         useMaterial3: true,
       ),
       home: const BottomNavigationBarExample(),
