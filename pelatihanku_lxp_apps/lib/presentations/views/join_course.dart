@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
+import 'package:pelatihanku_lxp_apps/presentations/views/view_course.dart';
 
 class JoinCourse extends StatelessWidget {
   const JoinCourse({super.key});
@@ -31,7 +32,13 @@ class JoinCourse extends StatelessWidget {
               height: 48,
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ViewCourse(),
+                      ));
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: ColorLxp.primary,
                 ),

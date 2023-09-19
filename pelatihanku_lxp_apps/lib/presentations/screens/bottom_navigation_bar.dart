@@ -61,7 +61,7 @@ class _BottomNavigationBarExampleState
             label: 'Pelatihan-ku',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.content_paste),
+            icon: Icon(Icons.assignment),
             label: 'Penugasan',
           ),
           BottomNavigationBarItem(
