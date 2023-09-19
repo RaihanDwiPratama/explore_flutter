@@ -11,6 +11,13 @@ class Style {
     fontSize: 20,
     height: 28 / 20,
     fontFamily: 'Poppins-SemiBold',
-    color: ColorLxp.neutral,
+    color: ColorLxp.neutral800,
   );
+  
+  // static const TextStyle label = TextStyle(
+  //   fontSize: 12,
+  //   height: 18 / 12,
+  //   fontFamily: 'Poppins-Medium',
+  //   color: ColorLxp.neutral300,
+  // );
 }
