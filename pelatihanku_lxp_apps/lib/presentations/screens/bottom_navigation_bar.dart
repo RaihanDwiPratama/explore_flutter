@@ -46,7 +46,12 @@ class _BottomNavigationBarExampleState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pelatihan-ku'),
+        title: const Text(
+          'Pelatihan-ku',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+        leading: const Icon(Icons.chevron_left),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -74,7 +79,7 @@ class _BottomNavigationBarExampleState
         selectedItemColor: const Color(0xff3498DB),
         unselectedItemColor: const Color(0xffCDD5DF),
         onTap: _onItemTapped,
-        showUnselectedLabels: false,
+        showUnselectedLabels: true,
       ),
     );
   }
