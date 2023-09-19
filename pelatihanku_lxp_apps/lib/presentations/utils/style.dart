@@ -13,6 +13,21 @@ class Style {
     fontFamily: 'Poppins-SemiBold',
     color: ColorLxp.neutral800,
   );
+
+  static const TextStyle titleContentBlank = TextStyle(
+    fontSize: 20,
+    height: 28 / 20,
+    fontFamily: 'Poppins-SemiBold',
+    color: ColorLxp.neutral400,
+  );
+  
+  static const TextStyle textButtonBlank = TextStyle(
+    fontSize: 16,
+    height: 24 / 16,
+    fontFamily: 'Poppins-Medium',
+    color: ColorLxp.white,
+  );
+
   
   // static const TextStyle label = TextStyle(
   //   fontSize: 12,
