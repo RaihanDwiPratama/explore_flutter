@@ -11,6 +11,20 @@ class ViewCourse extends StatefulWidget {
 }
 
 class _ViewCourseState extends State<ViewCourse> {
+  final List<String> images = <String>[
+    'assets/images/blank_content.svg',
+    'assets/images/blank_content.svg',
+    'assets/images/blank_content.svg',
+    'assets/images/blank_content.svg',
+  ];
+
+  final List<String> title = <String>[
+    'Pelatihan Keterampilan Komunikasi',
+    'Pelatihan Keterampilan Presentasi',
+    'Pelatihan Keterampilan Waktu',
+    'Pelatihan Kepemimpinan Tim',
+  ];
+
   @override
   Widget build(BuildContext context) {
     const String assetName = 'assets/images/blank_content.svg';
@@ -26,13 +40,29 @@ class _ViewCourseState extends State<ViewCourse> {
             onTap: () => Navigator.pop(context),
             child: const Icon(Icons.chevron_left)),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            margin: const EdgeInsets.symmetric(horizontal: 24.0),
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      body: ListView.builder(
+        itemCount: images.length,
+        padding: const EdgeInsets.only(top: 32.0),
+        itemBuilder: (context, index) {
+          return Container(
+            margin: const EdgeInsets.fromLTRB(24.0, 0, 24.0, 16.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 12.0,
+              vertical: 8.0,
+            ),
             height: 120,
+            decoration: BoxDecoration(
+              color: ColorLxp.white,
+              borderRadius: BorderRadius.circular(8),
+              boxShadow: const [
+                BoxShadow(
+                  color: Color(0xff18212E),
+                  blurRadius: 8.0,
+                  spreadRadius: -2,
+                  offset: Offset(0, 4),
+                )
+              ],
+            ),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -115,15 +145,7 @@ class _ViewCourseState extends State<ViewCourse> {
                             ),
                           ),
                           const SizedBox(width: 8),
-                          const Text(
-                            '10%',
-                            style: TextStyle(
-                              fontFamily: 'Poppins_Regular',
-                              fontSize: 10,
-                              height: 18 / 10,
-                              color: ColorLxp.neutral500,
-                            ),
-                          )
+                          const Text('10%', style: Style.textIndicator)
                         ],
                       ),
                     ),
@@ -131,8 +153,8 @@ class _ViewCourseState extends State<ViewCourse> {
                 ),
               ],
             ),
-          ),
-        ],
+          );
+        },
       ),
     );
   }

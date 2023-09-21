@@ -42,6 +42,13 @@ class Style {
     color: ColorLxp.neutral500,
   );
 
+  static const TextStyle textIndicator = TextStyle(
+    fontFamily: 'Poppins_Regular',
+    fontSize: 10,
+    height: 18 / 10,
+    color: ColorLxp.neutral500,
+  );
+
   // static const TextStyle label = TextStyle(
   //   fontSize: 12,
   //   height: 18 / 12,
