@@ -105,25 +105,31 @@ class _ViewCourseState extends State<ViewCourse> {
                     ),
                     SizedBox(
                       width: 200,
-                      child: LinearProgressIndicator(
-                        backgroundColor: ColorLxp.primaryLight,
-                        borderRadius: BorderRadius.circular(10),
-                        value: 0.1,
-                        valueColor:
-                            const AlwaysStoppedAnimation(ColorLxp.primary),
-                        minHeight: 10,
-                        semanticsLabel: '10%    ',
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: LinearProgressIndicator(
+                              backgroundColor: ColorLxp.primaryLight,
+                              borderRadius: BorderRadius.circular(10),
+                              value: 0.1,
+                              valueColor: const AlwaysStoppedAnimation(
+                                  ColorLxp.primary),
+                              minHeight: 10,
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          const Text(
+                            '10%',
+                            style: TextStyle(
+                              fontFamily: 'Poppins_Regular',
+                              fontSize: 10,
+                              height: 18 / 10,
+                              color: ColorLxp.neutral500,
+                            ),
+                          )
+                        ],
                       ),
                     ),
-                    const Text(
-                      '10%',
-                      style: TextStyle(
-                        fontFamily: 'Poppins_Regular',
-                        fontSize: 10,
-                        height: 18 / 10,
-                        color: ColorLxp.neutral500,
-                      ),
-                    )
                   ],
                 ),
               ],
