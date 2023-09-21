@@ -30,8 +30,10 @@ class _ViewCourseState extends State<ViewCourse> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 16.0),
-            height: 130,
+            margin: const EdgeInsets.symmetric(horizontal: 24.0),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            // color: Colors.amber,
+            height: 120,
             // color: Colors.amber,
             child: Row(
               mainAxisSize: MainAxisSize.max,
@@ -55,9 +57,10 @@ class _ViewCourseState extends State<ViewCourse> {
                         maxLines: 2,
                       ),
                     ),
-                    const SizedBox(
+                    Container(
+                      margin: const EdgeInsets.only(top: 6, bottom: 5),
                       width: 185,
-                      child: Row(
+                      child: const Row(
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -100,9 +103,8 @@ class _ViewCourseState extends State<ViewCourse> {
                         ],
                       ),
                     ),
-                    Container(
+                    SizedBox(
                       width: 200,
-                      color: Colors.amber,
                       child: LinearProgressIndicator(
                         backgroundColor: ColorLxp.primaryLight,
                         borderRadius: BorderRadius.circular(10),
