@@ -56,10 +56,10 @@ class _ViewCourseState extends State<ViewCourse> {
               borderRadius: BorderRadius.circular(8),
               boxShadow: const [
                 BoxShadow(
-                  color: Color(0xff18212E),
-                  blurRadius: 8.0,
-                  spreadRadius: -2,
-                  offset: Offset(0, 4),
+                  color: Color.fromARGB(255, 223, 226, 231),
+                  blurRadius: 20.0,
+                  spreadRadius: 4,
+                  offset: Offset(0, 1),
                 )
               ],
             ),
