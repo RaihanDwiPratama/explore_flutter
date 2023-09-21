@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
 class ViewCourse extends StatefulWidget {
@@ -12,7 +13,7 @@ class ViewCourse extends StatefulWidget {
 class _ViewCourseState extends State<ViewCourse> {
   @override
   Widget build(BuildContext context) {
-    const String assetName = 'assets/images/img_content.svg';
+    const String assetName = 'assets/images/blank_content.svg';
 
     return Scaffold(
       appBar: AppBar(
@@ -21,44 +22,113 @@ class _ViewCourseState extends State<ViewCourse> {
           style: Style.title,
         ),
         centerTitle: true,
-        leading: const Icon(Icons.chevron_left),
+        leading: GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: const Icon(Icons.chevron_left)),
       ),
-      body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: ListTile(
-            leading: SvgPicture.asset(
-              assetName,
-              semanticsLabel: 'Course Logo',
-            ),
-            trailing: const Column(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 16.0),
+            height: 130,
+            // color: Colors.amber,
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Pelatihan Keterampilan Komunikasi'),
-                Row(
+                SvgPicture.asset(
+                  assetName,
+                  semanticsLabel: 'Course Logo',
+                  width: 102,
+                ),
+                const SizedBox(width: 16),
+                Column(
                   mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      children: [
-                        Icon(Icons.assignment),
-                        Text('3 SKS'),
-                      ],
+                    const SizedBox(
+                      width: 185,
+                      child: Text(
+                        'Pelatihan Keterampilan Komunikasi',
+                        style: Style.textTitleCourse,
+                        maxLines: 2,
+                      ),
                     ),
-                    Row(
-                      children: [
-                        Icon(Icons.play_circle),
-                        Text('14 Video'),
-                      ],
+                    const SizedBox(
+                      width: 185,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            // mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.assignment_outlined,
+                                size: 16,
+                                color: ColorLxp.infoNormal,
+                              ),
+                              SizedBox(width: 4),
+                              Text('3 SKS', style: Style.textSks),
+                            ],
+                          ),
+                          Row(
+                            // mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.play_circle_outline,
+                                size: 16,
+                                color: ColorLxp.infoNormal,
+                              ),
+                              SizedBox(width: 4),
+                              Text('14 Video', style: Style.textSks),
+                            ],
+                          ),
+                          Row(
+                            // mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.person_add_outlined,
+                                size: 16,
+                                color: ColorLxp.infoNormal,
+                              ),
+                              SizedBox(width: 4),
+                              Text('80', style: Style.textSks),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
-                    Row(
-                      children: [
-                        Icon(Icons.person_add),
-                        Text('80'),
-                      ],
+                    Container(
+                      width: 200,
+                      color: Colors.amber,
+                      child: LinearProgressIndicator(
+                        backgroundColor: ColorLxp.primaryLight,
+                        borderRadius: BorderRadius.circular(10),
+                        value: 0.1,
+                        valueColor:
+                            const AlwaysStoppedAnimation(ColorLxp.primary),
+                        minHeight: 10,
+                        semanticsLabel: '10%    ',
+                      ),
                     ),
+                    const Text(
+                      '10%',
+                      style: TextStyle(
+                        fontFamily: 'Poppins_Regular',
+                        fontSize: 10,
+                        height: 18 / 10,
+                        color: ColorLxp.neutral500,
+                      ),
+                    )
                   ],
-                )
+                ),
               ],
             ),
-          )),
+          ),
+        ],
+      ),
     );
   }
 }
