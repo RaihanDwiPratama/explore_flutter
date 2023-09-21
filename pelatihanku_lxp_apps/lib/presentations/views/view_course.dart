@@ -79,10 +79,10 @@ class _ViewCourseState extends State<ViewCourse> {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(
+                    SizedBox(
                       width: 185,
                       child: Text(
-                        'Pelatihan Keterampilan Komunikasi',
+                        title[index].toString(),
                         style: Style.textTitleCourse,
                         maxLines: 2,
                       ),
