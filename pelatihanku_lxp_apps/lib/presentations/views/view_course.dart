@@ -32,17 +32,17 @@ class _ViewCourseState extends State<ViewCourse> {
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 24.0),
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            // color: Colors.amber,
             height: 120,
-            // color: Colors.amber,
             child: Row(
               mainAxisSize: MainAxisSize.max,
-              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                SvgPicture.asset(
-                  assetName,
-                  semanticsLabel: 'Course Logo',
-                  width: 102,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: SvgPicture.asset(
+                    assetName,
+                    semanticsLabel: 'Course Logo',
+                    width: 102,
+                  ),
                 ),
                 const SizedBox(width: 16),
                 Column(
@@ -65,7 +65,6 @@ class _ViewCourseState extends State<ViewCourse> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
-                            // mainAxisSize: MainAxisSize.min,
                             children: [
                               Icon(
                                 Icons.assignment_outlined,
@@ -77,7 +76,6 @@ class _ViewCourseState extends State<ViewCourse> {
                             ],
                           ),
                           Row(
-                            // mainAxisSize: MainAxisSize.min,
                             children: [
                               Icon(
                                 Icons.play_circle_outline,
@@ -89,7 +87,6 @@ class _ViewCourseState extends State<ViewCourse> {
                             ],
                           ),
                           Row(
-                            // mainAxisSize: MainAxisSize.min,
                             children: [
                               Icon(
                                 Icons.person_add_outlined,
