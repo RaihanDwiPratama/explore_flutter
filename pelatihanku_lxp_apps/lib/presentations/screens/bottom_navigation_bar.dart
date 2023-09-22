@@ -45,7 +45,7 @@ class _BottomNavigationBarExampleState
           style: Style.title,
         ),
         centerTitle: true,
-        leading: const Icon(Icons.chevron_left),
+        // leading: const Icon(Icons.chevron_left),
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
