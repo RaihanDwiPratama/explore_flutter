@@ -21,10 +21,12 @@ class JoinCourse extends StatelessWidget {
               assetName,
               semanticsLabel: 'Join Course Logo',
             ),
-            const SizedBox(height: 24),
-            const Text(
+            const SizedBox(height: 36),
+            Text(
               'Anda belum mengambil pelatihan apapun!',
-              style: Style.titleContentBlank,
+              style: Style.titleContentBlank.copyWith(
+                fontWeight: FontWeight.w600,
+              ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 40),
@@ -34,17 +36,20 @@ class JoinCourse extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ViewCourse(),
-                      ));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ViewCourse(),
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: ColorLxp.primary,
                 ),
-                child: const Text(
+                child: Text(
                   'Ikuti Pelatihan',
-                  style: Style.textButtonBlank,
+                  style: Style.textButtonBlank.copyWith(
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
             ),

@@ -14,14 +14,14 @@ class Style {
   );
 
   static const TextStyle titleContentBlank = TextStyle(
-    fontSize: 20,
-    height: 28 / 20,
+    fontSize: 16,
+    height: 20 / 16,
     color: ColorLxp.neutral400,
   );
 
   static const TextStyle textButtonBlank = TextStyle(
     fontSize: 16,
-    height: 24 / 12,
+    height: 24 / 16,
     color: ColorLxp.white,
   );
 

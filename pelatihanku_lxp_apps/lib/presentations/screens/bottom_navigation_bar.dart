@@ -40,9 +40,11 @@ class _BottomNavigationBarExampleState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Pelatihan-ku',
-          style: Style.title,
+          style: Style.title.copyWith(
+            fontWeight: FontWeight.w600,
+          ),
         ),
         centerTitle: true,
         // leading: const Icon(Icons.chevron_left),
