@@ -18,6 +18,7 @@ class _DetailPelatihankuState extends State<DetailPelatihanku> {
       body: Container(
         margin: const EdgeInsets.fromLTRB(24.0, 60.0, 24.0, 16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
@@ -25,6 +26,7 @@ class _DetailPelatihankuState extends State<DetailPelatihanku> {
                   '2',
                   style: Style.textButtonBlank.copyWith(
                     color: ColorLxp.neutral800,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
                 const SizedBox(width: 24),
@@ -35,16 +37,22 @@ class _DetailPelatihankuState extends State<DetailPelatihanku> {
                       "Dasar Keterampilan Komunikasi",
                       style: Style.textButtonBlank.copyWith(
                         color: ColorLxp.neutral500,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
-                    const Row(
+                    Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.alarm,
                           color: ColorLxp.neutral500,
                         ),
-                        SizedBox(width: 4),
-                        Text('8 Mnt', style: Style.textSks),
+                        const SizedBox(width: 4),
+                        Text(
+                          '8 Mnt',
+                          style: Style.textSks.copyWith(
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
                       ],
                     )
                   ],
@@ -52,6 +60,13 @@ class _DetailPelatihankuState extends State<DetailPelatihanku> {
                 const SizedBox(width: 44),
                 checkBox(context),
               ],
+            ),
+            const SizedBox(height: 20),
+            Text(
+              'Pertemuan 1 - Pengenalan',
+              style: Style.textTitleCourse.copyWith(
+                fontWeight: FontWeight.w600,
+              ),
             )
           ],
         ),
