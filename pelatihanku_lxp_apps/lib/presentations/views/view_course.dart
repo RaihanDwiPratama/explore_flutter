@@ -32,9 +32,11 @@ class _ViewCourseState extends State<ViewCourse> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Pelatihan-ku',
-          style: Style.title,
+          style: Style.title.copyWith(
+            fontWeight: FontWeight.w600,
+          ),
         ),
         centerTitle: true,
         leading: GestureDetector(
@@ -90,48 +92,65 @@ class _ViewCourseState extends State<ViewCourse> {
                         width: 185,
                         child: Text(
                           title[index].toString(),
-                          style: Style.textTitleCourse,
+                          style: Style.textTitleCourse.copyWith(
+                            fontWeight: FontWeight.w600,
+                          ),
                           maxLines: 2,
                         ),
                       ),
                       Container(
                         margin: const EdgeInsets.only(top: 6, bottom: 5),
                         width: 185,
-                        child: const Row(
+                        child: Row(
                           mainAxisSize: MainAxisSize.min,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.assignment_outlined,
                                   size: 16,
                                   color: ColorLxp.infoNormal,
                                 ),
-                                SizedBox(width: 4),
-                                Text('3 SKS', style: Style.textSks),
+                                const SizedBox(width: 4),
+                                Text(
+                                  '3 SKS',
+                                  style: Style.textSks.copyWith(
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
                               ],
                             ),
                             Row(
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.play_circle_outline,
                                   size: 16,
-                                  color: ColorLxp.infoNormal,
+                                  color: ColorLxp.successNormal,
                                 ),
-                                SizedBox(width: 4),
-                                Text('14 Video', style: Style.textSks),
+                                const SizedBox(width: 4),
+                                Text(
+                                  '14 Video',
+                                  style: Style.textSks.copyWith(
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
                               ],
                             ),
                             Row(
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.person_add_outlined,
                                   size: 16,
-                                  color: ColorLxp.infoNormal,
+                                  color: ColorLxp.purple,
                                 ),
-                                SizedBox(width: 4),
-                                Text('80', style: Style.textSks),
+                                const SizedBox(width: 4),
+                                Text(
+                                  '80',
+                                  style: Style.textSks.copyWith(
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
                               ],
                             ),
                           ],
@@ -152,7 +171,12 @@ class _ViewCourseState extends State<ViewCourse> {
                               ),
                             ),
                             const SizedBox(width: 8),
-                            const Text('10%', style: Style.textIndicator)
+                            Text(
+                              '10%',
+                              style: Style.textIndicator.copyWith(
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
                           ],
                         ),
                       ),

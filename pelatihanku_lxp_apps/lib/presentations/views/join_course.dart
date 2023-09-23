@@ -29,7 +29,7 @@ class JoinCourse extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 60),
             SizedBox(
               height: 48,
               width: double.infinity,
