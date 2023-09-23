@@ -180,7 +180,12 @@ class _DetailPelatihankuState extends State<DetailPelatihanku> {
                               ],
                             ),
                             const Spacer(),
-                            checkBox(),
+                            index == 3
+                                ? const Icon(
+                                    Icons.lock,
+                                    color: ColorLxp.neutral500,
+                                  )
+                                : checkBox(),
                           ],
                         ),
                       );
