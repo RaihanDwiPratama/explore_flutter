@@ -76,7 +76,7 @@ class _DetailPelatihankuState extends State<DetailPelatihanku> {
                     )
                   ],
                 ),
-                const SizedBox(width: 10),
+                const Spacer(),
                 checkBox(),
               ],
             ),
@@ -125,6 +125,7 @@ class _DetailPelatihankuState extends State<DetailPelatihanku> {
                     ),
                   ],
                 ),
+                const Spacer(),
                 dropDown(context),
               ],
             ),
@@ -138,8 +139,6 @@ class _DetailPelatihankuState extends State<DetailPelatihanku> {
                       return Padding(
                         padding: const EdgeInsets.only(bottom: 20),
                         child: Row(
-                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          // crossAxisAlignment: CrossAxisAlignment.,
                           children: [
                             Text(
                               (index + 1).toString(),
@@ -151,7 +150,6 @@ class _DetailPelatihankuState extends State<DetailPelatihanku> {
                             const SizedBox(width: 12),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              // mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Text(
                                   titleContent[index],
@@ -186,6 +184,18 @@ class _DetailPelatihankuState extends State<DetailPelatihanku> {
                                     color: ColorLxp.neutral500,
                                   )
                                 : checkBox(),
+                            // Checkbox(
+                            //     checkColor: ColorLxp.white,
+                            //     fillColor: MaterialStateColor.resolveWith(
+                            //       (states) => const Color(0xff0CA678),
+                            //     ),
+                            //     value: isClicked,
+                            //     onChanged: (value) {
+                            //       setState(() {
+                            //         isClicked = value!;
+                            //       });
+                            //     },
+                            //   ),
                           ],
                         ),
                       );
@@ -199,16 +209,23 @@ class _DetailPelatihankuState extends State<DetailPelatihanku> {
   }
 
   Widget checkBox() {
-    return IconButton(
-      icon: isClicked
-          ? const Icon(Icons.check_box)
-          : const Icon(Icons.check_box_outline_blank),
-      onPressed: () {
+    return GestureDetector(
+      onTap: () {
         setState(() {
           isClicked = !isClicked;
         });
       },
-      color: ColorLxp.neutral500,
+      child: Container(
+        child: isClicked
+            ? const Icon(
+                Icons.check_box,
+                color: ColorLxp.successNormal,
+              )
+            : const Icon(
+                Icons.check_box_outline_blank,
+                color: ColorLxp.neutral500,
+              ),
+      ),
     );
   }
 
