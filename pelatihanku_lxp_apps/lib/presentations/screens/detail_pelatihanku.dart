@@ -215,7 +215,7 @@ class _DetailPelatihankuState extends State<DetailPelatihanku> {
           isClicked = !isClicked;
         });
       },
-      child: Container(
+      child: SizedBox(
         child: isClicked
             ? const Icon(
                 Icons.check_box,
@@ -230,27 +230,29 @@ class _DetailPelatihankuState extends State<DetailPelatihanku> {
   }
 
   Widget dropDown(BuildContext context) {
-    return IconButton(
-      onPressed: () {
+    return GestureDetector(
+      onTap: () {
         setState(() {
           isContentVisible = !isContentVisible;
         });
       },
-      icon: isContentVisible
-          ? Transform.rotate(
-              angle: -math.pi / 2,
-              child: const Icon(
-                Icons.chevron_right,
-                color: ColorLxp.neutral800,
+      child: SizedBox(
+        child: isContentVisible
+            ? Transform.rotate(
+                angle: -math.pi / 2,
+                child: const Icon(
+                  Icons.chevron_right,
+                  color: ColorLxp.neutral800,
+                ),
+              )
+            : Transform.rotate(
+                angle: math.pi / 2,
+                child: const Icon(
+                  Icons.chevron_right,
+                  color: ColorLxp.neutral800,
+                ),
               ),
-            )
-          : Transform.rotate(
-              angle: math.pi / 2,
-              child: const Icon(
-                Icons.chevron_right,
-                color: ColorLxp.neutral800,
-              ),
-            ),
+      ),
     );
   }
 }
