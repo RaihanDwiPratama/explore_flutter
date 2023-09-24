@@ -14,7 +14,7 @@ class FirstListContent extends StatefulWidget {
 }
 
 class _FirstListContentState extends State<FirstListContent> {
-  bool isContentVisible1 = false;
+  bool isContentVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class _FirstListContentState extends State<FirstListContent> {
         GestureDetector(
           onTap: () {
             setState(() {
-              isContentVisible1 = !isContentVisible1;
+              isContentVisible = !isContentVisible;
             });
           },
           child: Row(
@@ -72,7 +72,7 @@ class _FirstListContentState extends State<FirstListContent> {
                 ],
               ),
               SizedBox(
-                child: isContentVisible1
+                child: isContentVisible
                     ? Transform.rotate(
                         angle: -math.pi / 2,
                         child: const Icon(
@@ -92,7 +92,7 @@ class _FirstListContentState extends State<FirstListContent> {
           ),
         ),
         Visibility(
-          visible: isContentVisible1,
+          visible: isContentVisible,
           child: Padding(
             padding: const EdgeInsets.only(top: 20.0),
             child: Column(

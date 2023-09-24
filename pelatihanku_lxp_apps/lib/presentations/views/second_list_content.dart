@@ -1,6 +1,6 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/checkbox_lxp.dart';
+import 'package:pelatihanku_lxp_apps/presentations/commons/dropdown_lxp.dart';
 import 'package:pelatihanku_lxp_apps/presentations/model/duration_content.dart';
 import 'package:pelatihanku_lxp_apps/presentations/model/title_content_two.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
@@ -71,22 +71,13 @@ class _SecondListContentState extends State<SecondListContent> {
                   ),
                 ],
               ),
-              SizedBox(
-                child: isContentVisible
-                    ? Transform.rotate(
-                        angle: -math.pi / 2,
-                        child: const Icon(
-                          Icons.chevron_right,
-                          color: ColorLxp.neutral800,
-                        ),
-                      )
-                    : Transform.rotate(
-                        angle: math.pi / 2,
-                        child: const Icon(
-                          Icons.chevron_right,
-                          color: ColorLxp.neutral800,
-                        ),
-                      ),
+              DropdownLxp(
+                isContentVisible: isContentVisible,
+                onVisibilityChanged: (value) {
+                  setState(() {
+                    isContentVisible = value;
+                  });
+                },
               ),
             ],
           ),
