@@ -13,7 +13,7 @@ class JoinCourse extends StatelessWidget {
 
     return Center(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -21,30 +21,35 @@ class JoinCourse extends StatelessWidget {
               assetName,
               semanticsLabel: 'Join Course Logo',
             ),
-            const SizedBox(height: 24),
-            const Text(
+            const SizedBox(height: 36),
+            Text(
               'Anda belum mengambil pelatihan apapun!',
-              style: Style.titleContentBlank,
+              style: Style.titleContentBlank.copyWith(
+                fontWeight: FontWeight.w600,
+              ),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 60),
             SizedBox(
               height: 48,
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ViewCourse(),
-                      ));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ViewCourse(),
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: ColorLxp.primary,
                 ),
-                child: const Text(
+                child: Text(
                   'Ikuti Pelatihan',
-                  style: Style.textButtonBlank,
+                  style: Style.textButtonBlank.copyWith(
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
             ),

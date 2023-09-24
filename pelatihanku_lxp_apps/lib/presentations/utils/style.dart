@@ -10,29 +10,36 @@ class Style {
   static const TextStyle title = TextStyle(
     fontSize: 20,
     height: 28 / 20,
-    fontFamily: 'Poppins-SemiBold',
     color: ColorLxp.neutral800,
   );
 
   static const TextStyle titleContentBlank = TextStyle(
-    fontSize: 20,
-    height: 28 / 20,
-    fontFamily: 'Poppins-SemiBold',
+    fontSize: 16,
+    height: 20 / 16,
     color: ColorLxp.neutral400,
   );
-  
+
   static const TextStyle textButtonBlank = TextStyle(
     fontSize: 16,
     height: 24 / 16,
-    fontFamily: 'Poppins-Medium',
     color: ColorLxp.white,
   );
 
-  
-  // static const TextStyle label = TextStyle(
-  //   fontSize: 12,
-  //   height: 18 / 12,
-  //   fontFamily: 'Poppins-Medium',
-  //   color: ColorLxp.neutral300,
-  // );
+  static const TextStyle textTitleCourse = TextStyle(
+    fontSize: 14,
+    height: 21 / 14,
+    color: ColorLxp.neutral800,
+  );
+
+  static const TextStyle textSks = TextStyle(
+    fontSize: 12,
+    height: 18 / 12,
+    color: ColorLxp.neutral500,
+  );
+
+  static const TextStyle textIndicator = TextStyle(
+    fontSize: 10,
+    height: 18 / 10,
+    color: ColorLxp.neutral500,
+  );
 }

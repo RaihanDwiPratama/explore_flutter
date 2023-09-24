@@ -19,7 +19,7 @@ class TimerView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 100.0),
+              padding: EdgeInsets.symmetric(vertical: 100.0),
               child: Center(
                 child: TimerText(),
               ),
