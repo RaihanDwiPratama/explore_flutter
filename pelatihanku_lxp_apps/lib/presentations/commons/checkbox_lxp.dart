@@ -9,19 +9,27 @@ class CheckboxLxp extends StatefulWidget {
 }
 
 class _CheckboxLxpState extends State<CheckboxLxp> {
-  bool isChecked = false;
+  bool isClicked = false;
 
   @override
   Widget build(BuildContext context) {
-    return Checkbox(
-      checkColor: ColorLxp.neutral500,
-      activeColor: ColorLxp.neutral500,
-      value: isChecked,
-      onChanged: (value) {
+    return GestureDetector(
+      onTap: () {
         setState(() {
-          isChecked = value!;
+          isClicked = !isClicked;
         });
       },
+      child: SizedBox(
+        child: isClicked
+            ? const Icon(
+                Icons.check_box,
+                color: ColorLxp.successNormal,
+              )
+            : const Icon(
+                Icons.check_box_outline_blank,
+                color: ColorLxp.neutral500,
+              ),
+      ),
     );
   }
 }

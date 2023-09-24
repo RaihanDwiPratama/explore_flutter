@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:pelatihanku_lxp_apps/presentations/commons/checkbox_lxp.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -85,7 +86,7 @@ class _DetailPelatihankuState extends State<DetailPelatihanku> {
                   ],
                 ),
                 const Spacer(),
-                checkBox(),
+                const CheckboxLxp(),
               ],
             ),
             const SizedBox(height: 20),
@@ -217,7 +218,7 @@ class _DetailPelatihankuState extends State<DetailPelatihanku> {
                                       Icons.lock,
                                       color: ColorLxp.neutral500,
                                     )
-                                  : checkBox(),
+                                  : const CheckboxLxp(),
                             ],
                           );
                         },
@@ -356,7 +357,7 @@ class _DetailPelatihankuState extends State<DetailPelatihanku> {
                                       Icons.lock,
                                       color: ColorLxp.neutral500,
                                     )
-                                  : checkBox(),
+                                  : const CheckboxLxp(),
                             ],
                           );
                         },
@@ -368,27 +369,6 @@ class _DetailPelatihankuState extends State<DetailPelatihanku> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget checkBox() {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          isClicked = !isClicked;
-        });
-      },
-      child: SizedBox(
-        child: isClicked
-            ? const Icon(
-                Icons.check_box,
-                color: ColorLxp.successNormal,
-              )
-            : const Icon(
-                Icons.check_box_outline_blank,
-                color: ColorLxp.neutral500,
-              ),
       ),
     );
   }
