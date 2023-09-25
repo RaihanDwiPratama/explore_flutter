@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/account.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 import 'package:pelatihanku_lxp_apps/presentations/views/join_course.dart';
 
@@ -24,10 +25,7 @@ class _BottomNavigationBarExampleState
       'Penugasan',
       style: Style.optionStyle,
     ),
-    Text(
-      'Akun',
-      style: Style.optionStyle,
-    ),
+    Account(),
   ];
 
   void _onItemTapped(int index) {
@@ -39,16 +37,6 @@ class _BottomNavigationBarExampleState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Pelatihan-ku',
-          style: Style.title.copyWith(
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        centerTitle: true,
-        // leading: const Icon(Icons.chevron_left),
-      ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),

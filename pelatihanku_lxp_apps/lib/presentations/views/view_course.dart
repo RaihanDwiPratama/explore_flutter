@@ -4,14 +4,7 @@ import 'package:pelatihanku_lxp_apps/presentations/screens/detail_pelatihanku.da
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class ViewCourse extends StatefulWidget {
-  const ViewCourse({super.key});
-
-  @override
-  State<ViewCourse> createState() => _ViewCourseState();
-}
-
-class _ViewCourseState extends State<ViewCourse> {
+class ViewCourse extends StatelessWidget {
   final List<String> images = <String>[
     'assets/images/blank_content.svg',
     'assets/images/blank_content.svg',
@@ -25,6 +18,8 @@ class _ViewCourseState extends State<ViewCourse> {
     'Pelatihan Keterampilan Waktu',
     'Pelatihan Kepemimpinan Tim',
   ];
+
+  ViewCourse({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +35,9 @@ class _ViewCourseState extends State<ViewCourse> {
         ),
         centerTitle: true,
         leading: GestureDetector(
-            onTap: () => Navigator.pop(context),
-            child: const Icon(Icons.chevron_left)),
+          onTap: () => Navigator.pop(context),
+          child: const Icon(Icons.chevron_left),
+        ),
       ),
       body: ListView.builder(
         itemCount: images.length,
