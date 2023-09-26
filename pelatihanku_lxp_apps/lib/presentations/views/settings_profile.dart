@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/setting_lxp.dart';
+import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 import 'package:pelatihanku_lxp_apps/presentations/views/join_course.dart';
 
@@ -22,15 +23,76 @@ class SettingsProfile extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           SettingLxp(
-              leading: Icons.person_outline,
-              title: 'Edit Profile',
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const JoinCourse(),
-                    ));
-              })
+            leading: Icons.person_outline,
+            title: 'Sunting Profil',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const JoinCourse(),
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 10),
+          const Divider(
+            height: 1,
+            color: ColorLxp.neutral200,
+          ),
+          const SizedBox(height: 10),
+          SettingLxp(
+            leading: Icons.settings_outlined,
+            title: 'Pengaturan',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const JoinCourse(),
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 10),
+          const Divider(
+            height: 1,
+            color: ColorLxp.neutral200,
+          ),
+          const SizedBox(height: 10),
+          SettingLxp(
+            leading: Icons.lock_outline,
+            title: 'Ubah Kata Sandi',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const JoinCourse(),
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 10),
+          const Divider(
+            height: 1,
+            color: ColorLxp.neutral200,
+          ),
+          const SizedBox(height: 10),
+          SettingLxp(
+            leading: Icons.logout_outlined,
+            title: 'Keluar',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const JoinCourse(),
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 10),
+          const Divider(
+            height: 1,
+            color: ColorLxp.neutral200,
+          ),
         ],
       ),
     );
