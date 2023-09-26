@@ -6,14 +6,11 @@ class Account extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        margin: const EdgeInsets.fromLTRB(24.0, 60.0, 24.0, 16.0),
-        child: const Column(
-          children: [
-            HeaderAccount(),
-          ],
-        ),
+    return const Scaffold(
+      body: Column(
+        children: [
+          HeaderAccount(),
+        ],
       ),
     );
   }
