@@ -55,6 +55,7 @@ class HeaderAccount extends StatelessWidget {
             bottom: -120,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Column(
                   children: [
@@ -68,6 +69,14 @@ class HeaderAccount extends StatelessWidget {
                           topLeft: Radius.circular(16),
                           topRight: Radius.circular(16),
                         ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromARGB(255, 221, 228, 239),
+                            blurRadius: 10.0,
+                            // spreadRadius: 1,
+                            offset: Offset(0, 1),
+                          )
+                        ],
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -101,6 +110,7 @@ class HeaderAccount extends StatelessWidget {
                                   size: 28,
                                 ),
                               ),
+                              const SizedBox(height: 3),
                               Text(
                                 'Rank',
                                 style: Style.textSks.copyWith(

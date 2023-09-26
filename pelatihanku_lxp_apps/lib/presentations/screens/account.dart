@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/views/header_account.dart';
+import 'package:pelatihanku_lxp_apps/presentations/views/settings_profile.dart';
 
 class Account extends StatelessWidget {
   const Account({super.key});
@@ -10,6 +11,7 @@ class Account extends StatelessWidget {
       body: Column(
         children: [
           HeaderAccount(),
+          SettingsProfile(),
         ],
       ),
     );
