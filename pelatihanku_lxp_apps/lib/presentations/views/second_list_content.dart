@@ -91,53 +91,56 @@ class _SecondListContentState extends State<SecondListContent> {
               children: List.generate(
                 titleContent2.length,
                 (index) {
-                  return Row(
-                    children: [
-                      Text(
-                        (index + 1).toString(),
-                        style: Style.textButtonBlank.copyWith(
-                          color: ColorLxp.neutral800,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            titleContent2[index],
-                            style: Style.textButtonBlank.copyWith(
-                              color: ColorLxp.neutral500,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 15,
-                            ),
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0),
+                    child: Row(
+                      children: [
+                        Text(
+                          (index + 1).toString(),
+                          style: Style.textButtonBlank.copyWith(
+                            color: ColorLxp.neutral800,
+                            fontWeight: FontWeight.w500,
                           ),
-                          Row(
-                            children: [
-                              const Icon(
-                                Icons.alarm,
-                                size: 18,
+                        ),
+                        const SizedBox(width: 12),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              titleContent2[index],
+                              style: Style.textButtonBlank.copyWith(
                                 color: ColorLxp.neutral500,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 15,
                               ),
-                              const SizedBox(width: 4),
-                              Text(
-                                durationContent[index],
-                                style: Style.textSks.copyWith(
-                                  fontWeight: FontWeight.w400,
+                            ),
+                            Row(
+                              children: [
+                                const Icon(
+                                  Icons.alarm,
+                                  size: 18,
+                                  color: ColorLxp.neutral500,
                                 ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                      const Spacer(),
-                      index == 3
-                          ? const Icon(
-                              Icons.lock,
-                              color: ColorLxp.neutral500,
+                                const SizedBox(width: 4),
+                                Text(
+                                  durationContent[index],
+                                  style: Style.textSks.copyWith(
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
                             )
-                          : const CheckboxLxp(),
-                    ],
+                          ],
+                        ),
+                        const Spacer(),
+                        index == 3
+                            ? const Icon(
+                                Icons.lock,
+                                color: ColorLxp.neutral500,
+                              )
+                            : const CheckboxLxp(),
+                      ],
+                    ),
                   );
                 },
               ),

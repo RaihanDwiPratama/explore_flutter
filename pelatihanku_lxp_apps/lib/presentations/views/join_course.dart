@@ -11,8 +11,18 @@ class JoinCourse extends StatelessWidget {
   Widget build(BuildContext context) {
     const String assetName = 'assets/images/blank_content.svg';
 
-    return Center(
-      child: Padding(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Pelatihan-ku',
+          style: Style.title.copyWith(
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        centerTitle: true,
+        // leading: const Icon(Icons.chevron_left),
+      ),
+      body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -38,7 +48,7 @@ class JoinCourse extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ViewCourse(),
+                      builder: (context) => ViewCourse(),
                     ),
                   );
                 },
