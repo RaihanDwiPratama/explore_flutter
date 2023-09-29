@@ -55,7 +55,6 @@ class HeaderAccount extends StatelessWidget {
             bottom: -120,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Column(
                   children: [

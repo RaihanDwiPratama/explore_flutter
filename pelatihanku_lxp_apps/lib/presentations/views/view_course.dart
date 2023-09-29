@@ -5,18 +5,30 @@ import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
 class ViewCourse extends StatelessWidget {
+  final bool isCompleted = false;
+
   final List<String> images = <String>[
     'assets/images/blank_content.svg',
-    'assets/images/blank_content.svg',
-    'assets/images/blank_content.svg',
-    'assets/images/blank_content.svg',
+    'assets/images/ai_img.svg',
+    'assets/images/ux_img.svg',
   ];
 
   final List<String> title = <String>[
-    'Pelatihan Keterampilan Komunikasi',
-    'Pelatihan Keterampilan Presentasi',
-    'Pelatihan Keterampilan Waktu',
-    'Pelatihan Kepemimpinan Tim',
+    'Keterampilan Komunikasi',
+    'UI/UX Designer',
+    'AI & Data Science',
+  ];
+
+  final List<String> trainer = <String>[
+    'Neneng Rohaye S.kom.',
+    'Iqbal Ramadhan S.kom.',
+    'Isnan Mulia S.kom., M.kom',
+  ];
+
+  final List<double> progress = <double>[
+    0.3,
+    0.5,
+    1.0,
   ];
 
   ViewCourse({super.key});
@@ -53,9 +65,9 @@ class ViewCourse extends StatelessWidget {
               margin: const EdgeInsets.fromLTRB(24.0, 0, 24.0, 16.0),
               padding: const EdgeInsets.symmetric(
                 horizontal: 12.0,
-                vertical: 8.0,
+                vertical: 16.0,
               ),
-              height: 120,
+              height: 180,
               decoration: BoxDecoration(
                 color: ColorLxp.white,
                 borderRadius: BorderRadius.circular(8),
@@ -68,116 +80,166 @@ class ViewCourse extends StatelessWidget {
                   )
                 ],
               ),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(8),
-                    child: SvgPicture.asset(
-                      assetName,
-                      semanticsLabel: 'Course Logo',
-                      width: 102,
-                    ),
-                  ),
-                  const SizedBox(width: 16),
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
                     children: [
-                      SizedBox(
-                        width: 185,
-                        child: Text(
-                          title[index].toString(),
-                          style: Style.textTitleCourse.copyWith(
-                            fontWeight: FontWeight.w600,
-                          ),
-                          maxLines: 2,
-                        ),
+                      SvgPicture.asset(
+                        assetName,
+                        semanticsLabel: 'Course Logo',
+                        width: 80,
                       ),
-                      Container(
-                        margin: const EdgeInsets.only(top: 6, bottom: 5),
-                        width: 185,
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                const Icon(
-                                  Icons.assignment_outlined,
-                                  size: 16,
-                                  color: ColorLxp.infoNormal,
-                                ),
-                                const SizedBox(width: 4),
-                                Text(
-                                  '3 SKS',
-                                  style: Style.textSks.copyWith(
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                const Icon(
-                                  Icons.play_circle_outline,
-                                  size: 16,
-                                  color: ColorLxp.successNormal,
-                                ),
-                                const SizedBox(width: 4),
-                                Text(
-                                  '14 Video',
-                                  style: Style.textSks.copyWith(
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                const Icon(
-                                  Icons.person_add_outlined,
-                                  size: 16,
-                                  color: ColorLxp.purple,
-                                ),
-                                const SizedBox(width: 4),
-                                Text(
-                                  '80',
-                                  style: Style.textSks.copyWith(
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: 200,
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: LinearProgressIndicator(
-                                backgroundColor: ColorLxp.primaryLight,
-                                borderRadius: BorderRadius.circular(10),
-                                value: 0.1,
-                                valueColor: const AlwaysStoppedAnimation(
-                                    ColorLxp.primary),
-                                minHeight: 10,
+                      const SizedBox(width: 16),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            // width: 190,
+                            child: Text(
+                              title[index].toString(),
+                              style: Style.textTitleCourse.copyWith(
+                                fontWeight: FontWeight.w600,
                               ),
+                              maxLines: 2,
                             ),
-                            const SizedBox(width: 8),
-                            Text(
-                              '10%',
-                              style: Style.textIndicator.copyWith(
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(top: 4, bottom: 8),
+                            child: Text(
+                              trainer[index].toString(),
+                              style: Style.textSks.copyWith(
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
-                          ],
+                          ),
+                          SizedBox(
+                            width: 185,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.assignment,
+                                      size: 16,
+                                      color: ColorLxp.infoNormal,
+                                    ),
+                                    const SizedBox(width: 4),
+                                    Text(
+                                      '3 SKS',
+                                      style: Style.textSks.copyWith(
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.play_circle,
+                                      size: 16,
+                                      color: ColorLxp.successNormal,
+                                    ),
+                                    const SizedBox(width: 4),
+                                    Text(
+                                      '14 Video',
+                                      style: Style.textSks.copyWith(
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.person_add,
+                                      size: 16,
+                                      color: ColorLxp.purple,
+                                    ),
+                                    const SizedBox(width: 4),
+                                    Text(
+                                      '80',
+                                      style: Style.textSks.copyWith(
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: LinearProgressIndicator(
+                          backgroundColor: ColorLxp.primaryLight,
+                          borderRadius: BorderRadius.circular(10),
+                          value: progress[index],
+                          valueColor:
+                              const AlwaysStoppedAnimation(ColorLxp.primary),
+                          minHeight: 10,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        progress[index].toString(),
+                        style: Style.textIndicator.copyWith(
+                          fontWeight: FontWeight.w400,
                         ),
                       ),
                     ],
                   ),
+                  Container(
+                    margin: const EdgeInsets.only(top: 8),
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 4,
+                      horizontal: 12,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      color: progress[index] == 1.0
+                          ? ColorLxp.successLight
+                          : ColorLxp.warningLight,
+                    ),
+                    child: Text(
+                      progress[index] == 1.0
+                          ? 'Sudah Selesai'
+                          : 'Belum Selesai',
+                      style: Style.textSks.copyWith(
+                        fontWeight: FontWeight.w400,
+                        color: progress[index] == 1.0
+                            ? ColorLxp.successNormal
+                            : ColorLxp.warningNormal,
+                      ),
+                    ),
+                  )
+                  // : Container(
+                  //     margin: const EdgeInsets.only(top: 8),
+                  //     padding: const EdgeInsets.symmetric(
+                  //       vertical: 4,
+                  //       horizontal: 12,
+                  //     ),
+                  //     decoration: BoxDecoration(
+                  //       borderRadius: BorderRadius.circular(4),
+                  //       color: ColorLxp.successLight,
+                  //     ),
+                  //     child: Text(
+                  //       'Belum Selesai',
+                  //       style: Style.textSks.copyWith(
+                  //         fontWeight: FontWeight.w400,
+                  //         color: ColorLxp.warningNormal,
+                  //       ),
+                  //     ),
+                  //   ),
                 ],
               ),
             ),

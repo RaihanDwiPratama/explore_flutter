@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/setting_lxp.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/edit_profile.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 import 'package:pelatihanku_lxp_apps/presentations/views/join_course.dart';
@@ -29,7 +30,7 @@ class SettingsProfile extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const JoinCourse(),
+                  builder: (context) => const EditProfile(),
                 ),
               );
             },
