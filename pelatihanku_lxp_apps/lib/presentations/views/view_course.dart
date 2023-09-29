@@ -9,6 +9,7 @@ class ViewCourse extends StatelessWidget {
 
   final List<String> images = <String>[
     'assets/images/blank_content.svg',
+    'assets/images/blank_content.svg',
     'assets/images/ai_img.svg',
     'assets/images/ux_img.svg',
   ];
@@ -17,18 +18,21 @@ class ViewCourse extends StatelessWidget {
     'Keterampilan Komunikasi',
     'UI/UX Designer',
     'AI & Data Science',
+    'Cyber Security & Networking'
   ];
 
   final List<String> trainer = <String>[
     'Neneng Rohaye S.kom.',
     'Iqbal Ramadhan S.kom.',
     'Isnan Mulia S.kom., M.kom',
+    'Rizky Darmawangsa S.kom., M.kom',
   ];
 
   final List<double> progress = <double>[
     0.3,
     0.5,
     1.0,
+    0.65,
   ];
 
   ViewCourse({super.key});
@@ -191,7 +195,7 @@ class ViewCourse extends StatelessWidget {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        progress[index].toString(),
+                        '${(progress[index] * 100).toStringAsFixed(0)}%',
                         style: Style.textIndicator.copyWith(
                           fontWeight: FontWeight.w400,
                         ),
@@ -222,24 +226,6 @@ class ViewCourse extends StatelessWidget {
                       ),
                     ),
                   )
-                  // : Container(
-                  //     margin: const EdgeInsets.only(top: 8),
-                  //     padding: const EdgeInsets.symmetric(
-                  //       vertical: 4,
-                  //       horizontal: 12,
-                  //     ),
-                  //     decoration: BoxDecoration(
-                  //       borderRadius: BorderRadius.circular(4),
-                  //       color: ColorLxp.successLight,
-                  //     ),
-                  //     child: Text(
-                  //       'Belum Selesai',
-                  //       style: Style.textSks.copyWith(
-                  //         fontWeight: FontWeight.w400,
-                  //         color: ColorLxp.warningNormal,
-                  //       ),
-                  //     ),
-                  //   ),
                 ],
               ),
             ),
