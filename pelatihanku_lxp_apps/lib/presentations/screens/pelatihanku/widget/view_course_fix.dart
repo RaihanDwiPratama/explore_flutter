@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/detail_pelatihanku.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/list_pertemuan_pelatihanku.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -54,7 +54,7 @@ class ViewCourseFix extends StatelessWidget {
             onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const DetailPelatihanku(),
+                  builder: (context) => const ListPertemuanPelatihanku(),
                 )),
             child: Container(
               margin: const EdgeInsets.fromLTRB(24.0, 0, 24.0, 16.0),

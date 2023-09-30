@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
-// import 'package:pelatihanku_lxp_apps/presentations/views/view_course.dart';
-import 'package:pelatihanku_lxp_apps/presentations/views/view_course_fix.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/widget/view_course_fix.dart';
 
-class JoinCourse extends StatelessWidget {
-  const JoinCourse({super.key});
+class JoinPelatihanku extends StatelessWidget {
+  const JoinPelatihanku({super.key});
 
   @override
   Widget build(BuildContext context) {

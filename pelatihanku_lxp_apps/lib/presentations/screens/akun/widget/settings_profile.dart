@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/setting_lxp.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/edit_profile.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/akun/widget/edit_profile.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/join_pelatihanku.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
-import 'package:pelatihanku_lxp_apps/presentations/views/join_course.dart';
 
 class SettingsProfile extends StatelessWidget {
   const SettingsProfile({super.key});
@@ -48,7 +48,7 @@ class SettingsProfile extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const JoinCourse(),
+                  builder: (context) => const JoinPelatihanku(),
                 ),
               );
             },
@@ -66,7 +66,7 @@ class SettingsProfile extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const JoinCourse(),
+                  builder: (context) => const JoinPelatihanku(),
                 ),
               );
             },
@@ -84,7 +84,7 @@ class SettingsProfile extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const JoinCourse(),
+                  builder: (context) => const JoinPelatihanku(),
                 ),
               );
             },

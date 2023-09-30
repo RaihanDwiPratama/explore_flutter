@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/list_pertemuan_lxp.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class DetailPelatihanku extends StatelessWidget {
-  const DetailPelatihanku({super.key});
+class ListPertemuanPelatihanku extends StatelessWidget {
+  const ListPertemuanPelatihanku({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +16,10 @@ class DetailPelatihanku extends StatelessWidget {
           ),
         ),
         centerTitle: true,
+        leading: GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: const Icon(Icons.chevron_left),
+        ),
         forceMaterialTransparency: true,
       ),
       body: Container(
