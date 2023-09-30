@@ -10,8 +10,8 @@ class ViewCourse extends StatelessWidget {
   final List<String> images = <String>[
     'assets/images/blank_content.svg',
     'assets/images/blank_content.svg',
-    'assets/images/ai_img.svg',
-    'assets/images/ux_img.svg',
+    'assets/images/blank_content.svg',
+    'assets/images/blank_content.svg',
   ];
 
   final List<String> title = <String>[
@@ -39,7 +39,6 @@ class ViewCourse extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const String assetName = 'assets/images/blank_content.svg';
 
     return Scaffold(
       appBar: AppBar(
@@ -91,7 +90,7 @@ class ViewCourse extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       SvgPicture.asset(
-                        assetName,
+                        images[index],
                         semanticsLabel: 'Course Logo',
                         width: 80,
                       ),

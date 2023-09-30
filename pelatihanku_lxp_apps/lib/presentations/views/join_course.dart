@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
-import 'package:pelatihanku_lxp_apps/presentations/views/view_course.dart';
+// import 'package:pelatihanku_lxp_apps/presentations/views/view_course.dart';
+import 'package:pelatihanku_lxp_apps/presentations/views/view_course_fix.dart';
 
 class JoinCourse extends StatelessWidget {
   const JoinCourse({super.key});
@@ -20,7 +21,6 @@ class JoinCourse extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        // leading: const Icon(Icons.chevron_left),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -48,7 +48,7 @@ class JoinCourse extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ViewCourse(),
+                      builder: (context) => ViewCourseFix(),
                     ),
                   );
                 },

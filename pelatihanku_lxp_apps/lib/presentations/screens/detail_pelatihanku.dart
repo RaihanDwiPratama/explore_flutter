@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pelatihanku_lxp_apps/presentations/views/first_list_content.dart';
 import 'package:pelatihanku_lxp_apps/presentations/views/header_course.dart';
-import 'package:pelatihanku_lxp_apps/presentations/views/second_list_content.dart';
 
 class DetailPelatihanku extends StatelessWidget {
   const DetailPelatihanku({super.key});
@@ -15,10 +13,10 @@ class DetailPelatihanku extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             HeaderCourse(),
-            SizedBox(height: 20),
-            FirstListContent(),
-            SizedBox(height: 30),
-            SecondListContent(),
+            // SizedBox(height: 20),
+            // FirstListContent(),
+            // SizedBox(height: 30),
+            // SecondListContent(),
           ],
         ),
       ),
