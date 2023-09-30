@@ -6,10 +6,12 @@ import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
 class ListPertemuanLxp extends StatefulWidget {
   final String pertemuan;
+  final VoidCallback onTap;
 
   const ListPertemuanLxp({
     super.key,
     required this.pertemuan,
+    required this.onTap,
   });
 
   @override
@@ -68,20 +70,23 @@ class _ListPertemuanLxpState extends State<ListPertemuanLxp> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 16),
-              Padding(
-                padding: const EdgeInsets.only(left: 24.0),
-                child: Row(
-                  children: [
-                    SvgPicture.asset('assets/icons/Notebook.svg'),
-                    const SizedBox(width: 8),
-                    Text(
-                      'Modul',
-                      style: Style.textTitleCourse.copyWith(
-                        color: ColorLxp.neutral500,
-                        fontWeight: FontWeight.w500,
+              GestureDetector(
+                onTap: widget.onTap,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 24.0),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset('assets/icons/Notebook.svg'),
+                      const SizedBox(width: 8),
+                      Text(
+                        'Modul',
+                        style: Style.textTitleCourse.copyWith(
+                          color: ColorLxp.neutral500,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(height: 16),

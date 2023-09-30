@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/list_pertemuan_lxp.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/modul_pelatihanku.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
 class ListPertemuanPelatihanku extends StatelessWidget {
@@ -24,23 +25,94 @@ class ListPertemuanPelatihanku extends StatelessWidget {
       ),
       body: Container(
         margin: const EdgeInsets.only(top: 30.0),
-        child: const SingleChildScrollView(
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ListPertemuanLxp(pertemuan: 'Pertemuan 1'),
-              SizedBox(height: 20),
-              ListPertemuanLxp(pertemuan: 'Pertemuan 2'),
-              SizedBox(height: 20),
-              ListPertemuanLxp(pertemuan: 'Pertemuan 3'),
-              SizedBox(height: 20),
-              ListPertemuanLxp(pertemuan: 'Pertemuan 4'),
-              SizedBox(height: 20),
-              ListPertemuanLxp(pertemuan: 'Pertemuan 5'),
-              SizedBox(height: 20),
-              ListPertemuanLxp(pertemuan: 'Pertemuan 6'),
-              SizedBox(height: 20),
-              ListPertemuanLxp(pertemuan: 'Pertemuan 7'),
+              ListPertemuanLxp(
+                pertemuan: 'Pertemuan 1',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ModulPelatihanku(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 20),
+              ListPertemuanLxp(
+                pertemuan: 'Pertemuan 2',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ModulPelatihanku(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 20),
+              ListPertemuanLxp(
+                pertemuan: 'Pertemuan 3',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ModulPelatihanku(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 20),
+              ListPertemuanLxp(
+                pertemuan: 'Pertemuan 4',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ModulPelatihanku(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 20),
+              ListPertemuanLxp(
+                pertemuan: 'Pertemuan 5',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ModulPelatihanku(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 20),
+              ListPertemuanLxp(
+                pertemuan: 'Pertemuan 6',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ModulPelatihanku(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 20),
+              ListPertemuanLxp(
+                pertemuan: 'Pertemuan 7',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ModulPelatihanku(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 20),
             ],
           ),
         ),
