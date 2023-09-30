@@ -10,7 +10,7 @@ class ViewCourseFix extends StatelessWidget {
     'Pelatihan Keterampilan Komunikasi',
     'Pelatihan Keterampilan Membaca',
     'Pelatihan Keterampilan Menulis',
-    'Pelatihan Keterampilan Presentasi'
+    'Pelatihan Keterampilan Presentasi',
   ];
 
   final List<String> trainer = <String>[
@@ -44,6 +44,7 @@ class ViewCourseFix extends StatelessWidget {
           onTap: () => Navigator.pop(context),
           child: const Icon(Icons.chevron_left),
         ),
+        forceMaterialTransparency: true,
       ),
       body: ListView.builder(
         itemCount: title.length,
