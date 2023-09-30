@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/list_pertemuan_pelatihanku.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
@@ -6,11 +7,18 @@ import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 class ViewCourseFix extends StatelessWidget {
   final bool isCompleted = false;
 
+  final List<String> images = <String>[
+    'assets/images/Image.svg',
+    'assets/images/ui_ux.svg',
+    'assets/images/Image.svg',
+    'assets/images/ui_ux.svg',
+  ];
+
   final List<String> title = <String>[
-    'Pelatihan Keterampilan Komunikasi',
-    'Pelatihan Keterampilan Membaca',
-    'Pelatihan Keterampilan Menulis',
-    'Pelatihan Keterampilan Presentasi',
+    'Keterampilan Komunikasi',
+    'UI/UX Designer',
+    'AI & Data Science',
+    'Cyber Security & Networking'
   ];
 
   final List<String> trainer = <String>[
@@ -23,7 +31,7 @@ class ViewCourseFix extends StatelessWidget {
   final List<double> progress = <double>[
     0.3,
     0.5,
-    0.86,
+    1.0,
     0.65,
   ];
 
@@ -44,10 +52,9 @@ class ViewCourseFix extends StatelessWidget {
           onTap: () => Navigator.pop(context),
           child: const Icon(Icons.chevron_left),
         ),
-        forceMaterialTransparency: true,
       ),
       body: ListView.builder(
-        itemCount: title.length,
+        itemCount: images.length,
         padding: const EdgeInsets.only(top: 32.0),
         itemBuilder: (context, index) {
           return GestureDetector(
@@ -62,7 +69,7 @@ class ViewCourseFix extends StatelessWidget {
                 horizontal: 12.0,
                 vertical: 16.0,
               ),
-              height: 120,
+              height: 135,
               decoration: BoxDecoration(
                 color: ColorLxp.white,
                 borderRadius: BorderRadius.circular(8),
@@ -79,15 +86,20 @@ class ViewCourseFix extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    // mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisSize: MainAxisSize.max,
                     children: [
+                      SvgPicture.asset(
+                        images[index],
+                        semanticsLabel: 'Course Logo',
+                        width: 80,
+                      ),
+                      const SizedBox(width: 16),
                       Column(
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(
-                            width: 200,
+                            // width: 190,
                             child: Text(
                               title[index].toString(),
                               style: Style.textTitleCourse.copyWith(
@@ -96,33 +108,77 @@ class ViewCourseFix extends StatelessWidget {
                               maxLines: 2,
                             ),
                           ),
-                          const SizedBox(height: 2),
-                          Text(
-                            trainer[index].toString(),
-                            style: Style.textSks.copyWith(
-                              fontWeight: FontWeight.w400,
+                          Container(
+                            margin: const EdgeInsets.only(top: 4, bottom: 8),
+                            child: Text(
+                              trainer[index].toString(),
+                              style: Style.textSks.copyWith(
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 185,
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.assignment,
+                                      size: 16,
+                                      color: ColorLxp.infoNormal,
+                                    ),
+                                    const SizedBox(width: 4),
+                                    Text(
+                                      '3 SKS',
+                                      style: Style.textSks.copyWith(
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.play_circle,
+                                      size: 16,
+                                      color: ColorLxp.successNormal,
+                                    ),
+                                    const SizedBox(width: 4),
+                                    Text(
+                                      '14 Video',
+                                      style: Style.textSks.copyWith(
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.person_add,
+                                      size: 16,
+                                      color: ColorLxp.purple,
+                                    ),
+                                    const SizedBox(width: 4),
+                                    Text(
+                                      '80',
+                                      style: Style.textSks.copyWith(
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
                           ),
                         ],
                       ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 2,
-                          horizontal: 8,
-                        ),
-                        height: 22,
-                        color: ColorLxp.successLight,
-                        child: Text(
-                          '3 SKS',
-                          style: Style.textSks.copyWith(
-                            fontWeight: FontWeight.w400,
-                            color: ColorLxp.successNormal,
-                          ),
-                        ),
-                      )
                     ],
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 16),
                   Row(
                     children: [
                       Expanded(
@@ -151,17 +207,17 @@ class ViewCourseFix extends StatelessWidget {
         },
       ),
       bottomNavigationBar: Container(
-        height: 48,
-        margin: const EdgeInsets.fromLTRB(24.0, 0, 24.0, 16.0),
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        height: 48.0,
+        margin: const EdgeInsets.all(24.0),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
           color: ColorLxp.neutral300,
+          borderRadius: BorderRadius.circular(8),
         ),
         child: Center(
           child: Text(
             'Selesai',
             style: Style.textButtonBlank.copyWith(
+              color: ColorLxp.white,
               fontWeight: FontWeight.w500,
             ),
           ),
