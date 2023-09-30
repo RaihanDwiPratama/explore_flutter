@@ -41,9 +41,14 @@ class _ListPertemuanLxpState extends State<ListPertemuanLxp> {
               children: [
                 Text(
                   widget.pertemuan,
-                  style: Style.textTitleCourse.copyWith(
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: isContentVisible
+                      ? Style.textTitleCourse.copyWith(
+                          fontWeight: FontWeight.w600,
+                          color: ColorLxp.white,
+                        )
+                      : Style.textTitleCourse.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
                 ),
                 DropdownLxp(
                   isContentVisible: isContentVisible,

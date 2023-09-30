@@ -16,18 +16,29 @@ class DetailPelatihanku extends StatelessWidget {
           ),
         ),
         centerTitle: true,
+        forceMaterialTransparency: true,
       ),
       body: Container(
         margin: const EdgeInsets.only(top: 30.0),
-        child: const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ListPertemuanLxp(pertemuan: 'Pertemuan 1'),
-            SizedBox(height: 20),
-            ListPertemuanLxp(pertemuan: 'Pertemuan 2'),
-            SizedBox(height: 20),
-            ListPertemuanLxp(pertemuan: 'Pertemuan 3'),
-          ],
+        child: const SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ListPertemuanLxp(pertemuan: 'Pertemuan 1'),
+              SizedBox(height: 20),
+              ListPertemuanLxp(pertemuan: 'Pertemuan 2'),
+              SizedBox(height: 20),
+              ListPertemuanLxp(pertemuan: 'Pertemuan 3'),
+              SizedBox(height: 20),
+              ListPertemuanLxp(pertemuan: 'Pertemuan 4'),
+              SizedBox(height: 20),
+              ListPertemuanLxp(pertemuan: 'Pertemuan 5'),
+              SizedBox(height: 20),
+              ListPertemuanLxp(pertemuan: 'Pertemuan 6'),
+              SizedBox(height: 20),
+              ListPertemuanLxp(pertemuan: 'Pertemuan 7'),
+            ],
+          ),
         ),
       ),
     );
