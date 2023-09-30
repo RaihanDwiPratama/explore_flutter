@@ -30,39 +30,42 @@ class _ListPertemuanLxpState extends State<ListPertemuanLxp> {
               isContentVisible = !isContentVisible;
             });
           },
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    widget.pertemuan,
-                    style: Style.textTitleCourse.copyWith(
-                      fontWeight: FontWeight.w600,
-                    ),
+          child: Container(
+            color: isContentVisible ? ColorLxp.primary : null,
+            padding: const EdgeInsets.symmetric(
+              vertical: 16.0,
+              horizontal: 24.0,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  widget.pertemuan,
+                  style: Style.textTitleCourse.copyWith(
+                    fontWeight: FontWeight.w600,
                   ),
-                ],
-              ),
-              DropdownLxp(
-                isContentVisible: isContentVisible,
-                onVisibilityChanged: (value) {
-                  setState(() {
-                    isContentVisible = value;
-                  });
-                },
-              ),
-            ],
+                ),
+                DropdownLxp(
+                  isContentVisible: isContentVisible,
+                  onVisibilityChanged: (value) {
+                    setState(() {
+                      isContentVisible = value;
+                    });
+                  },
+                ),
+              ],
+            ),
           ),
         ),
         Visibility(
           visible: isContentVisible,
-          child: Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 16),
+              Padding(
+                padding: const EdgeInsets.only(left: 24.0),
+                child: Row(
                   children: [
                     SvgPicture.asset('assets/icons/Notebook.svg'),
                     const SizedBox(width: 8),
@@ -75,13 +78,16 @@ class _ListPertemuanLxpState extends State<ListPertemuanLxp> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
-                const Divider(
-                  color: ColorLxp.neutral200,
-                  height: 1.0,
-                ),
-                const SizedBox(height: 10),
-                Row(
+              ),
+              const SizedBox(height: 16),
+              const Divider(
+                color: ColorLxp.neutral200,
+                height: 1.0,
+              ),
+              const SizedBox(height: 16),
+              Padding(
+                padding: const EdgeInsets.only(left: 24.0),
+                child: Row(
                   children: [
                     SvgPicture.asset('assets/icons/Exam.svg'),
                     const SizedBox(width: 8),
@@ -94,13 +100,16 @@ class _ListPertemuanLxpState extends State<ListPertemuanLxp> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
-                const Divider(
-                  color: ColorLxp.neutral200,
-                  height: 1.0,
-                ),
-                const SizedBox(height: 10),
-                Row(
+              ),
+              const SizedBox(height: 16),
+              const Divider(
+                color: ColorLxp.neutral200,
+                height: 1.0,
+              ),
+              const SizedBox(height: 16),
+              Padding(
+                padding: const EdgeInsets.only(left: 24.0),
+                child: Row(
                   children: [
                     SvgPicture.asset('assets/icons/Scroll.svg'),
                     const SizedBox(width: 8),
@@ -113,13 +122,16 @@ class _ListPertemuanLxpState extends State<ListPertemuanLxp> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
-                const Divider(
-                  color: ColorLxp.neutral200,
-                  height: 1.0,
-                ),
-                const SizedBox(height: 10),
-                Row(
+              ),
+              const SizedBox(height: 16),
+              const Divider(
+                color: ColorLxp.neutral200,
+                height: 1.0,
+              ),
+              const SizedBox(height: 16),
+              Padding(
+                padding: const EdgeInsets.only(left: 24.0),
+                child: Row(
                   children: [
                     SvgPicture.asset('assets/icons/Chats.svg'),
                     const SizedBox(width: 8),
@@ -132,8 +144,8 @@ class _ListPertemuanLxpState extends State<ListPertemuanLxp> {
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ],

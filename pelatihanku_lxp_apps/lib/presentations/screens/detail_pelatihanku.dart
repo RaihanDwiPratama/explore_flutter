@@ -18,7 +18,7 @@ class DetailPelatihanku extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(
-        margin: const EdgeInsets.fromLTRB(24.0, 30.0, 24.0, 0),
+        margin: const EdgeInsets.only(top: 30.0),
         child: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
