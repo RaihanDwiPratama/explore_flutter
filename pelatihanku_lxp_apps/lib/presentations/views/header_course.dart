@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 import 'package:pelatihanku_lxp_apps/presentations/views/first_list_content.dart';
 
 class HeaderCourse extends StatelessWidget {
@@ -7,18 +6,8 @@ class HeaderCourse extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Pertemuan',
-          style: Style.title.copyWith(
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        centerTitle: true,
-      ),
-      body: const FirstListContent(),
-    );
+    return const FirstListContent();
+    
     // return Row(
     //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
     //   children: [
