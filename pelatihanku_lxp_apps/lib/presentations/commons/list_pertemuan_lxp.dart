@@ -132,11 +132,6 @@ class _ListPertemuanLxpState extends State<ListPertemuanLxp> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
-                const Divider(
-                  color: ColorLxp.neutral200,
-                  height: 1.0,
-                ),
               ],
             ),
           ),

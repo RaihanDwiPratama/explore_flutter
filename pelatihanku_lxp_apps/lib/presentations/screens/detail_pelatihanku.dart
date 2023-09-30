@@ -23,6 +23,10 @@ class DetailPelatihanku extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ListPertemuanLxp(pertemuan: 'Pertemuan 1'),
+            SizedBox(height: 20),
+            ListPertemuanLxp(pertemuan: 'Pertemuan 2'),
+            SizedBox(height: 20),
+            ListPertemuanLxp(pertemuan: 'Pertemuan 3'),
           ],
         ),
       ),
