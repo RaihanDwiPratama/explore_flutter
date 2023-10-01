@@ -50,7 +50,7 @@ class ModulPelatihanku extends StatelessWidget {
             onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DasarKomunikasi(),
+                  builder: (context) => const DasarKomunikasi(),
                 )),
             child: Container(
               margin: const EdgeInsets.fromLTRB(24.0, 0, 24.0, 16.0),
@@ -153,28 +153,4 @@ class ModulPelatihanku extends StatelessWidget {
       ),
     );
   }
-  // const ModulPelatihanku({super.key});
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     appBar: AppBar(
-  //       title: Text(
-  //         'Modul',
-  //         style: Style.title.copyWith(
-  //           fontWeight: FontWeight.w600,
-  //         ),
-  //       ),
-  //       centerTitle: true,
-  //       leading: GestureDetector(
-  //         onTap: () => Navigator.pop(context),
-  //         child: const Icon(Icons.chevron_left),
-  //       ),
-  //       forceMaterialTransparency: true,
-  //     ),
-  //     body: const Center(
-  //       child: Text('Modul Pelatihanku'),
-  //     ),
-  //   );
-  // }
 }
