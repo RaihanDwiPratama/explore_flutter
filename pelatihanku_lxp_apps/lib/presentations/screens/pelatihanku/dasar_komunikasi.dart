@@ -87,9 +87,13 @@ class DasarKomunikasi extends StatelessWidget {
                     ),
                   ],
                 ),
+                const SizedBox(height: 20),
                 const DokumenLxp(title: 'Materi 1.pdf'),
+                const SizedBox(height: 20),
                 const DokumenLxp(title: 'Materi 2.pdf'),
+                const SizedBox(height: 20),
                 const DokumenLxp(title: 'Materi 3.pdf'),
+                const SizedBox(height: 20),
                 const Divider(
                   color: ColorLxp.neutral200,
                   height: 1,

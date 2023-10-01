@@ -12,20 +12,24 @@ class DokumenLxp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      contentPadding: const EdgeInsets.symmetric(horizontal: 0),
-      leading: SvgPicture.asset('assets/icons/FilePdf.svg'),
-      title: Text(
-        title,
-        style: Style.textTitleCourse.copyWith(
-          color: ColorLxp.neutral500,
-          fontWeight: FontWeight.w500,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        SvgPicture.asset('assets/icons/FilePdf.svg'),
+        const SizedBox(width: 8),
+        Text(
+          title,
+          style: Style.textTitleCourse.copyWith(
+            color: ColorLxp.neutral500,
+            fontWeight: FontWeight.w500,
+          ),
         ),
-      ),
-      trailing: const Icon(
-        Icons.file_download_outlined,
-        color: ColorLxp.successNormal,
-      ),
+        const Spacer(),
+        const Icon(
+          Icons.file_download_outlined,
+          color: ColorLxp.successNormal,
+        ),
+      ],
     );
   }
 }
