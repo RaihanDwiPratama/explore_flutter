@@ -35,7 +35,7 @@ class ListPertemuanPelatihanku extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ModulPelatihanku(),
+                      builder: (context) => ModulPelatihanku(),
                     ),
                   );
                 },
@@ -47,7 +47,7 @@ class ListPertemuanPelatihanku extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ModulPelatihanku(),
+                      builder: (context) => ModulPelatihanku(),
                     ),
                   );
                 },
@@ -59,7 +59,7 @@ class ListPertemuanPelatihanku extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ModulPelatihanku(),
+                      builder: (context) => ModulPelatihanku(),
                     ),
                   );
                 },
@@ -71,7 +71,7 @@ class ListPertemuanPelatihanku extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ModulPelatihanku(),
+                      builder: (context) => ModulPelatihanku(),
                     ),
                   );
                 },
@@ -83,7 +83,7 @@ class ListPertemuanPelatihanku extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ModulPelatihanku(),
+                      builder: (context) => ModulPelatihanku(),
                     ),
                   );
                 },
@@ -95,7 +95,7 @@ class ListPertemuanPelatihanku extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ModulPelatihanku(),
+                      builder: (context) => ModulPelatihanku(),
                     ),
                   );
                 },
@@ -107,7 +107,7 @@ class ListPertemuanPelatihanku extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ModulPelatihanku(),
+                      builder: (context) => ModulPelatihanku(),
                     ),
                   );
                 },

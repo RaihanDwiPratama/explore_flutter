@@ -9,9 +9,9 @@ class ViewCourseFix extends StatelessWidget {
 
   final List<String> images = <String>[
     'assets/images/Image.svg',
-    'assets/images/ui_ux.svg',
     'assets/images/Image.svg',
-    'assets/images/ui_ux.svg',
+    'assets/images/Image.svg',
+    'assets/images/Image.svg',
   ];
 
   final List<String> title = <String>[
@@ -31,7 +31,7 @@ class ViewCourseFix extends StatelessWidget {
   final List<double> progress = <double>[
     0.3,
     0.5,
-    1.0,
+    0.45,
     0.65,
   ];
 
