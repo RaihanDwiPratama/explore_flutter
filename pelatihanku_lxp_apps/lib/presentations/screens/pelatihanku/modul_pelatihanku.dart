@@ -50,7 +50,7 @@ class ModulPelatihanku extends StatelessWidget {
             onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const DasarKomunikasi(),
+                  builder: (context) => DasarKomunikasi(),
                 )),
             child: Container(
               margin: const EdgeInsets.fromLTRB(24.0, 0, 24.0, 16.0),
@@ -77,7 +77,10 @@ class ModulPelatihanku extends StatelessWidget {
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      SvgPicture.asset('assets/icons/Book.svg'),
+                      SvgPicture.asset(
+                        'assets/icons/Book.svg',
+                        height: 77,
+                      ),
                       const SizedBox(width: 16),
                       Column(
                         mainAxisSize: MainAxisSize.min,
