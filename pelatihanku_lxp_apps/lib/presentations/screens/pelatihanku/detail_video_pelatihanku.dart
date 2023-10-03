@@ -4,7 +4,14 @@ import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
 class DetailVideoPelatihanku extends StatelessWidget {
-  const DetailVideoPelatihanku({super.key});
+  DetailVideoPelatihanku({super.key});
+
+  final List<String> content = <String>[
+    'Tujuan Pelatihan',
+    'Alasan Pentingnya Keterampilan Komunikasi',
+    'Struktur Pelatihan',
+    'Antusiasme dan Motivasi',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +27,7 @@ class DetailVideoPelatihanku extends StatelessWidget {
       ),
       body: Column(
         children: [
+          const SizedBox(height: 20),
           SvgPicture.asset(
             'assets/images/video_content.svg',
           ),
@@ -72,6 +80,41 @@ class DetailVideoPelatihanku extends StatelessWidget {
                   style: Style.textSks.copyWith(
                     color: ColorLxp.grayModern,
                     fontWeight: FontWeight.w400,
+                  ),
+                ),
+                const SizedBox(height: 16.0),
+                Text(
+                  'Pembahasan Video',
+                  style: Style.textTitleCourse.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(height: 8.0),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 4,
+                  child: ListView.builder(
+                    itemCount: content.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 0,
+                          vertical: 0,
+                        ),
+                        horizontalTitleGap: 8.0,
+                        visualDensity: const VisualDensity(vertical: -4.0),
+                        leading: const Icon(
+                          Icons.check_circle_outline,
+                          color: ColorLxp.primary,
+                        ),
+                        title: Text(
+                          content[index],
+                          style: Style.textSks.copyWith(
+                            color: ColorLxp.neutral800,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      );
+                    },
                   ),
                 )
               ],

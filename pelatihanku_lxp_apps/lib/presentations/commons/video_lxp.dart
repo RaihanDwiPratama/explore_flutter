@@ -16,7 +16,7 @@ class VideoLxp extends StatelessWidget {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const DetailVideoPelatihanku(),
+          builder: (context) => DetailVideoPelatihanku(),
         ),
       ),
       child: Container(
