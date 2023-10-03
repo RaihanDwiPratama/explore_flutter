@@ -96,10 +96,8 @@ class DetailVideoPelatihanku extends StatelessWidget {
                     itemCount: content.length,
                     itemBuilder: (context, index) {
                       return ListTile(
-                        contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 0,
-                          vertical: 0,
-                        ),
+                        contentPadding:
+                            const EdgeInsets.symmetric(horizontal: 0),
                         horizontalTitleGap: 8.0,
                         visualDensity: const VisualDensity(vertical: -4.0),
                         leading: const Icon(
