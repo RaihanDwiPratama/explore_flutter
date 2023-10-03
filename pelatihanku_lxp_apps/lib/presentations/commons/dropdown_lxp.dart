@@ -31,7 +31,7 @@ class _DropdownLxpState extends State<DropdownLxp> {
                 angle: -math.pi / 2,
                 child: const Icon(
                   Icons.chevron_right,
-                  color: ColorLxp.neutral800,
+                  color: ColorLxp.white,
                 ),
               )
             : Transform.rotate(

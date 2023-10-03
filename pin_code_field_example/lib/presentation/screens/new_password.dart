@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pin_code_field_example/presentation/utils/color.dart';
+import 'package:pin_code_field_example/presentation/utils/style.dart';
 
 class NewPassword extends StatefulWidget {
   const NewPassword({super.key});
@@ -12,8 +14,6 @@ class _NewPasswordState extends State<NewPassword> {
   final _inputConfirmPassword = TextEditingController();
   bool isButtonEnabled = false;
   bool isPasswordObscured = true;
-  // ignore: unused_field
-  String _errorText = '';
 
   @override
   void initState() {
@@ -53,9 +53,9 @@ class _NewPasswordState extends State<NewPassword> {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: const Icon(
+          icon: Icon(
             Icons.chevron_left,
-            color: Color(0xff292D32),
+            color: ColorDcoll.grey,
             size: 30,
           ),
         ),
@@ -70,112 +70,32 @@ class _NewPasswordState extends State<NewPassword> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               const SizedBox(height: 30.0),
-              const Text(
+              Text(
                 'Password Baru',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                ),
+                style: StyleDcoll.title,
               ),
               const SizedBox(height: 20),
-              const Text(
+              Text(
                 'Password baru anda harus berbeda dari password sebelumnya.',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Color(0xff697586),
-                  fontWeight: FontWeight.w400,
-                ),
+                style: StyleDcoll.description,
               ),
               const SizedBox(height: 40.0),
-              const SizedBox(
-                height: 30,
-                child: Text(
-                  'Password Baru',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
+              Text(
+                'Password Baru',
+                style: StyleDcoll.newPassword,
               ),
-              TextField(
-                controller: _inputNewPassword,
-                obscureText: isPasswordObscured,
-                onChanged: (value) {
-                  updateButtonState();
-                },
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  enabledBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0xffEEF2F6),
-                    ),
-                  ),
-                  prefixIcon: const Icon(
-                    Icons.lock,
-                    color: Color(0xff9AA4B2),
-                  ),
-                  hintText: 'Masukkan password',
-                  hintStyle: const TextStyle(
-                    color: Color(0xff9AA4B2),
-                  ),
-                  suffixIcon: GestureDetector(
-                    onTap: () {
-                      tooglePasswordVisibility();
-                    },
-                    child: Icon(
-                      isPasswordObscured
-                          ? Icons.visibility
-                          : Icons.visibility_off,
-                      color: const Color(0xff9AA4B2),
-                    ),
-                  ),
-                ),
-              ),
+              const SizedBox(height: 10),
+              buildTextField('Masukkan password'),
               const SizedBox(height: 20),
-              const SizedBox(
-                height: 30,
-                child: Text(
-                  'Konfirmasi Password',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                  ),
+              const Text(
+                'Konfirmasi Password',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
-              TextField(
-                controller: _inputConfirmPassword,
-                obscureText: isPasswordObscured,
-                onChanged: (value) {
-                  updateButtonState();
-                },
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  enabledBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Color(0xffEEF2F6),
-                    ),
-                  ),
-                  prefixIcon: const Icon(
-                    Icons.lock,
-                    color: Color(0xff9AA4B2),
-                  ),
-                  hintText: 'Masukkan password',
-                  hintStyle: const TextStyle(
-                    color: Color(0xff9AA4B2),
-                  ),
-                  suffixIcon: GestureDetector(
-                    onTap: () {
-                      tooglePasswordVisibility();
-                    },
-                    child: Icon(
-                      isPasswordObscured
-                          ? Icons.visibility
-                          : Icons.visibility_off,
-                      color: const Color(0xff9AA4B2),
-                    ),
-                  ),
-                ),
-              ),
+              const SizedBox(height: 10),
+              buildTextField('Masukkan password'),
             ],
           ),
         ),
@@ -200,10 +120,6 @@ class _NewPasswordState extends State<NewPassword> {
                           content: Text('Password telah diperbarui'),
                         ),
                       );
-                    } else {
-                      setState(() {
-                        _errorText = 'Password tidak cocok.';
-                      });
                     }
                   }
                 : null,
@@ -222,6 +138,42 @@ class _NewPasswordState extends State<NewPassword> {
                 fontWeight: FontWeight.w600,
               ),
             ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildTextField(String hintText) {
+    return TextField(
+      obscureText: isPasswordObscured,
+      onChanged: (value) {
+        updateButtonState();
+      },
+      decoration: InputDecoration(
+        border: InputBorder.none,
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: ColorDcoll.greyModern,
+          ),
+        ),
+        prefixIcon: Icon(
+          Icons.lock,
+          color: ColorDcoll.grayModern,
+        ),
+        hintText: hintText,
+        hintStyle: TextStyle(
+          color: ColorDcoll.grayModern,
+        ),
+        suffixIcon: GestureDetector(
+          onTap: () {
+            setState(() {
+              isPasswordObscured = !isPasswordObscured;
+            });
+          },
+          child: Icon(
+            isPasswordObscured ? Icons.visibility : Icons.visibility_off,
+            color: ColorDcoll.grayModern,
           ),
         ),
       ),

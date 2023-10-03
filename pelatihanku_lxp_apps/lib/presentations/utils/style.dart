@@ -8,8 +8,8 @@ class Style {
   );
 
   static const TextStyle title = TextStyle(
-    fontSize: 20,
-    height: 28 / 20,
+    fontSize: 18,
+    height: 24 / 20,
     color: ColorLxp.neutral800,
   );
 

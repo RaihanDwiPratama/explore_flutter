@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/account.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/akun/account.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
-import 'package:pelatihanku_lxp_apps/presentations/views/join_course.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/join_pelatihanku.dart';
 
 class BottomNavigationBarExample extends StatefulWidget {
   const BottomNavigationBarExample({super.key});
@@ -20,7 +20,7 @@ class _BottomNavigationBarExampleState
       'Beranda',
       style: Style.optionStyle,
     ),
-    JoinCourse(),
+    JoinPelatihanku(),
     Text(
       'Penugasan',
       style: Style.optionStyle,
