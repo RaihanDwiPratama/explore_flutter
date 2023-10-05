@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/list_rangkuman_pelatihanku.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -31,7 +32,7 @@ class _RangkumanPelatihankuState extends State<RangkumanPelatihanku> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(24.0, 23.0, 24.0, 0),
+        padding: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
@@ -53,7 +54,7 @@ class _RangkumanPelatihankuState extends State<RangkumanPelatihanku> {
                 contentPadding: const EdgeInsets.all(12),
                 hintText: 'Buat rangkuman...',
                 hintStyle: Style.textSks.copyWith(
-                  color: const Color.fromARGB(255, 54, 77, 116),
+                  color: ColorLxp.neutral800,
                   fontWeight: FontWeight.w400,
                 ),
                 border: const OutlineInputBorder(
@@ -84,13 +85,8 @@ class _RangkumanPelatihankuState extends State<RangkumanPelatihanku> {
             showDialog<String>(
               context: context,
               builder: (BuildContext context) => AlertDialog(
-                // actionsPadding: const EdgeInsets.symmetric(
-                //   horizontal: 16.0,
-                // ),
-                // backgroundColor: ColorLxp.white,
                 title: SvgPicture.asset(
                   'assets/images/add_notes.svg',
-                  // width: 200,
                 ),
                 content: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -98,8 +94,9 @@ class _RangkumanPelatihankuState extends State<RangkumanPelatihanku> {
                     Text(
                       'Rangkuman berhasil dibuat!',
                       style: Style.textButtonBlank.copyWith(
-                          color: ColorLxp.neutral100,
-                          fontWeight: FontWeight.w600),
+                        color: ColorLxp.neutral100,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                     const SizedBox(height: 4),
                     SizedBox(
@@ -109,7 +106,8 @@ class _RangkumanPelatihankuState extends State<RangkumanPelatihanku> {
                         style: Style.textTitleCourse.copyWith(
                           color: ColorLxp.neutral100,
                           fontWeight: FontWeight.w400,
-                        ),textAlign: TextAlign.center,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ],
@@ -118,46 +116,52 @@ class _RangkumanPelatihankuState extends State<RangkumanPelatihanku> {
                   Column(
                     children: [
                       GestureDetector(
-                        onTap: () => Navigator.pop(context, 'Kembali'),
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const ListRangkumanPelatihanku(),
+                          ),
+                        ),
                         child: Container(
-                            padding: const EdgeInsets.symmetric(
-                              vertical: 12.0,
-                              horizontal: 68.0,
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 12.0,
+                            horizontal: 68.0,
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            color: ColorLxp.primary,
+                          ),
+                          child: Text(
+                            'Lihat rangkuman',
+                            style: Style.textTitleCourse.copyWith(
+                              color: ColorLxp.white,
+                              fontWeight: FontWeight.w500,
                             ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              color: ColorLxp.primary,
-                            ),
-                            child: Text(
-                              'Lihat rangkuman',
-                              style: Style.textTitleCourse.copyWith(
-                                color: ColorLxp.white,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            )),
+                          ),
+                        ),
                       ),
                       const SizedBox(height: 10),
                       GestureDetector(
-                        onTap: () => Navigator.pop(context, 'Kembali'),
+                        onTap: () => Navigator.pop(context),
                         child: Container(
-                            // height: 48,
-                            padding: const EdgeInsets.symmetric(
-                              vertical: 12.0,
-                              horizontal: 98.0,
-                            ),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8),
-                                // color: ColorLxp.primary,
-                                border: Border.all(
-                                  color: ColorLxp.primary,
-                                )),
-                            child: Text(
-                              'Kembali',
-                              style: Style.textTitleCourse.copyWith(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 12.0,
+                            horizontal: 98.0,
+                          ),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(
                                 color: ColorLxp.primary,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            )),
+                              )),
+                          child: Text(
+                            'Kembali',
+                            style: Style.textTitleCourse.copyWith(
+                              color: ColorLxp.primary,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   ),
