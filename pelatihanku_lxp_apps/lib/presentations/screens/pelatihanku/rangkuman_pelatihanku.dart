@@ -84,12 +84,16 @@ class _RangkumanPelatihankuState extends State<RangkumanPelatihanku> {
             showDialog<String>(
               context: context,
               builder: (BuildContext context) => AlertDialog(
+                // actionsPadding: const EdgeInsets.symmetric(
+                //   horizontal: 16.0,
+                // ),
                 // backgroundColor: ColorLxp.white,
                 title: SvgPicture.asset(
                   'assets/images/add_notes.svg',
                   // width: 200,
                 ),
                 content: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
                       'Rangkuman berhasil dibuat!',
@@ -98,22 +102,64 @@ class _RangkumanPelatihankuState extends State<RangkumanPelatihanku> {
                           fontWeight: FontWeight.w600),
                     ),
                     const SizedBox(height: 4),
-                    Text(
-                      'Rangkuman telah berhasil dibuat...',
-                      style: Style.textTitleCourse.copyWith(
+                    SizedBox(
+                      width: 200,
+                      child: Text(
+                        'Rangkuman telah berhasil dibuat...',
+                        style: Style.textTitleCourse.copyWith(
                           color: ColorLxp.neutral100,
-                          fontWeight: FontWeight.w400),
+                          fontWeight: FontWeight.w400,
+                        ),textAlign: TextAlign.center,
+                      ),
                     ),
                   ],
                 ),
                 actions: <Widget>[
-                  TextButton(
-                    onPressed: () => Navigator.pop(context, 'Cancel'),
-                    child: const Text('Cancel'),
-                  ),
-                  TextButton(
-                    onPressed: () => Navigator.pop(context, 'OK'),
-                    child: const Text('OK'),
+                  Column(
+                    children: [
+                      GestureDetector(
+                        onTap: () => Navigator.pop(context, 'Kembali'),
+                        child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 12.0,
+                              horizontal: 68.0,
+                            ),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: ColorLxp.primary,
+                            ),
+                            child: Text(
+                              'Lihat rangkuman',
+                              style: Style.textTitleCourse.copyWith(
+                                color: ColorLxp.white,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            )),
+                      ),
+                      const SizedBox(height: 10),
+                      GestureDetector(
+                        onTap: () => Navigator.pop(context, 'Kembali'),
+                        child: Container(
+                            // height: 48,
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 12.0,
+                              horizontal: 98.0,
+                            ),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                // color: ColorLxp.primary,
+                                border: Border.all(
+                                  color: ColorLxp.primary,
+                                )),
+                            child: Text(
+                              'Kembali',
+                              style: Style.textTitleCourse.copyWith(
+                                color: ColorLxp.primary,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            )),
+                      ),
+                    ],
                   ),
                 ],
               ),
