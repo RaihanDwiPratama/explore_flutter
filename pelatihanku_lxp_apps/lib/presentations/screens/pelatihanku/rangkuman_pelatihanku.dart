@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -38,13 +39,21 @@ class _RangkumanPelatihankuState extends State<RangkumanPelatihanku> {
               controller: _rangkuman,
               maxLines: null,
               onChanged: (value) {
-                value.length < 1000 ? _isEnabled = false : _isEnabled = true;
+                if (value.length >= 10) {
+                  setState(() {
+                    _isEnabled = true;
+                  });
+                } else {
+                  setState(() {
+                    _isEnabled = false;
+                  });
+                }
               },
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.all(12),
                 hintText: 'Buat rangkuman...',
                 hintStyle: Style.textSks.copyWith(
-                  color: ColorLxp.neutral800,
+                  color: const Color.fromARGB(255, 54, 77, 116),
                   fontWeight: FontWeight.w400,
                 ),
                 border: const OutlineInputBorder(
@@ -71,9 +80,45 @@ class _RangkumanPelatihankuState extends State<RangkumanPelatihanku> {
       ),
       bottomNavigationBar: GestureDetector(
         onTap: () {
-          setState(() {
-            _isEnabled = !_isEnabled;
-          });
+          if (_isEnabled) {
+            showDialog<String>(
+              context: context,
+              builder: (BuildContext context) => AlertDialog(
+                // backgroundColor: ColorLxp.white,
+                title: SvgPicture.asset(
+                  'assets/images/add_notes.svg',
+                  // width: 200,
+                ),
+                content: Column(
+                  children: [
+                    Text(
+                      'Rangkuman berhasil dibuat!',
+                      style: Style.textButtonBlank.copyWith(
+                          color: ColorLxp.neutral100,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Rangkuman telah berhasil dibuat...',
+                      style: Style.textTitleCourse.copyWith(
+                          color: ColorLxp.neutral100,
+                          fontWeight: FontWeight.w400),
+                    ),
+                  ],
+                ),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () => Navigator.pop(context, 'Cancel'),
+                    child: const Text('Cancel'),
+                  ),
+                  TextButton(
+                    onPressed: () => Navigator.pop(context, 'OK'),
+                    child: const Text('OK'),
+                  ),
+                ],
+              ),
+            );
+          } else {}
         },
         child: Container(
           height: 48.0,
