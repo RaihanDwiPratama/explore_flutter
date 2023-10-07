@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/add_comentar.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -73,6 +74,12 @@ class OnlyTextDiskusi extends StatelessWidget {
             ),
             const Divider(color: ColorLxp.neutral200),
             GestureDetector(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const AddComentar(),
+                ),
+              ),
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(16.0, 2.0, 16.0, 6.0),
                 child: Text(
