@@ -55,7 +55,7 @@ class ViewCourseFix extends StatelessWidget {
       ),
       body: ListView.builder(
         itemCount: images.length,
-        padding: const EdgeInsets.only(top: 32.0),
+        padding: const EdgeInsets.only(top: 24.0),
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () => Navigator.push(

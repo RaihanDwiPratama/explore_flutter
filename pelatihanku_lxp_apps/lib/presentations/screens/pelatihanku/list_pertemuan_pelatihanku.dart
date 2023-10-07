@@ -26,7 +26,7 @@ class ListPertemuanPelatihanku extends StatelessWidget {
         forceMaterialTransparency: true,
       ),
       body: Container(
-        margin: const EdgeInsets.only(top: 30.0),
+        margin: const EdgeInsets.only(top: 24.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

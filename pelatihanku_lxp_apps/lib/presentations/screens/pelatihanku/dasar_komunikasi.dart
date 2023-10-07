@@ -30,7 +30,7 @@ class DasarKomunikasi extends StatelessWidget {
         itemCount: 1,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.fromLTRB(24.0, 32.0, 24.0, 0),
+            padding: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
