@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/list_pertemuan_lxp.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/diskusi/blank_diskusi.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/modul_pelatihanku.dart';
+import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
 class ListPertemuanPelatihanku extends StatelessWidget {
@@ -24,14 +26,14 @@ class ListPertemuanPelatihanku extends StatelessWidget {
         forceMaterialTransparency: true,
       ),
       body: Container(
-        margin: const EdgeInsets.only(top: 30.0),
+        margin: const EdgeInsets.only(top: 24.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ListPertemuanLxp(
                 pertemuan: 'Pertemuan 1',
-                onTap: () {
+                onTapModul: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -39,80 +41,43 @@ class ListPertemuanPelatihanku extends StatelessWidget {
                     ),
                   );
                 },
-              ),
-              const SizedBox(height: 20),
-              ListPertemuanLxp(
-                pertemuan: 'Pertemuan 2',
-                onTap: () {
+                onTapDiskusi: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ModulPelatihanku(),
+                      builder: (context) => const BlankDiskusi(),
                     ),
                   );
                 },
               ),
               const SizedBox(height: 20),
-              ListPertemuanLxp(
-                pertemuan: 'Pertemuan 3',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ModulPelatihanku(),
-                    ),
-                  );
-                },
-              ),
-              const SizedBox(height: 20),
-              ListPertemuanLxp(
-                pertemuan: 'Pertemuan 4',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ModulPelatihanku(),
-                    ),
-                  );
-                },
-              ),
-              const SizedBox(height: 20),
-              ListPertemuanLxp(
-                pertemuan: 'Pertemuan 5',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ModulPelatihanku(),
-                    ),
-                  );
-                },
-              ),
-              const SizedBox(height: 20),
-              ListPertemuanLxp(
-                pertemuan: 'Pertemuan 6',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ModulPelatihanku(),
-                    ),
-                  );
-                },
-              ),
-              const SizedBox(height: 20),
-              ListPertemuanLxp(
-                pertemuan: 'Pertemuan 7',
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ModulPelatihanku(),
-                    ),
-                  );
-                },
-              ),
-              const SizedBox(height: 20),
+              SizedBox(
+                height: MediaQuery.of(context).size.height - 100,
+                child: ListView.builder(
+                  itemCount: 6,
+                  itemBuilder: (context, index) {
+                    int pertemuanNumber = index + 1;
+                    return Padding(
+                      padding: const EdgeInsets.fromLTRB(24.0, 0, 24.0, 36.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Pertemuan ${pertemuanNumber + 1}',
+                            style: Style.textTitleCourse.copyWith(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          const Icon(
+                            Icons.lock,
+                            color: ColorLxp.neutral500,
+                          )
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              )
             ],
           ),
         ),

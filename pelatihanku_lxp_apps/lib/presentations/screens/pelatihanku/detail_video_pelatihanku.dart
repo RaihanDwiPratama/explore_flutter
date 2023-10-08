@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -28,9 +27,7 @@ class DetailVideoPelatihanku extends StatelessWidget {
       body: Column(
         children: [
           const SizedBox(height: 20),
-          SvgPicture.asset(
-            'assets/images/video_content.svg',
-          ),
+          Image.asset('assets/images/detail_video.png'),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Column(
@@ -39,12 +36,10 @@ class DetailVideoPelatihanku extends StatelessWidget {
                 const SizedBox(height: 24.0),
                 Row(
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Container(
-                        height: 40,
-                        width: 40,
-                        color: ColorLxp.grayModern,
+                    const CircleAvatar(
+                      radius: 20.0,
+                      backgroundImage: AssetImage(
+                        'assets/images/profile_woman.jpg',
                       ),
                     ),
                     const SizedBox(width: 12),
@@ -96,10 +91,8 @@ class DetailVideoPelatihanku extends StatelessWidget {
                     itemCount: content.length,
                     itemBuilder: (context, index) {
                       return ListTile(
-                        contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 0,
-                          vertical: 0,
-                        ),
+                        contentPadding:
+                            const EdgeInsets.symmetric(horizontal: 0),
                         horizontalTitleGap: 8.0,
                         visualDensity: const VisualDensity(vertical: -4.0),
                         leading: const Icon(

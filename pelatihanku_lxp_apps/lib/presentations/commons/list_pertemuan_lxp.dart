@@ -6,12 +6,14 @@ import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
 class ListPertemuanLxp extends StatefulWidget {
   final String pertemuan;
-  final VoidCallback onTap;
+  final VoidCallback onTapModul;
+  final VoidCallback onTapDiskusi;
 
   const ListPertemuanLxp({
     super.key,
     required this.pertemuan,
-    required this.onTap,
+    required this.onTapModul,
+    required this.onTapDiskusi,
   });
 
   @override
@@ -71,7 +73,7 @@ class _ListPertemuanLxpState extends State<ListPertemuanLxp> {
             children: [
               const SizedBox(height: 16),
               GestureDetector(
-                onTap: widget.onTap,
+                onTap: widget.onTapModul,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 24.0),
                   child: Row(
@@ -139,20 +141,23 @@ class _ListPertemuanLxpState extends State<ListPertemuanLxp> {
                 height: 1.0,
               ),
               const SizedBox(height: 16),
-              Padding(
-                padding: const EdgeInsets.only(left: 24.0),
-                child: Row(
-                  children: [
-                    SvgPicture.asset('assets/icons/Chats.svg'),
-                    const SizedBox(width: 8),
-                    Text(
-                      'Diskusi',
-                      style: Style.textTitleCourse.copyWith(
-                        color: ColorLxp.neutral500,
-                        fontWeight: FontWeight.w500,
+              GestureDetector(
+                onTap: widget.onTapDiskusi,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 24.0),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset('assets/icons/Chats.svg'),
+                      const SizedBox(width: 8),
+                      Text(
+                        'Diskusi',
+                        style: Style.textTitleCourse.copyWith(
+                          color: ColorLxp.neutral500,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],

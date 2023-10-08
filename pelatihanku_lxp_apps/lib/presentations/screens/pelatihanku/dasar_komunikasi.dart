@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/content_video_lxp.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/dokumen_lxp.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/dokumen_pelatihanku.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/rangkuman_pelatihanku.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/video_pelatihanku.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
@@ -29,7 +30,7 @@ class DasarKomunikasi extends StatelessWidget {
         itemCount: 1,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.fromLTRB(24.0, 32.0, 24.0, 0),
+            padding: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -117,19 +118,27 @@ class DasarKomunikasi extends StatelessWidget {
           );
         },
       ),
-      bottomNavigationBar: Container(
-        height: 48.0,
-        margin: const EdgeInsets.all(24.0),
-        decoration: BoxDecoration(
-          color: ColorLxp.neutral300,
-          borderRadius: BorderRadius.circular(8),
+      bottomNavigationBar: GestureDetector(
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const RangkumanPelatihanku(),
+          ),
         ),
-        child: Center(
-          child: Text(
-            'Buat Rangkuman',
-            style: Style.textButtonBlank.copyWith(
-              color: ColorLxp.white,
-              fontWeight: FontWeight.w500,
+        child: Container(
+          height: 48.0,
+          margin: const EdgeInsets.all(24.0),
+          decoration: BoxDecoration(
+            color: ColorLxp.neutral300,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Center(
+            child: Text(
+              'Buat Rangkuman',
+              style: Style.textButtonBlank.copyWith(
+                color: ColorLxp.white,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
         ),
