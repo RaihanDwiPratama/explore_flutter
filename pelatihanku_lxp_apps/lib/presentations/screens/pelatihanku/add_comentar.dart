@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -44,105 +44,109 @@ class _AddComentarState extends State<AddComentar> {
           child: const Icon(Icons.chevron_left),
         ),
       ),
-      body: Container(
-        padding: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ListTile(
-              contentPadding: const EdgeInsets.symmetric(horizontal: 0),
-              leading: const CircleAvatar(
-                child: CircleAvatar(
-                  radius: 33.0,
-                  backgroundImage:
-                      AssetImage("assets/images/profile_woman.jpg"),
-                ),
-              ),
-              title: Text(
-                'Neneng Rohaye',
-                style: Style.textTitleCourse.copyWith(
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              subtitle: Text(
-                '12.30',
-                style: Style.textSks.copyWith(
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              trailing: const Icon(
-                Icons.more_horiz_outlined,
-                color: ColorLxp.neutral800,
-              ),
-            ),
-            ListTile(
-              leading: const VerticalDivider(
-                color: ColorLxp.neutral200,
-                thickness: 2,
-              ),
-              title: Text(
-                'Setelah mempelajari topik dipertemuan ini, hal apa yang dapat anda pelajari?',
-                style: Style.textTitleCourse.copyWith(
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            TextField(
-              controller: _rangkuman,
-              maxLines: 8,
-              onChanged: (value) {
-                if (value.length >= 10) {
-                  setState(() {
-                    _isEnabled = true;
-                  });
-                } else {
-                  setState(() {
-                    _isEnabled = false;
-                  });
-                }
-              },
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.all(12),
-                hintText: 'Buat rangkuman...',
-                hintStyle: Style.textTitleCourse.copyWith(
-                  color: ColorLxp.neutral500,
-                  fontWeight: FontWeight.w500,
-                ),
-                border: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(5),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ListTile(
+                contentPadding: const EdgeInsets.symmetric(horizontal: 0),
+                leading: const CircleAvatar(
+                  child: CircleAvatar(
+                    radius: 33.0,
+                    backgroundImage:
+                        AssetImage("assets/images/profile_woman.jpg"),
                   ),
-                  gapPadding: 6.0,
-                  borderSide: BorderSide(
-                    color: ColorLxp.neutral200,
+                ),
+                title: Text(
+                  'Neneng Rohaye',
+                  style: Style.textTitleCourse.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                subtitle: Text(
+                  '12.30',
+                  style: Style.textSks.copyWith(
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                trailing: const Icon(
+                  Icons.more_horiz_outlined,
+                  color: ColorLxp.neutral800,
+                ),
+              ),
+              ListTile(
+                leading: const VerticalDivider(
+                  color: ColorLxp.neutral200,
+                  thickness: 2,
+                ),
+                title: Text(
+                  'Setelah mempelajari topik dipertemuan ini, hal apa yang dapat anda pelajari?',
+                  style: Style.textTitleCourse.copyWith(
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 20),
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 4,
-              child: ListView.builder(
-                itemCount: content.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    contentPadding: const EdgeInsets.symmetric(horizontal: 0),
-                    horizontalTitleGap: 8.0,
-                    visualDensity: const VisualDensity(vertical: -4.0),
-                    leading: SvgPicture.asset(icons[index]),
-                    title: Text(
-                      content[index],
-                      style: Style.textSks.copyWith(
-                        color: ColorLxp.neutral800,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  );
+              const SizedBox(height: 20),
+              TextField(
+                controller: _rangkuman,
+                maxLines: 10,
+                onChanged: (value) {
+                  if (value.length >= 10) {
+                    setState(() {
+                      _isEnabled = true;
+                    });
+                  } else {
+                    setState(() {
+                      _isEnabled = false;
+                    });
+                  }
                 },
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.all(12),
+                  hintText: 'Buat rangkuman...',
+                  hintStyle: Style.textTitleCourse.copyWith(
+                    color: ColorLxp.neutral500,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(5),
+                    ),
+                    gapPadding: 6.0,
+                    borderSide: BorderSide(
+                      color: ColorLxp.neutral200,
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ],
+              const SizedBox(height: 20),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 4,
+                child: ListView.builder(
+                  itemCount: content.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 0),
+                      horizontalTitleGap: 8.0,
+                      visualDensity: const VisualDensity(vertical: -4.0),
+                      leading: SvgPicture.asset(
+                        icons[index],
+                        width: 20,
+                      ),
+                      title: Text(
+                        content[index],
+                        style: Style.textTitleCourse.copyWith(
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: GestureDetector(

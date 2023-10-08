@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
 class ContentVideoLxp extends StatelessWidget {
@@ -14,8 +13,8 @@ class ContentVideoLxp extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: SvgPicture.asset(
-              'assets/images/video_content.svg',
+            child: Image.asset(
+              'assets/images/video.png',
               width: 80,
             ),
           ),

@@ -31,52 +31,54 @@ class _RangkumanPelatihankuState extends State<RangkumanPelatihanku> {
           child: const Icon(Icons.chevron_left),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            TextField(
-              controller: _rangkuman,
-              maxLines: null,
-              onChanged: (value) {
-                if (value.length >= 10) {
-                  setState(() {
-                    _isEnabled = true;
-                  });
-                } else {
-                  setState(() {
-                    _isEnabled = false;
-                  });
-                }
-              },
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.all(12),
-                hintText: 'Buat rangkuman...',
-                hintStyle: Style.textSks.copyWith(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              TextField(
+                controller: _rangkuman,
+                maxLines: 24,
+                onChanged: (value) {
+                  if (value.length >= 1000) {
+                    setState(() {
+                      _isEnabled = true;
+                    });
+                  } else {
+                    setState(() {
+                      _isEnabled = false;
+                    });
+                  }
+                },
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.all(12),
+                  hintText: 'Buat rangkuman...',
+                  hintStyle: Style.textSks.copyWith(
+                    color: ColorLxp.neutral800,
+                    fontWeight: FontWeight.w400,
+                  ),
+                  border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(5),
+                    ),
+                    gapPadding: 6.0,
+                    borderSide: BorderSide(
+                      color: ColorLxp.neutral200,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 12),
+              Text(
+                'Minimal 1000 Karakter',
+                style: Style.textIndicator.copyWith(
                   color: ColorLxp.neutral800,
                   fontWeight: FontWeight.w400,
                 ),
-                border: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(5),
-                  ),
-                  gapPadding: 6.0,
-                  borderSide: BorderSide(
-                    color: ColorLxp.neutral200,
-                  ),
-                ),
               ),
-            ),
-            const SizedBox(height: 12),
-            Text(
-              'Minimal 1000 Karakter',
-              style: Style.textIndicator.copyWith(
-                color: ColorLxp.neutral800,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: GestureDetector(

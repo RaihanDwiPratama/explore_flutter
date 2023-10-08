@@ -23,7 +23,7 @@ class OnlyTextDiskusi extends StatelessWidget {
         ),
       ),
       body: Container(
-        height: 170,
+        height: 388,
         margin: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0),
         decoration: BoxDecoration(
           border: Border.all(
@@ -72,6 +72,12 @@ class OnlyTextDiskusi extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 10),
+            Align(
+              alignment: Alignment.center,
+              child: Image.asset('assets/images/Img_diskusi.png'),
+            ),
+            const SizedBox(height: 10),
             const Divider(color: ColorLxp.neutral200),
             GestureDetector(
               onTap: () => Navigator.push(

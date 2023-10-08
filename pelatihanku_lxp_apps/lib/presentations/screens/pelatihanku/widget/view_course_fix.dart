@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/list_pertemuan_pelatihanku.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
@@ -8,10 +7,10 @@ class ViewCourseFix extends StatelessWidget {
   final bool isCompleted = false;
 
   final List<String> images = <String>[
-    'assets/images/Image.svg',
-    'assets/images/Image.svg',
-    'assets/images/Image.svg',
-    'assets/images/Image.svg',
+    'assets/images/komunikasi.png',
+    'assets/images/ui_ux.png',
+    'assets/images/datascience.png',
+    'assets/images/cybersecurity.png',
   ];
 
   final List<String> title = <String>[
@@ -88,9 +87,8 @@ class ViewCourseFix extends StatelessWidget {
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      SvgPicture.asset(
+                      Image.asset(
                         images[index],
-                        semanticsLabel: 'Course Logo',
                         width: 80,
                       ),
                       const SizedBox(width: 16),
