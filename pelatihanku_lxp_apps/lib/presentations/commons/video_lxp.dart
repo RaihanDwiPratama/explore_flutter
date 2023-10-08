@@ -60,7 +60,9 @@ class VideoLxp extends StatelessWidget {
                     const Icon(
                       Icons.alarm,
                       color: ColorLxp.neutral500,
+                      size: 16,
                     ),
+                    const SizedBox(width: 4),
                     Text(
                       '6 Menit',
                       style: Style.textSks.copyWith(

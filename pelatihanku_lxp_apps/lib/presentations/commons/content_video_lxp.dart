@@ -14,7 +14,7 @@ class ContentVideoLxp extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: Image.asset(
-              'assets/images/video.png',
+              'assets/images/mini_video.png',
               width: 80,
             ),
           ),
