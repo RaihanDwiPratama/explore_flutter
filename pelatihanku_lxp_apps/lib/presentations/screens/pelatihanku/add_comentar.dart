@@ -82,7 +82,7 @@ class _AddComentarState extends State<AddComentar> {
                   thickness: 2,
                 ),
                 title: Text(
-                  'Setelah mempelajari topik dipertemuan ini, hal apa yang dapat anda pelajari?',
+                  'Apa yang dimaksud dengan pernyataan "Yang penting kamu mengerti" dalam konteks komunikasi?',
                   style: Style.textTitleCourse.copyWith(
                     fontWeight: FontWeight.w400,
                   ),
