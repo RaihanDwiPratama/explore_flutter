@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/radio_button_lxp.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/detail_video_pelatihanku.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
@@ -38,14 +37,10 @@ class VideoLxp extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: SvgPicture.asset(
-                'assets/images/video_content.svg',
-                width: 94,
-              ),
+            Image.asset(
+              'assets/images/video.png',
+              width: 76,
             ),
-            const SizedBox(width: 16),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
