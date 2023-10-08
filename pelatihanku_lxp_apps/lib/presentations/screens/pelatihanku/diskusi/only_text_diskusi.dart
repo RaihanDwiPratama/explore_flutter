@@ -23,7 +23,7 @@ class OnlyTextDiskusi extends StatelessWidget {
         ),
       ),
       body: Container(
-        height: 388,
+        height: 400,
         margin: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0),
         decoration: BoxDecoration(
           border: Border.all(
@@ -75,7 +75,10 @@ class OnlyTextDiskusi extends StatelessWidget {
             const SizedBox(height: 10),
             Align(
               alignment: Alignment.center,
-              child: Image.asset('assets/images/Img_diskusi.png'),
+              child: Image.asset(
+                'assets/images/img_diskusi.png',
+                height: 200,
+              ),
             ),
             const SizedBox(height: 10),
             const Divider(color: ColorLxp.neutral200),
@@ -87,7 +90,7 @@ class OnlyTextDiskusi extends StatelessWidget {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(16.0, 2.0, 16.0, 6.0),
+                padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 6.0),
                 child: Text(
                   'Tambah Komentar...',
                   style: Style.textSks.copyWith(
