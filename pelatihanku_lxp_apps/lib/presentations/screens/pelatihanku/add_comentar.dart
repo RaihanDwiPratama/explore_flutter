@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/diskusi/reply_diskusi.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -153,7 +154,7 @@ class _AddComentarState extends State<AddComentar> {
         onTap: () => Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const AddComentar(),
+            builder: (context) => const ReplyDiskusi(),
           ),
         ),
         child: Container(
