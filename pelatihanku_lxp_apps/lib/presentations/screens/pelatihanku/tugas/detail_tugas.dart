@@ -148,7 +148,60 @@ class DetailTugas extends StatelessWidget {
                   )
                 ],
               ),
-            )
+            ),
+            const SizedBox(height: 28),
+            Text(
+              'Jawaban Terkirim',
+              style: Style.textTitleCourse.copyWith(
+                fontWeight: FontWeight.w500,
+                color: ColorLxp.neutral800,
+              ),
+            ),
+            const Divider(
+              color: ColorLxp.neutral300,
+              thickness: 1,
+            ),
+            const SizedBox(height: 24),
+            Center(
+              child: SvgPicture.asset('assets/icons/FileX.svg'),
+            ),
+            const SizedBox(height: 4),
+            Center(
+              child: Text(
+                'Terlambat Mengumpulkan',
+                style: Style.textSks.copyWith(
+                  color: ColorLxp.neutral300,
+                ),
+                maxLines: 2,
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 48.0,
+        margin: const EdgeInsets.all(24.0),
+        decoration: BoxDecoration(
+          color: ColorLxp.primary,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(
+              Icons.file_download_outlined,
+              color: ColorLxp.white,
+            ),
+            const SizedBox(
+              width: 8,
+            ),
+            Text(
+              'Upload Tugas',
+              style: Style.textButtonBlank.copyWith(
+                color: ColorLxp.white,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
           ],
         ),
       ),
