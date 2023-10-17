@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/list_pertemuan_lxp.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/diskusi/blank_diskusi.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/modul_pelatihanku.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/tugas/detail_tugas.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -38,6 +39,14 @@ class ListPertemuanPelatihanku extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => ModulPelatihanku(),
+                    ),
+                  );
+                },
+                onTapTugas: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const DetailTugas(),
                     ),
                   );
                 },

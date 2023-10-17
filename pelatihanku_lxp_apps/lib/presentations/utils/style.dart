@@ -42,10 +42,17 @@ class Style {
     height: 18 / 10,
     color: ColorLxp.neutral500,
   );
-  
+
   static const TextStyle textPoint = TextStyle(
     fontSize: 24,
     height: 36 / 24,
     color: ColorLxp.black,
+  );
+
+  static const TextStyle textDetail = TextStyle(
+    fontSize: 18,
+    height: 27 / 18,
+    fontWeight: FontWeight.w600,
+    color: ColorLxp.neutral800,
   );
 }
