@@ -7,12 +7,14 @@ import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 class ListPertemuanLxp extends StatefulWidget {
   final String pertemuan;
   final VoidCallback onTapModul;
+  final VoidCallback onTapTugas;
   final VoidCallback onTapDiskusi;
 
   const ListPertemuanLxp({
     super.key,
     required this.pertemuan,
     required this.onTapModul,
+    required this.onTapTugas,
     required this.onTapDiskusi,
   });
 
@@ -119,20 +121,23 @@ class _ListPertemuanLxpState extends State<ListPertemuanLxp> {
                 height: 1.0,
               ),
               const SizedBox(height: 16),
-              Padding(
-                padding: const EdgeInsets.only(left: 24.0),
-                child: Row(
-                  children: [
-                    SvgPicture.asset('assets/icons/Scroll.svg'),
-                    const SizedBox(width: 8),
-                    Text(
-                      'Tugas',
-                      style: Style.textTitleCourse.copyWith(
-                        color: ColorLxp.neutral500,
-                        fontWeight: FontWeight.w500,
+              GestureDetector(
+                onTap: widget.onTapTugas,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 24.0),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset('assets/icons/Scroll.svg'),
+                      const SizedBox(width: 8),
+                      Text(
+                        'Tugas',
+                        style: Style.textTitleCourse.copyWith(
+                          color: ColorLxp.neutral500,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(height: 16),
