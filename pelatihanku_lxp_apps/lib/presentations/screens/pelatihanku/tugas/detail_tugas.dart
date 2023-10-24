@@ -1,11 +1,18 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class DetailTugas extends StatelessWidget {
+class DetailTugas extends StatefulWidget {
   const DetailTugas({super.key});
 
+  @override
+  State<DetailTugas> createState() => _DetailTugasState();
+}
+
+class _DetailTugasState extends State<DetailTugas> {
+  FilePickerResult? result;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -162,47 +169,68 @@ class DetailTugas extends StatelessWidget {
               thickness: 1,
             ),
             const SizedBox(height: 24),
-            Center(
-              child: SvgPicture.asset('assets/icons/FileX.svg'),
-            ),
-            const SizedBox(height: 4),
-            Center(
-              child: Text(
-                'Terlambat Mengumpulkan',
-                style: Style.textSks.copyWith(
-                  color: ColorLxp.neutral300,
-                ),
-                maxLines: 2,
-              ),
-            ),
+            result == null
+                ? Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Center(
+                        child: SvgPicture.asset('assets/icons/FileX.svg'),
+                      ),
+                      const SizedBox(height: 4),
+                      Center(
+                        child: Text(
+                          'Terlambat Mengumpulkan',
+                          style: Style.textSks.copyWith(
+                            color: ColorLxp.neutral300,
+                          ),
+                          maxLines: 2,
+                        ),
+                      )
+                    ],
+                  )
+                : const Text('Berhasil'),
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        height: 48.0,
-        margin: const EdgeInsets.all(24.0),
-        decoration: BoxDecoration(
-          color: ColorLxp.primary,
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(
-              Icons.file_download_outlined,
-              color: ColorLxp.white,
-            ),
-            const SizedBox(
-              width: 8,
-            ),
-            Text(
-              'Upload Tugas',
-              style: Style.textButtonBlank.copyWith(
+      bottomNavigationBar: GestureDetector(
+        onTap: () async {
+          result = await FilePicker.platform.pickFiles(allowMultiple: true);
+          if (result == null) {
+            print('No file selected');
+          } else {
+            setState(() {
+              for (var element in result!.files) {
+                print(element.name);
+              }
+            });
+          }
+        },
+        child: Container(
+          height: 48.0,
+          margin: const EdgeInsets.all(24.0),
+          decoration: BoxDecoration(
+            color: ColorLxp.primary,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(
+                Icons.file_download_outlined,
                 color: ColorLxp.white,
-                fontWeight: FontWeight.w500,
               ),
-            ),
-          ],
+              const SizedBox(
+                width: 8,
+              ),
+              Text(
+                'Upload Tugas',
+                style: Style.textButtonBlank.copyWith(
+                  color: ColorLxp.white,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -74,11 +74,12 @@ class ListPertemuanPelatihanku extends StatelessWidget {
                           Text(
                             'Pertemuan ${pertemuanNumber + 1}',
                             style: Style.textTitleCourse.copyWith(
-                              fontWeight: FontWeight.w600,
+                              color: ColorLxp.neutral500,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                           const Icon(
-                            Icons.lock,
+                            Icons.lock_outline,
                             color: ColorLxp.neutral500,
                           )
                         ],
