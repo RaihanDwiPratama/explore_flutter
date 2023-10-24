@@ -156,95 +156,123 @@ class _DetailTugasState extends State<DetailTugas> {
                 ],
               ),
             ),
-            const SizedBox(height: 28),
-            Text(
-              'Jawaban Terkirim',
-              style: Style.textTitleCourse.copyWith(
-                fontWeight: FontWeight.w500,
-                color: ColorLxp.neutral800,
-              ),
-            ),
-            const Divider(
-              color: ColorLxp.neutral300,
-              thickness: 1,
-            ),
             result == null
-                ? Center(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const SizedBox(height: 24),
-                        SvgPicture.asset('assets/icons/FileX.svg'),
-                        const SizedBox(height: 4),
-                        SizedBox(
-                          width: 100,
-                          child: Text(
-                            'Terlambat Mengumpulkan',
-                            style: Style.textSks.copyWith(
-                              color: ColorLxp.neutral300,
-                            ),
-                            maxLines: 2,
-                            textAlign: TextAlign.center,
-                          ),
-                        )
-                      ],
-                    ),
-                  )
-                : Container(
-                    height: 58,
-                    padding: const EdgeInsets.all(8),
-                    margin: const EdgeInsets.symmetric(vertical: 12),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: ColorLxp.neutral300,
-                        strokeAlign: 1,
+                ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 28),
+                      Text(
+                        'Jawaban Terkirim',
+                        style: Style.textTitleCourse.copyWith(
+                          fontWeight: FontWeight.w500,
+                          color: ColorLxp.neutral800,
+                        ),
                       ),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Row(
+                      const Divider(
+                        color: ColorLxp.neutral300,
+                        thickness: 1,
+                      ),
+                      Center(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            SvgPicture.asset('assets/icons/FilePdf.svg'),
-                            const SizedBox(width: 4),
-                            Text(
-                              'Tugas Komunikasi 1_Jhon.pdf',
-                              style: Style.textSks.copyWith(
-                                fontWeight: FontWeight.w400,
-                                color: ColorLxp.neutral800,
+                            const SizedBox(height: 24),
+                            SvgPicture.asset('assets/icons/FileX.svg'),
+                            const SizedBox(height: 4),
+                            SizedBox(
+                              width: 100,
+                              child: Text(
+                                'Terlambat Mengumpulkan',
+                                style: Style.textSks.copyWith(
+                                  color: ColorLxp.neutral300,
+                                ),
+                                maxLines: 2,
+                                textAlign: TextAlign.center,
                               ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  )
+                : Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 28),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Jawaban Terkirim',
+                            style: Style.textTitleCourse.copyWith(
+                              fontWeight: FontWeight.w500,
+                              color: ColorLxp.neutral800,
+                            ),
+                          ),
+                          const Text('Sedang Dinilai', style: Style.textSks),
+                        ],
+                      ),
+                      const Divider(
+                        color: ColorLxp.neutral300,
+                        thickness: 1,
+                      ),
+                      Container(
+                        height: 58,
+                        padding: const EdgeInsets.all(8),
+                        margin: const EdgeInsets.symmetric(vertical: 12),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(
+                            color: ColorLxp.neutral300,
+                            strokeAlign: 1,
+                          ),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                SvgPicture.asset('assets/icons/FilePdf.svg'),
+                                const SizedBox(width: 4),
+                                Text(
+                                  'Tugas Komunikasi 1_Jhon.pdf',
+                                  style: Style.textSks.copyWith(
+                                    fontWeight: FontWeight.w400,
+                                    color: ColorLxp.neutral800,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 4),
+                            Row(
+                              children: [
+                                Text(
+                                  'Terkirim',
+                                  style: Style.textSks.copyWith(
+                                    color: ColorLxp.neutral800,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                                const SizedBox(width: 8),
+                                const Icon(
+                                  Icons.check_circle,
+                                  color: ColorLxp.successNormal,
+                                  size: 18,
+                                ),
+                                const SizedBox(width: 4),
+                                Text(
+                                  '15:13:30 - 14/09/2023',
+                                  style: Style.textSks.copyWith(
+                                    fontWeight: FontWeight.w500,
+                                    color: ColorLxp.successNormal,
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
-                        const SizedBox(height: 4),
-                        Row(
-                          children: [
-                            Text(
-                              'Terkirim',
-                              style: Style.textSks.copyWith(
-                                color: ColorLxp.neutral800,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            const SizedBox(width: 8),
-                            const Icon(
-                              Icons.check_circle,
-                              color: ColorLxp.successNormal,
-                              size: 18,
-                            ),
-                            const SizedBox(width: 4),
-                            Text(
-                              '15:13:30 - 14/09/2023',
-                              style: Style.textSks.copyWith(
-                                fontWeight: FontWeight.w500,
-                                color: ColorLxp.successNormal,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
           ],
         ),
