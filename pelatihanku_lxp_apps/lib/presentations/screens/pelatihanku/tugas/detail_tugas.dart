@@ -15,23 +15,27 @@ class _DetailTugasState extends State<DetailTugas> {
   FilePickerResult? result;
   List<PlatformFile> files = [];
 
-  void hapusFile(int index) {
+  void hapusFile() {
     setState(() {
-      files.removeAt(index);
+      files.clear();
+      if (files.isEmpty) {
+        result = null;
+      }
     });
   }
 
-  void gantiFile(int index) async {
+  void gantiFile() async {
     FilePickerResult? newFileResult = await FilePicker.platform.pickFiles(
       allowMultiple: false,
     );
-    if (newFileResult != null && newFileResult.files.isEmpty) {
+    if (newFileResult != null && newFileResult.files.isNotEmpty) {
       // ambil file yang baru dipilih oleh pengguna
-      PlatformFile newFile = newFileResult.files.first;
+      // PlatformFile newFile = newFileResult.files.first;
 
       // menyimpan file baru
       setState(() {
-        files[index] = newFile;
+        files.clear();
+        files.addAll(newFileResult.files);
       });
     }
   }
@@ -206,9 +210,7 @@ class _DetailTugasState extends State<DetailTugas> {
                             SizedBox(
                               width: 100,
                               child: Text(
-                                files.isNotEmpty
-                                    ? files.first.name
-                                    : 'Terlambat mengumpulkan',
+                                'Belum mengumpulkan',
                                 style: Style.textSks.copyWith(
                                   color: ColorLxp.neutral300,
                                 ),
@@ -304,9 +306,9 @@ class _DetailTugasState extends State<DetailTugas> {
                             PopupMenuButton(
                               onSelected: (value) {
                                 if (value == 'hapus') {
-                                  hapusFile(0);
+                                  hapusFile();
                                 } else if (value == 'ubah') {
-                                  gantiFile(0);
+                                  gantiFile();
                                 }
                               },
                               itemBuilder: (context) =>
@@ -341,9 +343,15 @@ class _DetailTugasState extends State<DetailTugas> {
       ),
       bottomNavigationBar: GestureDetector(
         onTap: () async {
-          result = await FilePicker.platform.pickFiles(
+          FilePickerResult? newFileResult = await FilePicker.platform.pickFiles(
             allowMultiple: true,
           );
+          if (newFileResult != null && newFileResult.files.isNotEmpty) {
+            setState(() {
+              files.clear();
+              files.addAll(newFileResult.files);
+            });
+          }
         },
         child: Container(
           height: 48.0,
