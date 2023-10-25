@@ -13,6 +13,29 @@ class DetailTugas extends StatefulWidget {
 
 class _DetailTugasState extends State<DetailTugas> {
   FilePickerResult? result;
+  List<PlatformFile> files = [];
+
+  void hapusFile(int index) {
+    setState(() {
+      files.removeAt(index);
+    });
+  }
+
+  void gantiFile(int index) async {
+    FilePickerResult? newFileResult = await FilePicker.platform.pickFiles(
+      allowMultiple: false,
+    );
+    if (newFileResult != null && newFileResult.files.isEmpty) {
+      // ambil file yang baru dipilih oleh pengguna
+      PlatformFile newFile = newFileResult.files.first;
+
+      // menyimpan file baru
+      setState(() {
+        files[index] = newFile;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,6 +146,7 @@ class _DetailTugasState extends State<DetailTugas> {
                       border: Border.all(
                         color: ColorLxp.neutral300,
                         strokeAlign: 1,
+                        width: 1.0,
                       ),
                     ),
                     child: Row(
@@ -182,7 +206,9 @@ class _DetailTugasState extends State<DetailTugas> {
                             SizedBox(
                               width: 100,
                               child: Text(
-                                'Terlambat Mengumpulkan',
+                                files.isNotEmpty
+                                    ? files.first.name
+                                    : 'Terlambat mengumpulkan',
                                 style: Style.textSks.copyWith(
                                   color: ColorLxp.neutral300,
                                 ),
@@ -227,47 +253,83 @@ class _DetailTugasState extends State<DetailTugas> {
                             strokeAlign: 1,
                           ),
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Row(
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                SvgPicture.asset('assets/icons/FilePdf.svg'),
-                                const SizedBox(width: 4),
-                                Text(
-                                  'Tugas Komunikasi 1_Jhon.pdf',
-                                  style: Style.textSks.copyWith(
-                                    fontWeight: FontWeight.w400,
-                                    color: ColorLxp.neutral800,
-                                  ),
+                                Row(
+                                  children: [
+                                    SvgPicture.asset(
+                                        'assets/icons/FilePdf.svg'),
+                                    const SizedBox(width: 4),
+                                    Text(
+                                      'Tugas Komunikasi 1_Jhon.pdf',
+                                      style: Style.textSks.copyWith(
+                                        fontWeight: FontWeight.w400,
+                                        color: ColorLxp.neutral800,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 4),
+                                Row(
+                                  children: [
+                                    Text(
+                                      'Terkirim',
+                                      style: Style.textSks.copyWith(
+                                        color: ColorLxp.neutral800,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 8),
+                                    const Icon(
+                                      Icons.check_circle,
+                                      color: ColorLxp.successNormal,
+                                      size: 18,
+                                    ),
+                                    const SizedBox(width: 4),
+                                    Text(
+                                      '15:13:30 - 14/09/2023',
+                                      style: Style.textSks.copyWith(
+                                        fontWeight: FontWeight.w500,
+                                        color: ColorLxp.successNormal,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
-                            const SizedBox(height: 4),
-                            Row(
-                              children: [
-                                Text(
-                                  'Terkirim',
-                                  style: Style.textSks.copyWith(
-                                    color: ColorLxp.neutral800,
-                                    fontWeight: FontWeight.w400,
+                            PopupMenuButton(
+                              onSelected: (value) {
+                                if (value == 'hapus') {
+                                  hapusFile(0);
+                                } else if (value == 'ubah') {
+                                  gantiFile(0);
+                                }
+                              },
+                              itemBuilder: (context) =>
+                                  <PopupMenuEntry<String>>[
+                                const PopupMenuItem<String>(
+                                  value: 'hapus',
+                                  child: ListTile(
+                                    leading: Icon(Icons.delete),
+                                    title: Text('Hapus'),
                                   ),
                                 ),
-                                const SizedBox(width: 8),
-                                const Icon(
-                                  Icons.check_circle,
-                                  color: ColorLxp.successNormal,
-                                  size: 18,
-                                ),
-                                const SizedBox(width: 4),
-                                Text(
-                                  '15:13:30 - 14/09/2023',
-                                  style: Style.textSks.copyWith(
-                                    fontWeight: FontWeight.w500,
-                                    color: ColorLxp.successNormal,
+                                const PopupMenuItem<String>(
+                                  value: 'ubah',
+                                  child: ListTile(
+                                    leading: Icon(Icons.edit),
+                                    title: Text('Ubah'),
                                   ),
-                                ),
+                                )
                               ],
+                              child: const Icon(
+                                Icons.more_vert,
+                                color: ColorLxp.neutral500,
+                              ),
                             ),
                           ],
                         ),
@@ -281,17 +343,7 @@ class _DetailTugasState extends State<DetailTugas> {
         onTap: () async {
           result = await FilePicker.platform.pickFiles(
             allowMultiple: true,
-            // allowedExtensions: ['pdf'],
           );
-          if (result == null) {
-            print('No file selected');
-          } else {
-            setState(() {
-              for (var element in result!.files) {
-                print(element.name);
-              }
-            });
-          }
         },
         child: Container(
           height: 48.0,
