@@ -27,7 +27,7 @@ flutter:
     - assets/images/
     - assets/icons/
 
-  fonts:
+  fonts:   
     - family: Poppins
       fonts:
         - asset: assets/fonts/Poppins-Black.ttf
