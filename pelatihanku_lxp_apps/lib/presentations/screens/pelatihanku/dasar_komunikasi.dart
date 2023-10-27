@@ -15,7 +15,7 @@ class DasarKomunikasi extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Keterampilan Komunikasi',
+          'Dasar Komunikasi',
           style: Style.title.copyWith(
             fontWeight: FontWeight.w600,
           ),
@@ -107,7 +107,7 @@ class DasarKomunikasi extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Pelatihan Keterampilan Komunikasi adalah program pendidikan yang dirancang untuk membantu peserta mengembangkan kemampuan...',
+                  'Pelatihan keterampilan komunikasi pada aplikasi adalah program yang dirancang untuk membantu individu meningkatkan kemampuan mereka dalam berkomunikasi secara efektif...',
                   style: Style.textSks.copyWith(
                     color: ColorLxp.grayModern,
                     fontWeight: FontWeight.w400,
