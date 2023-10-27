@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/content_video_lxp.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/dokumen_lxp.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/dokumen_pelatihanku.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/rangkuman_pelatihanku.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/video_pelatihanku.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/dokumen_pelatihanku.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/rangkuman_pelatihanku.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/video_pelatihanku.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 

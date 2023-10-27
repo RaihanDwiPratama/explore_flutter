@@ -1,36 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/dasar_komunikasi.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/list_pertemuan_pelatihanku.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class ModulPelatihanku extends StatelessWidget {
+class ViewCourseFix extends StatelessWidget {
   final bool isCompleted = false;
+
+  final List<String> images = <String>[
+    'assets/images/komunikasi.png',
+    'assets/images/ui_ux.png',
+    'assets/images/datascience.png',
+    'assets/images/cybersecurity.png',
+  ];
 
   final List<String> title = <String>[
     'Keterampilan Komunikasi',
-    'Dasar Komunikasi',
-    'Komunikasi Non-Verbal',
-    'Presentasi dan Negosiasi',
-    'Komunikasi Antarbudaya',
+    'UI/UX Designer',
+    'AI & Data Science',
+    'Cyber Security & Networking'
   ];
 
-  final List<String> subtitle = <String>[
-    'Modul 1 merupakan langkah awal dalam perjalanan ',
-    'Modul 1 merupakan langkah awal dalam perjalanan ',
-    'Modul 1 merupakan langkah awal dalam perjalanan ',
-    'Modul 1 merupakan langkah awal dalam perjalanan ',
-    'Modul 1 merupakan langkah awal dalam perjalanan ',
+  final List<String> trainer = <String>[
+    'Neneng Rohaye S.kom.',
+    'Iqbal Ramadhan S.kom.',
+    'Isnan Mulia S.kom., M.kom',
+    'Rizky Darmawangsa S.kom., M.kom',
   ];
 
-  ModulPelatihanku({super.key});
+  final List<double> progress = <double>[
+    0.3,
+    0.5,
+    0.45,
+    0.65,
+  ];
+
+  ViewCourseFix({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Modul',
+          'Pelatihan-ku',
           style: Style.title.copyWith(
             fontWeight: FontWeight.w600,
           ),
@@ -40,17 +51,16 @@ class ModulPelatihanku extends StatelessWidget {
           onTap: () => Navigator.pop(context),
           child: const Icon(Icons.chevron_left),
         ),
-        forceMaterialTransparency: true,
       ),
       body: ListView.builder(
-        itemCount: title.length,
+        itemCount: images.length,
         padding: const EdgeInsets.only(top: 24.0),
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const DasarKomunikasi(),
+                  builder: (context) => const ListPertemuanPelatihanku(),
                 )),
             child: Container(
               margin: const EdgeInsets.fromLTRB(24.0, 0, 24.0, 16.0),
@@ -77,9 +87,9 @@ class ModulPelatihanku extends StatelessWidget {
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      SvgPicture.asset(
-                        'assets/icons/Book.svg',
-                        height: 77,
+                      Image.asset(
+                        images[index],
+                        width: 80,
                       ),
                       const SizedBox(width: 16),
                       Column(
@@ -87,7 +97,7 @@ class ModulPelatihanku extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(
-                            width: 200,
+                            // width: 190,
                             child: Text(
                               title[index].toString(),
                               style: Style.textTitleCourse.copyWith(
@@ -98,9 +108,8 @@ class ModulPelatihanku extends StatelessWidget {
                           ),
                           Container(
                             margin: const EdgeInsets.only(top: 4, bottom: 8),
-                            width: 190,
                             child: Text(
-                              subtitle[index].toString(),
+                              trainer[index].toString(),
                               style: Style.textSks.copyWith(
                                 fontWeight: FontWeight.w400,
                               ),
@@ -110,10 +119,15 @@ class ModulPelatihanku extends StatelessWidget {
                             width: 185,
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Row(
                                   children: [
-                                    SvgPicture.asset('assets/icons/Video.svg'),
+                                    const Icon(
+                                      Icons.assignment,
+                                      size: 16,
+                                      color: ColorLxp.infoNormal,
+                                    ),
                                     const SizedBox(width: 4),
                                     Text(
                                       '3 SKS',
@@ -123,14 +137,32 @@ class ModulPelatihanku extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                                const SizedBox(width: 16),
                                 Row(
                                   children: [
-                                    SvgPicture.asset(
-                                        'assets/icons/FilePdf.svg'),
+                                    const Icon(
+                                      Icons.play_circle,
+                                      size: 16,
+                                      color: ColorLxp.successNormal,
+                                    ),
                                     const SizedBox(width: 4),
                                     Text(
                                       '14 Video',
+                                      style: Style.textSks.copyWith(
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    const Icon(
+                                      Icons.person_add,
+                                      size: 16,
+                                      color: ColorLxp.purple,
+                                    ),
+                                    const SizedBox(width: 4),
+                                    Text(
+                                      '80',
                                       style: Style.textSks.copyWith(
                                         fontWeight: FontWeight.w400,
                                       ),
@@ -145,11 +177,49 @@ class ModulPelatihanku extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: LinearProgressIndicator(
+                          backgroundColor: ColorLxp.primaryLight,
+                          borderRadius: BorderRadius.circular(10),
+                          value: progress[index],
+                          valueColor:
+                              const AlwaysStoppedAnimation(ColorLxp.primary),
+                          minHeight: 10,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        '${(progress[index] * 100).toStringAsFixed(0)}%',
+                        style: Style.textIndicator.copyWith(
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
           );
         },
+      ),
+      bottomNavigationBar: Container(
+        height: 48.0,
+        margin: const EdgeInsets.all(24.0),
+        decoration: BoxDecoration(
+          color: ColorLxp.neutral300,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Center(
+          child: Text(
+            'Selesai',
+            style: Style.textButtonBlank.copyWith(
+              color: ColorLxp.white,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
       ),
     );
   }

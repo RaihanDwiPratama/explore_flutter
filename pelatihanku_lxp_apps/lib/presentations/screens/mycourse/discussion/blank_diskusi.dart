@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/diskusi/only_text_diskusi.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/only_text_diskusi.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
