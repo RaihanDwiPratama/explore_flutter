@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/widgets/course_completed.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/widget/view_course_fix.dart';
@@ -52,52 +53,61 @@ class CourseView extends StatelessWidget {
               ),
             ),
           ),
-          body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SvgPicture.asset(
-                  assetName,
-                  semanticsLabel: 'Join Course Logo',
-                ),
-                const SizedBox(height: 36),
-                Text(
-                  'Anda belum mengambil pelatihan apapun!',
-                  style: Style.titleContentBlank.copyWith(
-                    fontWeight: FontWeight.w600,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 60),
-                SizedBox(
-                  height: 48,
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ViewCourseFix(),
+          body: TabBarView(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SvgPicture.asset(
+                      assetName,
+                      semanticsLabel: 'Join Course Logo',
+                    ),
+                    const SizedBox(height: 36),
+                    SizedBox(
+                      width: 250,
+                      child: Text(
+                        'Anda belum mengambil pelatihan apapun!',
+                        style: Style.titleContentBlank.copyWith(
+                          fontWeight: FontWeight.w500,
                         ),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: ColorLxp.primary,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
+                        maxLines: 2,
+                        textAlign: TextAlign.center,
                       ),
                     ),
-                    child: Text(
-                      'Ikuti Pelatihan',
-                      style: Style.textButtonBlank.copyWith(
-                        fontWeight: FontWeight.w500,
+                    const SizedBox(height: 60),
+                    SizedBox(
+                      height: 48,
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ViewCourseFix(),
+                            ),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: ColorLxp.primary,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                        child: Text(
+                          'Ikuti Pelatihan',
+                          style: Style.textButtonBlank.copyWith(
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+              const CourseCompleted()
+            ],
           ),
         ),
       ),
