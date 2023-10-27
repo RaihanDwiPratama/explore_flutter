@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/list_pertemuan_pelatihanku.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
@@ -45,7 +46,7 @@ class CourseCompleted extends StatelessWidget {
                     children: [
                       Image.asset(
                         'assets/images/komunikasi.png',
-                        width: 100,
+                        width: 107,
                       ),
                       const SizedBox(width: 16),
                       Column(
@@ -79,11 +80,8 @@ class CourseCompleted extends StatelessWidget {
                               children: [
                                 Row(
                                   children: [
-                                    const Icon(
-                                      Icons.assignment,
-                                      size: 16,
-                                      color: ColorLxp.infoNormal,
-                                    ),
+                                    SvgPicture.asset(
+                                        'assets/icons/Notebook.svg'),
                                     const SizedBox(width: 4),
                                     Text(
                                       '3 SKS',
@@ -95,11 +93,8 @@ class CourseCompleted extends StatelessWidget {
                                 ),
                                 Row(
                                   children: [
-                                    const Icon(
-                                      Icons.play_circle,
-                                      size: 16,
-                                      color: ColorLxp.successNormal,
-                                    ),
+                                    SvgPicture.asset(
+                                        'assets/icons/PlayCircle.svg'),
                                     const SizedBox(width: 4),
                                     Text(
                                       '14 Video',
@@ -111,11 +106,8 @@ class CourseCompleted extends StatelessWidget {
                                 ),
                                 Row(
                                   children: [
-                                    const Icon(
-                                      Icons.person_add,
-                                      size: 16,
-                                      color: ColorLxp.purple,
-                                    ),
+                                    SvgPicture.asset(
+                                        'assets/icons/UsersThree.svg'),
                                     const SizedBox(width: 4),
                                     Text(
                                       '80',
@@ -147,17 +139,18 @@ class CourseCompleted extends StatelessWidget {
                         child: LinearProgressIndicator(
                           backgroundColor: ColorLxp.primaryLight,
                           borderRadius: BorderRadius.circular(10),
-                          value: 0.25,
-                          valueColor:
-                              const AlwaysStoppedAnimation(ColorLxp.primary),
+                          value: 1.0,
+                          valueColor: const AlwaysStoppedAnimation(
+                              ColorLxp.successNormal),
                           minHeight: 10,
                         ),
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        '${(0.25 * 100).toStringAsFixed(0)}%',
+                        '${(1.0 * 100).toStringAsFixed(0)}%',
                         style: Style.textIndicator.copyWith(
                           fontWeight: FontWeight.w400,
+                          color: ColorLxp.successNormal,
                         ),
                       ),
                     ],

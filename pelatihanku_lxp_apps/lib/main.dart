@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/bottom_navigation_bar.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/home/screen/home_page.dart';
 
 void main() {
   runApp(const Pelatihanku());
@@ -16,7 +17,12 @@ class Pelatihanku extends StatelessWidget {
         fontFamily: 'Poppins',
         useMaterial3: true,
       ),
-      home: const BottomNavigationBarExample(),
+      initialRoute: '/',
+      routes: {
+        '/':(context) => const BottomNavigationBarExample(),
+        'home':(context) => const HomePage(),
+      },
+      // home: const BottomNavigationBarExample(),
     );
   }
 }

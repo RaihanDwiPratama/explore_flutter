@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/account/account.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/home/screen/home_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/screen/course_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -16,10 +17,7 @@ class _BottomNavigationBarExampleState
   int _selectedIndex = 0;
 
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Beranda',
-      style: Style.optionStyle,
-    ),
+    HomePage(),
     CoursePage(),
     Text(
       'Penugasan',
