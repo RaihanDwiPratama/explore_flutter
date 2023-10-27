@@ -14,7 +14,7 @@ class ListPertemuanPelatihanku extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Pertemuan',
+          'Keterampilan Komunikasi',
           style: Style.title.copyWith(
             fontWeight: FontWeight.w600,
           ),
@@ -22,7 +22,10 @@ class ListPertemuanPelatihanku extends StatelessWidget {
         centerTitle: true,
         leading: GestureDetector(
           onTap: () => Navigator.pop(context),
-          child: const Icon(Icons.chevron_left),
+          child: const Icon(
+            Icons.chevron_left,
+            color: ColorLxp.neutral800,
+          ),
         ),
         forceMaterialTransparency: true,
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/account/account.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/account/screen/account_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/home/screen/home_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/assignment/screen/assignment_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/screen/course_page.dart';
@@ -21,7 +21,7 @@ class _BottomNavigationBarExampleState
     HomePage(),
     CoursePage(),
     AssignmentPage(),
-    Account(),
+    AccountPage(),
   ];
 
   void _onItemTapped(int index) {

@@ -48,7 +48,9 @@ class SettingsProfile extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const CourseView(),
+                  builder: (context) => const CourseView(
+                    isMember: true,
+                  ),
                 ),
               );
             },
@@ -66,7 +68,9 @@ class SettingsProfile extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const CourseView(),
+                  builder: (context) => const CourseView(
+                    isMember: true,
+                  ),
                 ),
               );
             },
@@ -84,7 +88,7 @@ class SettingsProfile extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const CourseView(),
+                  builder: (context) => const CourseView(isMember: true),
                 ),
               );
             },

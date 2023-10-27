@@ -6,6 +6,8 @@ class CoursePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CourseView();
+    return const CourseView(
+      isMember: true,
+    );
   }
 }

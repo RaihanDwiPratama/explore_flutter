@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/account/widget/header_account.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/account/widget/settings_profile.dart';
 
-class Account extends StatelessWidget {
-  const Account({super.key});
+class AccountView extends StatelessWidget {
+  const AccountView({super.key});
 
   @override
   Widget build(BuildContext context) {

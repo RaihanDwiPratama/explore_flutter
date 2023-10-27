@@ -4,8 +4,8 @@ import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/list_pertemu
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class CourseCompleted extends StatelessWidget {
-  const CourseCompleted({super.key});
+class CoursePendingApproval extends StatelessWidget {
+  const CoursePendingApproval({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,47 +45,31 @@ class CourseCompleted extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Image.asset(
-                        'assets/images/presentasi.png',
+                        'assets/images/komunikasi.png',
                         width: 107,
                       ),
                       const SizedBox(width: 16),
                       const ContentCourse(
-                        title: 'Pelatihan Keterampilan Presentasi',
+                        title: 'Pelatihan Keterampilan Komunikasi',
                         trainee: 'Neneng Rohaye S.kom.',
                       ),
                     ],
                   ),
                   const SizedBox(height: 12),
-                  Text(
-                    'Tingkat Penyelesaian',
-                    style: Style.textSks.copyWith(
-                      color: ColorLxp.neutral800,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: LinearProgressIndicator(
-                          backgroundColor: ColorLxp.primaryLight,
-                          borderRadius: BorderRadius.circular(10),
-                          value: 1.0,
-                          valueColor: const AlwaysStoppedAnimation(
-                              ColorLxp.successNormal),
-                          minHeight: 10,
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                      Text(
-                        '${(1.0 * 100).toStringAsFixed(0)}%',
-                        style: Style.textIndicator.copyWith(
+                  Container(
+                    height: 42,
+                    color: ColorLxp.primaryLight,
+                    // padding: const EdgeInsets.all(12),
+                    child: Center(
+                      child: Text(
+                        'Pengajuan diproses',
+                        style: Style.textTitleCourse.copyWith(
                           fontWeight: FontWeight.w400,
-                          color: ColorLxp.successNormal,
+                          color: ColorLxp.primary,
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  )
                 ],
               ),
             ),

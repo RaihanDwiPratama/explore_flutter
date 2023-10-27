@@ -1,11 +1,18 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/widgets/course_completed.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/widgets/course_ongoing.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/widgets/course_not_started.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/widgets/course_pending_approval.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
 class CourseView extends StatelessWidget {
-  const CourseView({super.key});
+  final bool isMember;
+  const CourseView({
+    Key? key,
+    required this.isMember,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,12 +57,19 @@ class CourseView extends StatelessWidget {
               ),
             ),
           ),
-          body: const TabBarView(
-            children: [
-              CourseOngoing(),
-              CourseCompleted(),
-            ],
-          ),
+          body: isMember
+              ? const TabBarView(
+                  children: [
+                    CoursePendingApproval(),
+                    CourseCompleted(),
+                  ],
+                )
+              : const TabBarView(
+                  children: [
+                    CourseNotStarted(),
+                    CourseNotStarted(),
+                  ],
+                ),
         ),
       ),
     );
