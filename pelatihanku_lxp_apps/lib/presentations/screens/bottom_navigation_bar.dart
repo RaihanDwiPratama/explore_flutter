@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/account/account.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/home/screen/home_page.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/assignment/screen/assignment_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/screen/course_page.dart';
-import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
 class BottomNavigationBarExample extends StatefulWidget {
   const BottomNavigationBarExample({super.key});
@@ -20,10 +20,7 @@ class _BottomNavigationBarExampleState
   static const List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     CoursePage(),
-    Text(
-      'Penugasan',
-      style: Style.optionStyle,
-    ),
+    AssignmentPage(),
     Account(),
   ];
 
