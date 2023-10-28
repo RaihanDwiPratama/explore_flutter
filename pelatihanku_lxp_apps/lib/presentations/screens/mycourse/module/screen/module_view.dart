@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/dasar_komunikasi.dart';
-import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class ModulPelatihanku extends StatelessWidget {
+class ModuleView extends StatelessWidget {
   final bool isCompleted = false;
 
   final List<String> title = <String>[
@@ -23,7 +22,7 @@ class ModulPelatihanku extends StatelessWidget {
     'Modul 1 merupakan langkah awal dalam perjalanan ',
   ];
 
-  ModulPelatihanku({super.key});
+  ModuleView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,10 +47,11 @@ class ModulPelatihanku extends StatelessWidget {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const DasarKomunikasi(),
-                )),
+              context,
+              MaterialPageRoute(
+                builder: (context) => const DasarKomunikasi(),
+              ),
+            ),
             child: Container(
               margin: const EdgeInsets.fromLTRB(24.0, 0, 24.0, 16.0),
               padding: const EdgeInsets.symmetric(
@@ -59,18 +59,7 @@ class ModulPelatihanku extends StatelessWidget {
                 vertical: 16.0,
               ),
               height: 135,
-              decoration: BoxDecoration(
-                color: ColorLxp.white,
-                borderRadius: BorderRadius.circular(8),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 223, 226, 231),
-                    blurRadius: 20.0,
-                    spreadRadius: 4,
-                    offset: Offset(0, 1),
-                  )
-                ],
-              ),
+              decoration: Style.shadowCourses,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -127,7 +116,8 @@ class ModulPelatihanku extends StatelessWidget {
                                 Row(
                                   children: [
                                     SvgPicture.asset(
-                                        'assets/icons/FilePdf.svg'),
+                                      'assets/icons/FilePdf.svg',
+                                    ),
                                     const SizedBox(width: 4),
                                     Text(
                                       '14 Video',
