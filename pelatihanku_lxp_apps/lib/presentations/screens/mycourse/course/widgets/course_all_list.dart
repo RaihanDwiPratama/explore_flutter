@@ -6,8 +6,8 @@ import 'package:pelatihanku_lxp_apps/presentations/screens/assignment/detail_tug
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class ListPertemuanPelatihanku extends StatelessWidget {
-  const ListPertemuanPelatihanku({super.key});
+class CourseAllList extends StatelessWidget {
+  const CourseAllList({super.key});
 
   @override
   Widget build(BuildContext context) {

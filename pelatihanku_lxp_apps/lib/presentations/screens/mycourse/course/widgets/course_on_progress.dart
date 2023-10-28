@@ -4,8 +4,8 @@ import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/widge
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class CourseCompleted extends StatelessWidget {
-  const CourseCompleted({super.key});
+class CourseOnProgress extends StatelessWidget {
+  const CourseOnProgress({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +35,12 @@ class CourseCompleted extends StatelessWidget {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Image.asset(
-                          'assets/images/presentasi.png',
+                          'assets/images/komunikasi.png',
                           width: 107,
                         ),
                         const SizedBox(width: 16),
                         const ContentCourse(
-                          title: 'Pelatihan Keterampilan Presentasi',
+                          title: 'Pelatihan Keterampilan Komunikasi',
                           trainee: 'Neneng Rohaye S.kom.',
                         ),
                       ],
@@ -60,18 +60,19 @@ class CourseCompleted extends StatelessWidget {
                           child: LinearProgressIndicator(
                             backgroundColor: ColorLxp.primaryLight,
                             borderRadius: BorderRadius.circular(10),
-                            value: 1.0,
+                            value: 0.25,
                             valueColor: const AlwaysStoppedAnimation(
-                                ColorLxp.successNormal),
+                              ColorLxp.primary,
+                            ),
                             minHeight: 10,
                           ),
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          '${(1.0 * 100).toStringAsFixed(0)}%',
+                          '${(0.25 * 100).toStringAsFixed(0)}%',
                           style: Style.textIndicator.copyWith(
                             fontWeight: FontWeight.w400,
-                            color: ColorLxp.successNormal,
+                            color: ColorLxp.primary,
                           ),
                         ),
                       ],

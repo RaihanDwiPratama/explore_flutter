@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/content_course.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/list_pertemuan_pelatihanku.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -9,35 +8,18 @@ class CoursePendingApproval extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 16.0),
-          child: GestureDetector(
-            onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const ListPertemuanPelatihanku(),
-              ),
-            ),
+    return Scaffold(
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: Container(
               margin: const EdgeInsets.fromLTRB(24.0, 0, 24.0, 16.0),
               padding: const EdgeInsets.symmetric(
                 horizontal: 12.0,
                 vertical: 16.0,
               ),
-              decoration: BoxDecoration(
-                color: ColorLxp.white,
-                borderRadius: BorderRadius.circular(8),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 223, 226, 231),
-                    blurRadius: 20.0,
-                    spreadRadius: 4,
-                    offset: Offset(0, 1),
-                  )
-                ],
-              ),
+              decoration: Style.shadowCourses,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -59,7 +41,6 @@ class CoursePendingApproval extends StatelessWidget {
                   Container(
                     height: 42,
                     color: ColorLxp.primaryLight,
-                    // padding: const EdgeInsets.all(12),
                     child: Center(
                       child: Text(
                         'Pengajuan diproses',
@@ -74,8 +55,8 @@ class CoursePendingApproval extends StatelessWidget {
               ),
             ),
           ),
-        )
-      ],
+        ],
+      ),
     );
   }
 }

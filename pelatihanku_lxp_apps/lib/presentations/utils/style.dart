@@ -55,4 +55,17 @@ class Style {
     fontWeight: FontWeight.w600,
     color: ColorLxp.neutral800,
   );
+
+  static BoxDecoration shadowCourses = BoxDecoration(
+    color: ColorLxp.white,
+    borderRadius: BorderRadius.circular(8),
+    boxShadow: const [
+      BoxShadow(
+        color: Color.fromARGB(255, 223, 226, 231),
+        blurRadius: 20.0,
+        spreadRadius: 4,
+        offset: Offset(0, 1),
+      )
+    ],
+  );
 }

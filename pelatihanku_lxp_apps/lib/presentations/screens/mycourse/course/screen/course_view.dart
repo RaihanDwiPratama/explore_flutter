@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/widgets/course_completed.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/widgets/course_not_started.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/widgets/course_pending_approval.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/widgets/course_on_progress.dart';
+// import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/widgets/course_pending_approval.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -60,7 +61,8 @@ class CourseView extends StatelessWidget {
           body: isMember
               ? const TabBarView(
                   children: [
-                    CoursePendingApproval(),
+                    // CoursePendingApproval(),
+                    CourseOnProgress(),
                     CourseCompleted(),
                   ],
                 )
