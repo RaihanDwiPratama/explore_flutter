@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/dasar_komunikasi.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/module/widgets/module_detail.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
 class ModuleView extends StatelessWidget {
@@ -49,7 +49,7 @@ class ModuleView extends StatelessWidget {
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const DasarKomunikasi(),
+                builder: (context) => const ModuleDetail(),
               ),
             ),
             child: Container(

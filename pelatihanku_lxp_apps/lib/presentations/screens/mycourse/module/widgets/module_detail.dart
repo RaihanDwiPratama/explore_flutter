@@ -7,15 +7,15 @@ import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/video_pelati
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class DasarKomunikasi extends StatelessWidget {
-  const DasarKomunikasi({super.key});
+class ModuleDetail extends StatelessWidget {
+  const ModuleDetail({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Dasar Komunikasi',
+          'Modul',
           style: Style.title.copyWith(
             fontWeight: FontWeight.w600,
           ),
@@ -39,26 +39,29 @@ class DasarKomunikasi extends StatelessWidget {
                   children: [
                     Text(
                       'Video',
-                      style: Style.textTitleCourse
-                          .copyWith(fontWeight: FontWeight.w600),
+                      style: Style.textTitleCourse.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                     GestureDetector(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const VideoPelatihanku(),
-                            )),
-                        child: Text(
-                          'Lihat semua',
-                          style: Style.textSks.copyWith(
-                            color: ColorLxp.primary,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ))
+                      onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const VideoPelatihanku(),
+                        ),
+                      ),
+                      child: Text(
+                        'Lihat semua',
+                        style: Style.textSks.copyWith(
+                          color: ColorLxp.primary,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
-                const ContentVideoLxp(title: 'Pendahuluan'),
-                const ContentVideoLxp(title: 'Komunikasi Kreatif'),
+                const ContentVideoLxp(title: 'Keterampilan Komunikasi'),
+                const ContentVideoLxp(title: 'Keterampilan Presentasi'),
                 const Divider(
                   color: ColorLxp.neutral200,
                   height: 1,
@@ -69,15 +72,17 @@ class DasarKomunikasi extends StatelessWidget {
                   children: [
                     Text(
                       'Dokumen',
-                      style: Style.textTitleCourse
-                          .copyWith(fontWeight: FontWeight.w600),
+                      style: Style.textTitleCourse.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                     GestureDetector(
                       onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const DokumenPelatihanku(),
-                          )),
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const DokumenPelatihanku(),
+                        ),
+                      ),
                       child: Text(
                         'Lihat semua',
                         style: Style.textSks.copyWith(
@@ -91,9 +96,9 @@ class DasarKomunikasi extends StatelessWidget {
                 const SizedBox(height: 20),
                 const DokumenLxp(title: 'Materi 1.pdf'),
                 const SizedBox(height: 20),
-                const DokumenLxp(title: 'Materi 2.pdf'),
+                const DokumenLxp(title: 'Jurnal.pdf'),
                 const SizedBox(height: 20),
-                const DokumenLxp(title: 'Materi 3.pdf'),
+                const DokumenLxp(title: 'Artikel.pdf'),
                 const SizedBox(height: 20),
                 const Divider(
                   color: ColorLxp.neutral200,
@@ -101,7 +106,7 @@ class DasarKomunikasi extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 Text(
-                  'Dokumen',
+                  'Detail Pelatihanku',
                   style: Style.textTitleCourse
                       .copyWith(fontWeight: FontWeight.w600),
                 ),
@@ -128,10 +133,7 @@ class DasarKomunikasi extends StatelessWidget {
         child: Container(
           height: 48.0,
           margin: const EdgeInsets.all(24.0),
-          decoration: BoxDecoration(
-            color: ColorLxp.neutral300,
-            borderRadius: BorderRadius.circular(8),
-          ),
+          decoration: Style.btnSummary,
           child: Center(
             child: Text(
               'Buat Rangkuman',

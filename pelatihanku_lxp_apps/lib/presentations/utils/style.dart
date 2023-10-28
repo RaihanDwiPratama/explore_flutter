@@ -68,4 +68,9 @@ class Style {
       )
     ],
   );
+
+  static BoxDecoration btnSummary = BoxDecoration(
+    color: ColorLxp.neutral300,
+    borderRadius: BorderRadius.circular(8),
+  );
 }
