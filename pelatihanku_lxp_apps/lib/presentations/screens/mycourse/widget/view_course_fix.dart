@@ -60,7 +60,7 @@ class ViewCourseFix extends StatelessWidget {
             onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const CourseAllList(),
+                  builder: (context) => CourseAllList(),
                 )),
             child: Container(
               margin: const EdgeInsets.fromLTRB(24.0, 0, 24.0, 16.0),

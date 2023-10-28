@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/content_course.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/widgets/course_all_list.dart';
@@ -83,7 +82,7 @@ class CourseView extends StatelessWidget {
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const CourseAllList(),
+                builder: (context) => CourseAllList(),
               ),
             ),
             child: Container(
@@ -160,7 +159,7 @@ class CourseView extends StatelessWidget {
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const CourseAllList(),
+                builder: (context) => CourseAllList(),
               ),
             ),
             child: Container(

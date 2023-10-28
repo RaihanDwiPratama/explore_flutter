@@ -30,7 +30,7 @@ class CourseOnProgress extends StatelessWidget {
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const CourseAllList(),
+                builder: (context) => CourseAllList(),
               ),
             ),
             child: Container(

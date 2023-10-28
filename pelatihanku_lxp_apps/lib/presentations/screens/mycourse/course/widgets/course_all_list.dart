@@ -6,6 +6,7 @@ import 'package:pelatihanku_lxp_apps/presentations/screens/assignment/detail_tug
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
+// ignore: must_be_immutable
 class CourseAllList extends StatelessWidget {
   const CourseAllList({super.key});
 
@@ -81,10 +82,21 @@ class CourseAllList extends StatelessWidget {
                               fontWeight: FontWeight.w500,
                             ),
                           ),
-                          const Icon(
-                            Icons.lock_outline,
-                            color: ColorLxp.neutral500,
-                          )
+                          GestureDetector(
+                            onTap: () {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text(
+                                    'Pertemuan ini di kunci anda harus menyelesaikan pertemuan sebelumnya',
+                                  ),
+                                ),
+                              );
+                            },
+                            child: const Icon(
+                              Icons.lock_outline,
+                              color: ColorLxp.neutral500,
+                            ),
+                          ),
                         ],
                       ),
                     );
