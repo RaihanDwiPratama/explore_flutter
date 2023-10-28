@@ -5,7 +5,20 @@ import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
 class CourseOnProgress extends StatelessWidget {
-  const CourseOnProgress({super.key});
+  final String imgPath;
+  final String title;
+  final String subtitle;
+  final double progress;
+  final double indicator;
+
+  const CourseOnProgress({
+    super.key,
+    required this.imgPath,
+    required this.title,
+    required this.subtitle,
+    required this.progress,
+    required this.indicator,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,13 +47,13 @@ class CourseOnProgress extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Image.asset(
-                        'assets/images/komunikasi.png',
+                        imgPath,
                         width: 107,
                       ),
                       const SizedBox(width: 16),
-                      const ContentCourse(
-                        title: 'Pelatihan Keterampilan Komunikasi',
-                        trainee: 'Neneng Rohaye S.kom.',
+                      ContentCourse(
+                        title: title,
+                        trainee: subtitle,
                       ),
                     ],
                   ),
@@ -59,7 +72,7 @@ class CourseOnProgress extends StatelessWidget {
                         child: LinearProgressIndicator(
                           backgroundColor: ColorLxp.primaryLight,
                           borderRadius: BorderRadius.circular(10),
-                          value: 0.25,
+                          value: progress,
                           valueColor: const AlwaysStoppedAnimation(
                             ColorLxp.primary,
                           ),
@@ -68,7 +81,7 @@ class CourseOnProgress extends StatelessWidget {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        '${(0.25 * 100).toStringAsFixed(0)}%',
+                        '${(indicator * 100).toStringAsFixed(0)}%',
                         style: Style.textIndicator.copyWith(
                           fontWeight: FontWeight.w400,
                           color: ColorLxp.primary,

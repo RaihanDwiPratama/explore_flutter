@@ -2,8 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/content_course.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/widgets/course_all_list.dart';
-
-import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/widgets/course_completed.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/widgets/course_not_started.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
@@ -61,8 +59,6 @@ class CourseView extends StatelessWidget {
           body: isMember
               ? TabBarView(
                   children: [
-                    // CoursePendingApproval(),
-                    // CourseOnProgress(),
                     courseOnProgress(context),
                     courseCompleted(context),
                   ],
@@ -154,7 +150,7 @@ class CourseView extends StatelessWidget {
       ],
     );
   }
-  
+
   Widget courseCompleted(BuildContext context) {
     return Column(
       children: [
@@ -181,11 +177,14 @@ class CourseView extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Image.asset(
-                        'assets/images/komunikasi.png',
+                        'assets/images/presentasi.png',
                         width: 107,
                       ),
                       const SizedBox(width: 16),
-                      
+                      const ContentCourse(
+                        title: 'Pelatihan Keterampilan Presentasi',
+                        trainee: 'Neneng Rohaye S.kom.',
+                      ),
                     ],
                   ),
                   const SizedBox(height: 12),
@@ -203,19 +202,19 @@ class CourseView extends StatelessWidget {
                         child: LinearProgressIndicator(
                           backgroundColor: ColorLxp.primaryLight,
                           borderRadius: BorderRadius.circular(10),
-                          value: 0.25,
+                          value: 1.0,
                           valueColor: const AlwaysStoppedAnimation(
-                            ColorLxp.primary,
+                            ColorLxp.successNormal,
                           ),
                           minHeight: 10,
                         ),
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        '${(0.25 * 100).toStringAsFixed(0)}%',
+                        '${(1.0 * 100).toStringAsFixed(0)}%',
                         style: Style.textIndicator.copyWith(
                           fontWeight: FontWeight.w400,
-                          color: ColorLxp.primary,
+                          color: ColorLxp.successNormal,
                         ),
                       ),
                     ],
