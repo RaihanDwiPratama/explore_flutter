@@ -4,6 +4,7 @@ import 'package:pelatihanku_lxp_apps/presentations/screens/assignment/screen/ass
 import 'package:pelatihanku_lxp_apps/presentations/screens/bottom_navigation_bar.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/home/screen/home_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/screen/course_page.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/widgets/course_all_list.dart';
 
 void main() {
   runApp(const Pelatihanku());
@@ -22,13 +23,13 @@ class Pelatihanku extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/':(context) => const BottomNavigationBarExample(),
-        'home':(context) => const HomePage(),
-        'courses':(context) => const CoursePage(),
-        'assignment':(context) => const AssignmentPage(),
-        'account':(context) => const AccountPage(),
+        '/': (context) => const BottomNavigationBarExample(),
+        'home': (context) => const HomePage(),
+        'courses': (context) => const CoursePage(),
+        'assignment': (context) => const AssignmentPage(),
+        'account': (context) => const AccountPage(),
+        'listCourse': (context) => const CourseAllList(),
       },
-      // home: const BottomNavigationBarExample(),
     );
   }
 }
