@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/content_video_lxp.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/dokumen_lxp.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/module/widgets/module_all_document.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/rangkuman_pelatihanku.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/module/widgets/module_summary.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/module/widgets/module_all_video.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
@@ -172,7 +172,7 @@ class _ModuleDetailState extends State<ModuleDetail> {
             ? Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const RangkumanPelatihanku(),
+                  builder: (context) => const ModuleSummary(),
                 ),
               )
             : null,

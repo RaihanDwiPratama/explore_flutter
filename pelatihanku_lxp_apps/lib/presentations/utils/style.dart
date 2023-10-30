@@ -84,4 +84,21 @@ class Style {
       ),
     ],
   );
+
+  static InputDecoration inputSummary = InputDecoration(
+    contentPadding: const EdgeInsets.all(12),
+    hintStyle: Style.textSks.copyWith(
+      color: ColorLxp.neutral800,
+      fontWeight: FontWeight.w400,
+    ),
+    border: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(
+        Radius.circular(5),
+      ),
+      gapPadding: 6.0,
+      borderSide: BorderSide(
+        color: ColorLxp.neutral200,
+      ),
+    ),
+  );
 }

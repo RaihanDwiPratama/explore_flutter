@@ -4,16 +4,17 @@ import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/list_rangkum
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class RangkumanPelatihanku extends StatefulWidget {
-  const RangkumanPelatihanku({super.key});
+class ModuleSummary extends StatefulWidget {
+  const ModuleSummary({super.key});
 
   @override
-  State<RangkumanPelatihanku> createState() => _RangkumanPelatihankuState();
+  State<ModuleSummary> createState() => _ModuleSummaryState();
 }
 
-class _RangkumanPelatihankuState extends State<RangkumanPelatihanku> {
+class _ModuleSummaryState extends State<ModuleSummary> {
   bool _isEnabled = false;
-  final _rangkuman = TextEditingController();
+  final _rangkumanVideo = TextEditingController();
+  final _rangkumanDokumen = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,47 +36,24 @@ class _RangkumanPelatihankuState extends State<RangkumanPelatihanku> {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextField(
-                controller: _rangkuman,
-                maxLines: 24,
-                onChanged: (value) {
-                  if (value.length >= 1000) {
-                    setState(() {
-                      _isEnabled = true;
-                    });
-                  } else {
-                    setState(() {
-                      _isEnabled = false;
-                    });
-                  }
-                },
-                decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.all(12),
-                  hintText: 'Buat rangkuman...',
-                  hintStyle: Style.textSks.copyWith(
-                    color: ColorLxp.neutral800,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(5),
-                    ),
-                    gapPadding: 6.0,
-                    borderSide: BorderSide(
-                      color: ColorLxp.neutral200,
-                    ),
-                  ),
+              Text(
+                'Buatlah rangkuman pemahaman anda dari semua materi yang telah anda pelajari, minimal 150 karakter.',
+                style: Style.textSks.copyWith(
+                  color: ColorLxp.grayModern,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
-              const SizedBox(height: 12),
-              Text(
-                'Minimal 1000 Karakter',
-                style: Style.textIndicator.copyWith(
-                  color: ColorLxp.neutral800,
-                  fontWeight: FontWeight.w400,
-                ),
+              summary(
+                'Buat Rangkuman Video',
+                _rangkumanVideo,
+                'Buat Rangkuman Seluruh Video...',
+              ),
+              summary(
+                'Buat Rangkuman Dokumen',
+                _rangkumanDokumen,
+                'Buat Rangkuman Seluruh Dokumen...',
               ),
             ],
           ),
@@ -190,6 +168,56 @@ class _RangkumanPelatihankuState extends State<RangkumanPelatihanku> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget summary(
+    String title,
+    TextEditingController controller,
+    String hintText,
+  ) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(height: 24.0),
+        Text(
+          title,
+          style: Style.textSks.copyWith(
+            color: ColorLxp.neutral800,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        const SizedBox(height: 8),
+        TextField(
+          controller: controller,
+          maxLines: 5,
+          onChanged: (value) {
+            if (value.length >= 150) {
+              setState(() {
+                _isEnabled = true;
+              });
+            } else {
+              setState(() {
+                _isEnabled = false;
+              });
+            }
+          },
+          decoration: Style.inputSummary.copyWith(
+            hintText: hintText,
+          ),
+        ),
+        const SizedBox(height: 12),
+        Align(
+          alignment: Alignment.bottomRight,
+          child: Text(
+            'Minimal 150 Karakter',
+            style: Style.textIndicator.copyWith(
+              color: ColorLxp.neutral800,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
