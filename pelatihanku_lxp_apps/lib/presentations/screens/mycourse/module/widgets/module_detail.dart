@@ -7,8 +7,15 @@ import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/video_pelati
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class ModuleDetail extends StatelessWidget {
+class ModuleDetail extends StatefulWidget {
   const ModuleDetail({super.key});
+
+  @override
+  State<ModuleDetail> createState() => _ModuleDetailState();
+}
+
+class _ModuleDetailState extends State<ModuleDetail> {
+  bool isExpanded = false;
 
   @override
   Widget build(BuildContext context) {
@@ -111,13 +118,46 @@ class ModuleDetail extends StatelessWidget {
                       .copyWith(fontWeight: FontWeight.w600),
                 ),
                 const SizedBox(height: 8),
-                Text(
-                  'Pelatihan keterampilan komunikasi pada aplikasi adalah program yang dirancang untuk membantu individu meningkatkan kemampuan mereka dalam berkomunikasi secara efektif...',
-                  style: Style.textSks.copyWith(
-                    color: ColorLxp.grayModern,
-                    fontWeight: FontWeight.w400,
-                  ),
-                )
+                Column(
+                  children: [
+                    AnimatedSize(
+                      duration: const Duration(milliseconds: 200),
+                      child: ConstrainedBox(
+                        constraints: isExpanded
+                            ? const BoxConstraints()
+                            : const BoxConstraints(maxHeight: 50.0),
+                        child: Text(
+                          'Pelatihan keterampilan komunikasi pada aplikasi adalah program yang dirancang untuk membantu individu meningkatkan kemampuan mereka dalam berkomunikasi secara efektif. Pelatihan keterampilan komunikasi pada aplikasi adalah program yang dirancang untuk membantu individu meningkatkan kemampuan mereka dalam berkomunikasi secara efektif',
+                          softWrap: true,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 10,
+                          style: Style.textSks.copyWith(
+                            color: ColorLxp.grayModern,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                    ),
+                    isExpanded
+                        ? const SizedBox(height: 8.0)
+                        : TextButton(
+                            onPressed: () {
+                              setState(
+                                () {
+                                  isExpanded = true;
+                                },
+                              );
+                            },
+                            child: Text(
+                              'Selengkapnya',
+                              style: Style.textTitleCourse.copyWith(
+                                color: ColorLxp.primary,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                  ],
+                ),
               ],
             ),
           );
