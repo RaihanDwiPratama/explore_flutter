@@ -139,20 +139,41 @@ class _ModuleDetailState extends State<ModuleDetail> {
                       ),
                     ),
                     isExpanded
-                        ? const SizedBox(height: 8.0)
-                        : TextButton(
-                            onPressed: () {
+                        ? GestureDetector(
+                            onTap: () {
+                              setState(
+                                () {
+                                  isExpanded = false;
+                                },
+                              );
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 12.0),
+                              child: Text(
+                                'Tampilkan lebih sedikit',
+                                style: Style.textTitleCourse.copyWith(
+                                  color: ColorLxp.primary,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ),
+                          )
+                        : GestureDetector(
+                            onTap: () {
                               setState(
                                 () {
                                   isExpanded = true;
                                 },
                               );
                             },
-                            child: Text(
-                              'Selengkapnya',
-                              style: Style.textTitleCourse.copyWith(
-                                color: ColorLxp.primary,
-                                fontWeight: FontWeight.w400,
+                            child: Padding(
+                              padding: const EdgeInsets.only(top: 12.0),
+                              child: Text(
+                                'Selengkapnya',
+                                style: Style.textTitleCourse.copyWith(
+                                  color: ColorLxp.primary,
+                                  fontWeight: FontWeight.w400,
+                                ),
                               ),
                             ),
                           ),
