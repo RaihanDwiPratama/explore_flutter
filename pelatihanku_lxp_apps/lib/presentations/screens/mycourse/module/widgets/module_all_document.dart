@@ -3,15 +3,15 @@ import 'package:pelatihanku_lxp_apps/presentations/commons/dokumen_lxp.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class DokumenPelatihanku extends StatelessWidget {
-  const DokumenPelatihanku({super.key});
+class ModuleAllDocument extends StatelessWidget {
+  const ModuleAllDocument({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Dokumen',
+          'Semua Dokumen',
           style: Style.title.copyWith(
             fontWeight: FontWeight.w600,
           ),
