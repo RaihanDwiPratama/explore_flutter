@@ -3,7 +3,7 @@ import 'package:pelatihanku_lxp_apps/presentations/commons/content_video_lxp.dar
 import 'package:pelatihanku_lxp_apps/presentations/commons/dokumen_lxp.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/dokumen_pelatihanku.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/rangkuman_pelatihanku.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/video_pelatihanku.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/module/widgets/module_all_video.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -54,7 +54,7 @@ class _ModuleDetailState extends State<ModuleDetail> {
                       onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const VideoPelatihanku(),
+                          builder: (context) => const ModuleAllVideo(),
                         ),
                       ),
                       child: Text(

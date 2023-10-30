@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/video_lxp.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class VideoPelatihanku extends StatelessWidget {
-  const VideoPelatihanku({super.key});
+class ModuleAllVideo extends StatelessWidget {
+  const ModuleAllVideo({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Video',
+          'Semua Video',
           style: Style.title.copyWith(
             fontWeight: FontWeight.w600,
           ),
