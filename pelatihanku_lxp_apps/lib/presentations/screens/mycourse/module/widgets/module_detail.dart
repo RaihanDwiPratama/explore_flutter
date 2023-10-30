@@ -32,6 +32,7 @@ class _ModuleDetailState extends State<ModuleDetail> {
           onTap: () => Navigator.pop(context),
           child: const Icon(Icons.chevron_left),
         ),
+        forceMaterialTransparency: true,
       ),
       body: ListView.builder(
         itemCount: 1,
@@ -147,7 +148,7 @@ class _ModuleDetailState extends State<ModuleDetail> {
                         );
                       },
                       child: Padding(
-                        padding: const EdgeInsets.only(top: 12.0),
+                        padding: const EdgeInsets.only(top: 12.0, bottom: 24.0),
                         child: Text(
                           isExpanded
                               ? 'Tampilkan lebih sedikit'
@@ -167,22 +168,29 @@ class _ModuleDetailState extends State<ModuleDetail> {
         },
       ),
       bottomNavigationBar: GestureDetector(
-        onTap: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const RangkumanPelatihanku(),
-          ),
-        ),
+        onTap: () => isExpanded
+            ? Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const RangkumanPelatihanku(),
+                ),
+              )
+            : null,
         child: Container(
-          height: 48.0,
-          margin: const EdgeInsets.all(24.0),
-          decoration: Style.btnSummary,
-          child: Center(
-            child: Text(
-              'Buat Rangkuman',
-              style: Style.textButtonBlank.copyWith(
-                color: ColorLxp.white,
-                fontWeight: FontWeight.w500,
+          padding: const EdgeInsets.all(24.0),
+          decoration: Style.shadowSummary,
+          child: Container(
+            height: 48.0,
+            decoration: Style.btnSummary.copyWith(
+              color: isExpanded ? ColorLxp.primary : ColorLxp.neutral300,
+            ),
+            child: Center(
+              child: Text(
+                'Buat Rangkuman',
+                style: Style.textButtonBlank.copyWith(
+                  color: ColorLxp.white,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
           ),

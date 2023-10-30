@@ -73,4 +73,15 @@ class Style {
     color: ColorLxp.neutral300,
     borderRadius: BorderRadius.circular(8),
   );
+
+  static BoxDecoration shadowSummary = const BoxDecoration(
+    color: ColorLxp.white,
+    boxShadow: [
+      BoxShadow(
+        color: Color.fromARGB(255, 223, 226, 231),
+        blurRadius: 20.0,
+        offset: Offset(0, -4),
+      ),
+    ],
+  );
 }
