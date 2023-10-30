@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class DetailVideoPelatihanku extends StatelessWidget {
-  DetailVideoPelatihanku({super.key});
+class ModuleDetailVideo extends StatelessWidget {
+  ModuleDetailVideo({super.key});
 
   final List<String> content = <String>[
     'Tujuan Pelatihan',
@@ -17,7 +17,7 @@ class DetailVideoPelatihanku extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Komunikasi Kreatif',
+          'Pelatihan Komunikasi Kreatif',
           style: Style.title.copyWith(
             fontWeight: FontWeight.w600,
           ),
@@ -39,7 +39,7 @@ class DetailVideoPelatihanku extends StatelessWidget {
                     const CircleAvatar(
                       radius: 20.0,
                       backgroundImage: AssetImage(
-                        'assets/images/profile_woman.jpg',
+                        'assets/images/neneng.png',
                       ),
                     ),
                     const SizedBox(width: 12),

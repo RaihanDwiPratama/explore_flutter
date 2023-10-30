@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/radio_button_lxp.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/detail_video_pelatihanku.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/module/widgets/module_detail_video.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -15,7 +15,7 @@ class VideoLxp extends StatelessWidget {
       onTap: () => Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => DetailVideoPelatihanku(),
+          builder: (context) => ModuleDetailVideo(),
         ),
       ),
       child: Container(
