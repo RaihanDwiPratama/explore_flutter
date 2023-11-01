@@ -103,18 +103,11 @@ class _ModuleDetailState extends State<ModuleDetail> {
                 ),
                 const SizedBox(height: 20),
                 const DokumenLxp(title: 'Materi 1.pdf'),
-                const SizedBox(height: 20),
                 const DokumenLxp(title: 'Jurnal.pdf'),
-                const SizedBox(height: 20),
                 const DokumenLxp(title: 'Artikel.pdf'),
                 const SizedBox(height: 20),
-                const Divider(
-                  color: ColorLxp.neutral200,
-                  height: 1,
-                ),
-                const SizedBox(height: 20),
                 Text(
-                  'Detail Pelatihanku',
+                  'Detail Pelatihan',
                   style: Style.textTitleCourse.copyWith(
                     fontWeight: FontWeight.w600,
                   ),
