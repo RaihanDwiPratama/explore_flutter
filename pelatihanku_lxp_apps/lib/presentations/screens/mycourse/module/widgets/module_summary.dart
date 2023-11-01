@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/list_rangkuman_pelatihanku.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/module/widgets/module_list_summary.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -102,7 +102,7 @@ class _ModuleSummaryState extends State<ModuleSummary> {
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
-                                const ListRangkumanPelatihanku(),
+                                const ModuleListSummary(),
                           ),
                         ),
                         child: Container(
