@@ -101,4 +101,11 @@ class Style {
       ),
     ),
   );
+
+  static ButtonStyle btnCourse = ElevatedButton.styleFrom(
+    backgroundColor: ColorLxp.primary,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(8),
+    ),
+  );
 }

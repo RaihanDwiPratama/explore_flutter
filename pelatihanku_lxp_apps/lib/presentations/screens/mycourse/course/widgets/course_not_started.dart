@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/widgets/course_pending_approval.dart';
-import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
 class CourseNotStarted extends StatelessWidget {
@@ -47,12 +46,7 @@ class CourseNotStarted extends StatelessWidget {
                         ),
                       );
                     },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: ColorLxp.primary,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
+                    style: Style.btnCourse,
                     child: Text(
                       'Ikuti Pelatihan',
                       style: Style.textButtonBlank.copyWith(

@@ -6,7 +6,6 @@ import 'package:pelatihanku_lxp_apps/presentations/screens/assignment/detail_tug
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-// ignore: must_be_immutable
 class CourseAllList extends StatelessWidget {
   const CourseAllList({super.key});
 
