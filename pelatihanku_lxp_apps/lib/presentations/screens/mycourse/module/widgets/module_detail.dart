@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/content_video_lxp.dart';
-import 'package:pelatihanku_lxp_apps/presentations/commons/dokumen_lxp.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/module/widgets/module_all_document.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/module/widgets/module_summary.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/module/widgets/module_all_video.dart';
@@ -70,11 +70,12 @@ class _ModuleDetailState extends State<ModuleDetail> {
                 ),
                 const ContentVideoLxp(title: 'Keterampilan Komunikasi'),
                 const ContentVideoLxp(title: 'Keterampilan Presentasi'),
+                const SizedBox(height: 24.0),
                 const Divider(
                   color: ColorLxp.neutral200,
                   height: 1,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -101,11 +102,16 @@ class _ModuleDetailState extends State<ModuleDetail> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
-                const DokumenLxp(title: 'Materi 1.pdf'),
-                const DokumenLxp(title: 'Jurnal.pdf'),
-                const DokumenLxp(title: 'Artikel.pdf'),
-                const SizedBox(height: 20),
+                const SizedBox(height: 16),
+                dokumenDownload('Materi 1.pdf'),
+                dokumenViewonly(),
+                dokumenDownload('Artikel.pdf'),
+                const SizedBox(height: 36.0),
+                const Divider(
+                  color: ColorLxp.neutral200,
+                  height: 1,
+                ),
+                const SizedBox(height: 16),
                 Text(
                   'Detail Pelatihan',
                   style: Style.textTitleCourse.copyWith(
@@ -190,6 +196,54 @@ class _ModuleDetailState extends State<ModuleDetail> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget dokumenDownload(String title) {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SvgPicture.asset('assets/icons/FilePdf.svg'),
+            const SizedBox(width: 8),
+            Text(
+              title,
+              style: Style.textTitleCourse.copyWith(
+                color: ColorLxp.neutral500,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            const Spacer(),
+            const Icon(
+              Icons.file_download_outlined,
+              color: ColorLxp.successNormal,
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget dokumenViewonly() {
+    return Column(
+      children: [
+        const SizedBox(height: 16.0),
+        Row(
+          children: [
+            SvgPicture.asset('assets/icons/FilePdf.svg'),
+            const SizedBox(width: 8),
+            Text(
+              'Jurnal.pdf',
+              style: Style.textTitleCourse.copyWith(
+                color: ColorLxp.neutral500,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 16.0),
+      ],
     );
   }
 }
