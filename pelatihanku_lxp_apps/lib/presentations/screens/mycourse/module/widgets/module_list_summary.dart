@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/detail_rangkuman_pelatihanku.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/module/widgets/module_detail_summary.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -80,7 +80,7 @@ class ModuleListSummary extends StatelessWidget {
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const DetailRangkumanPelatihanku(),
+              builder: (context) => const ModuleDetailSummary(),
             ),
           ),
           child: ListTile(

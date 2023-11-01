@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class DetailRangkumanPelatihanku extends StatelessWidget {
-  const DetailRangkumanPelatihanku({super.key});
+class ModuleDetailSummary extends StatelessWidget {
+  const ModuleDetailSummary({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Rangkuman',
+          'Isi Rangkuman',
           style: Style.title.copyWith(
             fontWeight: FontWeight.w600,
           ),
