@@ -24,13 +24,9 @@ class ModuleAllVideo extends StatelessWidget {
       body: const Column(
         children: [
           VideoLxp(title: 'Pendahuluan'),
-          SizedBox(height: 16),
           VideoLxp(title: 'Komunikasi Efektif'),
-          SizedBox(height: 16),
           VideoLxp(title: 'Mendengarkan Aktif'),
-          SizedBox(height: 16),
           VideoLxp(title: 'Empati dalam Komunikasi'),
-          SizedBox(height: 16),
           VideoLxp(title: 'Komunikasi Dua Arah'),
         ],
       ),

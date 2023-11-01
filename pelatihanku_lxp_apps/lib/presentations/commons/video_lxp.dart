@@ -7,7 +7,10 @@ import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 class VideoLxp extends StatelessWidget {
   final String title;
 
-  const VideoLxp({super.key, required this.title});
+  const VideoLxp({
+    super.key,
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,20 +23,9 @@ class VideoLxp extends StatelessWidget {
       ),
       child: Container(
         padding: const EdgeInsets.all(16.0),
-        margin: const EdgeInsets.symmetric(horizontal: 24.0),
+        margin: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0),
         height: 108,
-        decoration: BoxDecoration(
-          color: ColorLxp.white,
-          borderRadius: BorderRadius.circular(8),
-          boxShadow: const [
-            BoxShadow(
-              color: Color.fromARGB(255, 223, 226, 231),
-              blurRadius: 20.0,
-              spreadRadius: 4,
-              offset: Offset(0, 1),
-            )
-          ],
-        ),
+        decoration: Style.shadowCourses,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

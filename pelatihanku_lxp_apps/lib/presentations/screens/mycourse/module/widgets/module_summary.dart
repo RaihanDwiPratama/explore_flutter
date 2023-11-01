@@ -12,9 +12,27 @@ class ModuleSummary extends StatefulWidget {
 }
 
 class _ModuleSummaryState extends State<ModuleSummary> {
-  bool _isEnabled = false;
   final _rangkumanVideo = TextEditingController();
   final _rangkumanDokumen = TextEditingController();
+  Color _buttonColor = ColorLxp.neutral300;
+
+  @override
+  void initState() {
+    super.initState();
+    _rangkumanDokumen.addListener(checkCharacter);
+    _rangkumanVideo.addListener(checkCharacter);
+  }
+
+  void checkCharacter() {
+    setState(() {
+      if (_rangkumanVideo.text.length >= 150 &&
+          _rangkumanDokumen.text.length >= 150) {
+        _buttonColor = ColorLxp.primary;
+      } else {
+        _buttonColor = ColorLxp.neutral300;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -101,8 +119,7 @@ class _ModuleSummaryState extends State<ModuleSummary> {
                         onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) =>
-                                const ModuleListSummary(),
+                            builder: (context) => const ModuleListSummary(),
                           ),
                         ),
                         child: Container(
@@ -110,10 +127,7 @@ class _ModuleSummaryState extends State<ModuleSummary> {
                             vertical: 12.0,
                             horizontal: 68.0,
                           ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: ColorLxp.primary,
-                          ),
+                          decoration: Style.btnBlue,
                           child: Text(
                             'Lihat rangkuman',
                             style: Style.textTitleCourse.copyWith(
@@ -131,12 +145,7 @@ class _ModuleSummaryState extends State<ModuleSummary> {
                             vertical: 12.0,
                             horizontal: 98.0,
                           ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(
-                              color: ColorLxp.primary,
-                            ),
-                          ),
+                          decoration: Style.borderBlue,
                           child: Text(
                             'Kembali',
                             style: Style.textTitleCourse.copyWith(
@@ -157,7 +166,7 @@ class _ModuleSummaryState extends State<ModuleSummary> {
           height: 48.0,
           margin: const EdgeInsets.all(24.0),
           decoration: BoxDecoration(
-            color: _isEnabled ? ColorLxp.primary : ColorLxp.neutral300,
+            color: _buttonColor,
             borderRadius: BorderRadius.circular(8),
           ),
           child: Center(
@@ -194,17 +203,6 @@ class _ModuleSummaryState extends State<ModuleSummary> {
         TextField(
           controller: controller,
           maxLines: 5,
-          onChanged: (value) {
-            if (value.length >= 150) {
-              setState(() {
-                _isEnabled = true;
-              });
-            } else {
-              setState(() {
-                _isEnabled = false;
-              });
-            }
-          },
           decoration: Style.inputSummary.copyWith(
             hintText: hintText,
           ),

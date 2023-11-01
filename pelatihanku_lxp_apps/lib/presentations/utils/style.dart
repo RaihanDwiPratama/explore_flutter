@@ -108,4 +108,16 @@ class Style {
       borderRadius: BorderRadius.circular(8),
     ),
   );
+
+  static BoxDecoration btnBlue = BoxDecoration(
+    borderRadius: BorderRadius.circular(8),
+    color: ColorLxp.primary,
+  );
+
+  static BoxDecoration borderBlue = BoxDecoration(
+    borderRadius: BorderRadius.circular(8),
+    border: Border.all(
+      color: ColorLxp.primary,
+    ),
+  );
 }
