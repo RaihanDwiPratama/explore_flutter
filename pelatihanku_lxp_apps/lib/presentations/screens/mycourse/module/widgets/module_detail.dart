@@ -115,8 +115,9 @@ class _ModuleDetailState extends State<ModuleDetail> {
                 const SizedBox(height: 20),
                 Text(
                   'Detail Pelatihanku',
-                  style: Style.textTitleCourse
-                      .copyWith(fontWeight: FontWeight.w600),
+                  style: Style.textTitleCourse.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
                 const SizedBox(height: 8),
                 Column(
