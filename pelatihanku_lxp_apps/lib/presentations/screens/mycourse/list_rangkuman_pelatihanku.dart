@@ -55,13 +55,7 @@ class ListRangkumanPelatihanku extends StatelessWidget {
               ),
               child: ListTile(
                 contentPadding: const EdgeInsets.symmetric(horizontal: 0),
-                leading: const CircleAvatar(
-                  child: CircleAvatar(
-                    radius: 33.0,
-                    backgroundImage:
-                        AssetImage("assets/images/profile_woman.jpg"),
-                  ),
-                ),
+                leading: Image.asset("assets/images/sumar.png"),
                 title: Text(
                   'Bahasa tubuh, ekspresi wajah, memiliki peran besar dalam menyampaikan pesan.',
                   style: Style.textSks.copyWith(

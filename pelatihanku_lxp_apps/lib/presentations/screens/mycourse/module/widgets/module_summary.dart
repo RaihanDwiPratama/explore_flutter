@@ -21,12 +21,13 @@ class _ModuleSummaryState extends State<ModuleSummary> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Rangkuman',
+          'Tugas',
           style: Style.title.copyWith(
             fontWeight: FontWeight.w600,
           ),
         ),
         centerTitle: true,
+        forceMaterialTransparency: true,
         leading: GestureDetector(
           onTap: () => Navigator.pop(context),
           child: const Icon(Icons.chevron_left),
@@ -61,7 +62,8 @@ class _ModuleSummaryState extends State<ModuleSummary> {
       ),
       bottomNavigationBar: GestureDetector(
         onTap: () {
-          if (_isEnabled) {
+          if (_rangkumanDokumen.text.length >= 150 &&
+              _rangkumanVideo.text.length >= 150) {
             showDialog<String>(
               context: context,
               builder: (BuildContext context) => AlertDialog(
@@ -130,10 +132,11 @@ class _ModuleSummaryState extends State<ModuleSummary> {
                             horizontal: 98.0,
                           ),
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8),
-                              border: Border.all(
-                                color: ColorLxp.primary,
-                              )),
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(
+                              color: ColorLxp.primary,
+                            ),
+                          ),
                           child: Text(
                             'Kembali',
                             style: Style.textTitleCourse.copyWith(
