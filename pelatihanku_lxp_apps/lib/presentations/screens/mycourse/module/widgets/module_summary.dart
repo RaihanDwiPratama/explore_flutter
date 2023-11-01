@@ -101,8 +101,7 @@ class _ModuleSummaryState extends State<ModuleSummary> {
                         onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) =>
-                                const ModuleListSummary(),
+                            builder: (context) => const ModuleListSummary(),
                           ),
                         ),
                         child: Container(
