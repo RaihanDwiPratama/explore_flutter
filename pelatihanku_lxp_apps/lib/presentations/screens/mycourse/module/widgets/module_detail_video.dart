@@ -36,11 +36,9 @@ class ModuleDetailVideo extends StatelessWidget {
                 const SizedBox(height: 24.0),
                 Row(
                   children: [
-                    const CircleAvatar(
-                      radius: 20.0,
-                      backgroundImage: AssetImage(
-                        'assets/images/neneng.png',
-                      ),
+                    Image.asset(
+                      'assets/images/neneng.png',
+                      width: 40,
                     ),
                     const SizedBox(width: 12),
                     Column(
