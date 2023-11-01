@@ -14,6 +14,25 @@ class ModuleSummary extends StatefulWidget {
 class _ModuleSummaryState extends State<ModuleSummary> {
   final _rangkumanVideo = TextEditingController();
   final _rangkumanDokumen = TextEditingController();
+  Color _buttonColor = ColorLxp.neutral300;
+
+  @override
+  void initState() {
+    super.initState();
+    _rangkumanDokumen.addListener(checkCharacter);
+    _rangkumanVideo.addListener(checkCharacter);
+  }
+
+  void checkCharacter() {
+    setState(() {
+      if (_rangkumanVideo.text.length >= 150 &&
+          _rangkumanDokumen.text.length >= 150) {
+        _buttonColor = ColorLxp.primary;
+      } else {
+        _buttonColor = ColorLxp.neutral300;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -147,10 +166,7 @@ class _ModuleSummaryState extends State<ModuleSummary> {
           height: 48.0,
           margin: const EdgeInsets.all(24.0),
           decoration: BoxDecoration(
-            color: _rangkumanDokumen.text.length >= 150 &&
-                    _rangkumanVideo.text.length >= 150
-                ? ColorLxp.primary
-                : ColorLxp.neutral300,
+            color: _buttonColor,
             borderRadius: BorderRadius.circular(8),
           ),
           child: Center(
