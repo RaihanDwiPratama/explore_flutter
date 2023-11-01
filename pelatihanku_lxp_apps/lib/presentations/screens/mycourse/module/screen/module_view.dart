@@ -49,7 +49,7 @@ class ModuleView extends StatelessWidget {
             onTap: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ModuleDetail(),
+                builder: (context) => const ModuleDetail(),
               ),
             ),
             child: Container(
