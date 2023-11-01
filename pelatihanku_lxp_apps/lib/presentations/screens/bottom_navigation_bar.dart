@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/akun/account.dart';
-import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/pelatihanku/join_pelatihanku.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/account/screen/account_page.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/home/screen/home_page.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/assignment/screen/assignment_page.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/course/screen/course_page.dart';
 
 class BottomNavigationBarExample extends StatefulWidget {
   const BottomNavigationBarExample({super.key});
@@ -16,16 +18,10 @@ class _BottomNavigationBarExampleState
   int _selectedIndex = 0;
 
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Beranda',
-      style: Style.optionStyle,
-    ),
-    JoinPelatihanku(),
-    Text(
-      'Penugasan',
-      style: Style.optionStyle,
-    ),
-    Account(),
+    HomePage(),
+    CoursePage(),
+    AssignmentPage(),
+    AccountPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -41,22 +37,38 @@ class _BottomNavigationBarExampleState
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: SvgPicture.asset('assets/icons/House.svg'),
             label: 'Beranda',
+            activeIcon: SvgPicture.asset(
+              'assets/icons/House.svg',
+              color: const Color(0xff3498DB),
+            ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.perm_contact_cal),
+            icon: SvgPicture.asset('assets/icons/AddressBook.svg'),
             label: 'Pelatihan-ku',
+            activeIcon: SvgPicture.asset(
+              'assets/icons/AddressBook.svg',
+              color: const Color(0xff3498DB),
+            ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.assignment),
+            icon: SvgPicture.asset('assets/icons/ClipboardText.svg'),
             label: 'Penugasan',
+            activeIcon: SvgPicture.asset(
+              'assets/icons/ClipboardText.svg',
+              color: const Color(0xff3498DB),
+            ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
+            icon: SvgPicture.asset('assets/icons/UserCircle.svg'),
             label: 'Akun',
+            activeIcon: SvgPicture.asset(
+              'assets/icons/UserCircle.svg',
+              color: const Color(0xff3498DB),
+            ),
           ),
         ],
         currentIndex: _selectedIndex,

@@ -55,4 +55,57 @@ class Style {
     fontWeight: FontWeight.w600,
     color: ColorLxp.neutral800,
   );
+
+  static BoxDecoration shadowCourses = BoxDecoration(
+    color: ColorLxp.white,
+    borderRadius: BorderRadius.circular(8),
+    boxShadow: const [
+      BoxShadow(
+        color: Color.fromARGB(255, 223, 226, 231),
+        blurRadius: 20.0,
+        spreadRadius: 4,
+        offset: Offset(0, 1),
+      )
+    ],
+  );
+
+  static BoxDecoration btnSummary = BoxDecoration(
+    color: ColorLxp.neutral300,
+    borderRadius: BorderRadius.circular(8),
+  );
+
+  static BoxDecoration shadowSummary = const BoxDecoration(
+    color: ColorLxp.white,
+    boxShadow: [
+      BoxShadow(
+        color: Color.fromARGB(255, 223, 226, 231),
+        blurRadius: 20.0,
+        offset: Offset(0, -4),
+      ),
+    ],
+  );
+
+  static InputDecoration inputSummary = InputDecoration(
+    contentPadding: const EdgeInsets.all(12),
+    hintStyle: Style.textSks.copyWith(
+      color: ColorLxp.neutral800,
+      fontWeight: FontWeight.w400,
+    ),
+    border: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(
+        Radius.circular(5),
+      ),
+      gapPadding: 6.0,
+      borderSide: BorderSide(
+        color: ColorLxp.neutral200,
+      ),
+    ),
+  );
+
+  static ButtonStyle btnCourse = ElevatedButton.styleFrom(
+    backgroundColor: ColorLxp.primary,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(8),
+    ),
+  );
 }

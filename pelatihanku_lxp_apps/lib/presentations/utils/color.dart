@@ -21,4 +21,5 @@ class ColorLxp {
   static const Color neutral400 = Color(0xff9AA4B2);
   static const Color neutral500 = Color(0xff697586);
   static const Color neutral800 = Color(0xff202939);
+  static const Color shadowSummary = Color(0xff1C2A34);
 }
