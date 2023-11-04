@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/list_pertemuan_lxp.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/blank_diskusi.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/screen/discussion_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/module/screen/module_page.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/assignment/detail_tugas.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/task/widgets/detail_tugas.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -57,7 +57,7 @@ class CourseAllList extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const BlankDiskusi(),
+                      builder: (context) => const DiscussionPage(),
                     ),
                   );
                 },

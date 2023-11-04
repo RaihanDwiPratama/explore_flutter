@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/only_text_diskusi.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/widgets/discussion_view_reply.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class BlankDiskusi extends StatelessWidget {
-  const BlankDiskusi({super.key});
+class DiscussionView extends StatelessWidget {
+  const DiscussionView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class BlankDiskusi extends StatelessWidget {
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const OnlyTextDiskusi(),
+              builder: (context) => const DiscussionViewReply(),
             ),
           ),
           child: Text(
