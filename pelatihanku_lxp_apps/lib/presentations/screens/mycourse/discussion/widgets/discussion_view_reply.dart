@@ -1,45 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/widgets/discussion_like_comment_reply.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class DiscussionViewReply extends StatefulWidget {
+class DiscussionViewReply extends StatelessWidget {
   const DiscussionViewReply({super.key});
-
-  @override
-  State<DiscussionViewReply> createState() => _DiscussionViewReplyState();
-}
-
-class _DiscussionViewReplyState extends State<DiscussionViewReply> {
-  bool isFavourite = false;
-  int favouriteCount = 11;
-  bool isComment = false;
-  int commentCount = 3;
-  bool isReplyComment = false;
-
-  void toogleFavourite() {
-    setState(() {
-      if (isFavourite) {
-        favouriteCount -= 1;
-        isFavourite = false;
-      } else {
-        favouriteCount += 1;
-        isFavourite = true;
-      }
-    });
-  }
-
-  void toogleComment() {
-    setState(() {
-      if (isComment) {
-        commentCount -= 1;
-        isComment = false;
-      } else {
-        commentCount += 1;
-        isComment = true;
-      }
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -109,37 +74,7 @@ class _DiscussionViewReplyState extends State<DiscussionViewReply> {
                 ),
               ),
               const SizedBox(height: 16.0),
-              Row(
-                children: [
-                  Row(
-                    children: [
-                      GestureDetector(
-                        onTap: () => toogleFavourite(),
-                        child: SvgPicture.asset(
-                          isFavourite
-                              ? 'assets/icons/Heart.svg'
-                              : 'assets/icons/HeartRed.svg',
-                        ),
-                      ),
-                      const SizedBox(width: 4),
-                      Text('$favouriteCount'),
-                    ],
-                  ),
-                  const SizedBox(width: 24),
-                  Row(
-                    children: [
-                      GestureDetector(
-                        onTap: () => toogleComment(),
-                        child: SvgPicture.asset(
-                          'assets/icons/ChatTeardrop.svg',
-                        ),
-                      ),
-                      const SizedBox(width: 4),
-                      Text('$commentCount'),
-                    ],
-                  ),
-                ],
-              ),
+              const DiscussionLikeCommentReply(),
               const SizedBox(height: 10),
               const Divider(
                 color: ColorLxp.neutral200,

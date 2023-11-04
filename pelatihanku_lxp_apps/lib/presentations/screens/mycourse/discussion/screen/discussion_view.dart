@@ -27,7 +27,7 @@ class DiscussionView extends StatelessWidget {
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const DiscussionViewReply(),
+              builder: (context) => DiscussionViewReply(),
             ),
           ),
           child: Text(
