@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
+
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/widgets/discussion_like_comment_reply.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
+// ignore: must_be_immutable
 class DiscussionComentar extends StatelessWidget {
   final String image;
   final String name;
   final String job;
   final String date;
+  String imgComment = "";
   final String comment;
 
-  const DiscussionComentar({
-    super.key,
+  DiscussionComentar({
+    Key? key,
     required this.image,
     required this.name,
     required this.job,
     required this.date,
+    required this.imgComment,
     required this.comment,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +59,12 @@ class DiscussionComentar extends StatelessWidget {
             color: ColorLxp.neutral800,
           ),
         ),
+        imgComment != ""
+            ? Image.asset(
+                imgComment,
+                width: 120,
+              )
+            : const SizedBox(),
         Padding(
           padding: const EdgeInsets.only(left: 73.0),
           child: Column(

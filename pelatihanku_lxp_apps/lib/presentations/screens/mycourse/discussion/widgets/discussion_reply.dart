@@ -75,13 +75,23 @@ class DiscussionReply extends StatelessWidget {
           color: ColorLxp.neutral200,
           thickness: 1,
         ),
-        const DiscussionComentar(
+        DiscussionComentar(
           image: "assets/images/owen.png",
           name: 'Owen Arya',
           job: 'Siswa',
           date: '23 September 2023, 16.30',
+          imgComment: "",
           comment:
               'Pernyataan ini menekankan bahwa dalam sebuah interaksi komunikasi, tujuan utama bukan hanya sekadar berbicara atau menyampaikan pesan, tetapi juga memastikan bahwa pendengar atau penerima pesan benar-benar memahami apa yang ingin disampaikan oleh pembicara.',
+        ),
+        DiscussionComentar(
+          image: "assets/images/bob.png",
+          name: 'Bob Marley',
+          job: 'Admin',
+          date: '23 September 2023, 16.30',
+          imgComment: 'assets/images/img_reply_person.png',
+          comment:
+              'Dengan kata lain, pesan ini menggambarkan bahwa tidak hanya berbicara yang penting, tetapi juga memastikan bahwa apa yang telah disampaikan oleh pembicara telah dipahami dengan benar oleh pendengar.',
         ),
       ],
     );
