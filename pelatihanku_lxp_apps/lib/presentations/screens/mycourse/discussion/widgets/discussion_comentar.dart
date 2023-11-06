@@ -4,7 +4,20 @@ import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
 class DiscussionComentar extends StatelessWidget {
-  const DiscussionComentar({super.key});
+  final String image;
+  final String name;
+  final String job;
+  final String date;
+  final String comment;
+
+  const DiscussionComentar({
+    super.key,
+    required this.image,
+    required this.name,
+    required this.job,
+    required this.date,
+    required this.comment,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,25 +25,25 @@ class DiscussionComentar extends StatelessWidget {
       children: [
         ListTile(
           contentPadding: const EdgeInsets.symmetric(horizontal: 0),
-          leading: Image.asset("assets/images/aldi.png"),
+          leading: Image.asset(image),
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Aldi Taher',
+                name,
                 style: Style.textTitleCourse.copyWith(
                   fontWeight: FontWeight.w600,
                 ),
               ),
               Text(
-                'Siswa',
+                job,
                 style: Style.textSks.copyWith(
                   color: ColorLxp.neutral800,
                 ),
               ),
               Text(
-                '23 September 2023, 15.30',
+                date,
                 style: Style.textSks.copyWith(
                   fontWeight: FontWeight.w500,
                 ),
@@ -50,8 +63,8 @@ class DiscussionComentar extends StatelessWidget {
               SizedBox(
                 width: 270,
                 child: Text(
-                  'Dalam konteks ini, yang menjadi fokus utama adalah pemahaman dan pengertian yang diperoleh oleh pendengar terhadap pesan yang disampaikan.',
-                  maxLines: 5,
+                  comment,
+                  maxLines: 10,
                   style: Style.textTitleCourse.copyWith(
                     fontWeight: FontWeight.w400,
                   ),

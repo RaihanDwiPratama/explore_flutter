@@ -75,7 +75,14 @@ class DiscussionReply extends StatelessWidget {
           color: ColorLxp.neutral200,
           thickness: 1,
         ),
-        const DiscussionComentar(),
+        const DiscussionComentar(
+          image: "assets/images/owen.png",
+          name: 'Owen Arya',
+          job: 'Siswa',
+          date: '23 September 2023, 16.30',
+          comment:
+              'Pernyataan ini menekankan bahwa dalam sebuah interaksi komunikasi, tujuan utama bukan hanya sekadar berbicara atau menyampaikan pesan, tetapi juga memastikan bahwa pendengar atau penerima pesan benar-benar memahami apa yang ingin disampaikan oleh pembicara.',
+        ),
       ],
     );
   }
