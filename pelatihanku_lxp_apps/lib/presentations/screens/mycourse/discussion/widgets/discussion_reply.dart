@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/widgets/discussion_like_comment_reply.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/widgets/discussion_reply_comentar.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -65,6 +66,7 @@ class DiscussionReply extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 const DiscussionLikeCommentReply(),
+                const DiscussionReplyComentar(),
               ],
             ),
           ],
