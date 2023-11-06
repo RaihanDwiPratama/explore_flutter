@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/widgets/discussion_comentar.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/widgets/discussion_like_comment_reply.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class DiscussionReply extends StatelessWidget {
-  const DiscussionReply({super.key});
+class DiscussionComentar extends StatelessWidget {
+  const DiscussionComentar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,38 +42,31 @@ class DiscussionReply extends StatelessWidget {
             color: ColorLxp.neutral800,
           ),
         ),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(width: 28),
-            SvgPicture.asset('assets/images/line.svg'),
-            const SizedBox(width: 18),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: 270,
-                  child: Text(
-                    'Dalam konteks ini, yang menjadi fokus utama adalah pemahaman dan pengertian yang diperoleh oleh pendengar terhadap pesan yang disampaikan.',
-                    maxLines: 5,
-                    style: Style.textTitleCourse.copyWith(
-                      fontWeight: FontWeight.w400,
-                    ),
+        Padding(
+          padding: const EdgeInsets.only(left: 73.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: 270,
+                child: Text(
+                  'Dalam konteks ini, yang menjadi fokus utama adalah pemahaman dan pengertian yang diperoleh oleh pendengar terhadap pesan yang disampaikan.',
+                  maxLines: 5,
+                  style: Style.textTitleCourse.copyWith(
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
-                const SizedBox(height: 16),
-                const DiscussionLikeCommentReply(),
-              ],
-            ),
-          ],
+              ),
+              const SizedBox(height: 16),
+              const DiscussionLikeCommentReply(),
+            ],
+          ),
         ),
         const SizedBox(height: 10),
         const Divider(
           color: ColorLxp.neutral200,
           thickness: 1,
         ),
-        const DiscussionComentar(),
       ],
     );
   }
