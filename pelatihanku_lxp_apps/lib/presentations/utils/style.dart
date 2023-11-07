@@ -120,4 +120,14 @@ class Style {
       color: ColorLxp.primary,
     ),
   );
+
+  static InputDecoration nonBorder = InputDecoration(
+    contentPadding: const EdgeInsets.all(12),
+    hintText: 'Buat rangkuman...',
+    hintStyle: Style.textTitleCourse.copyWith(
+      color: ColorLxp.neutral500,
+      fontWeight: FontWeight.w500,
+    ),
+    border: InputBorder.none,
+  );
 }

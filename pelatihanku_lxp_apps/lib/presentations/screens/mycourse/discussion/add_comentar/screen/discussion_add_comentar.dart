@@ -53,43 +53,32 @@ class _DiscussionAddComentarState extends State<DiscussionAddComentar> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const AddComentarPost(),
-              const VerticalDivider(
-                width: 20,
-                color: ColorLxp.neutral200,
-                thickness: 2,
-              ),
               const SizedBox(height: 20),
-              TextField(
-                controller: _rangkuman,
-                maxLines: 10,
-                onChanged: (value) {
-                  if (value.length >= 10) {
-                    setState(() {
-                      _isEnabled = true;
-                    });
-                  } else {
-                    setState(() {
-                      _isEnabled = false;
-                    });
-                  }
-                },
-                decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.all(12),
-                  hintText: 'Buat rangkuman...',
-                  hintStyle: Style.textTitleCourse.copyWith(
-                    color: ColorLxp.neutral500,
-                    fontWeight: FontWeight.w500,
+              Row(crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Image.asset(
+                    'assets/images/fauzi.png',
+                    width: 40,
                   ),
-                  border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(5),
-                    ),
-                    gapPadding: 6.0,
-                    borderSide: BorderSide(
-                      color: ColorLxp.neutral200,
+                  Flexible(
+                    child: TextField(
+                      controller: _rangkuman,
+                      maxLines: 10,
+                      onChanged: (value) {
+                        if (value.length >= 10) {
+                          setState(() {
+                            _isEnabled = true;
+                          });
+                        } else {
+                          setState(() {
+                            _isEnabled = false;
+                          });
+                        }
+                      },
+                      decoration: Style.nonBorder,
                     ),
                   ),
-                ),
+                ],
               ),
               const SizedBox(height: 20),
               SizedBox(
