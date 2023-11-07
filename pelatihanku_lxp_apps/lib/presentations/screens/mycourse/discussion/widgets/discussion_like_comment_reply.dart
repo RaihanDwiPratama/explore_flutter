@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/add_comentar/screen/discussion_add_comentar.dart';
 
 class DiscussionLikeCommentReply extends StatefulWidget {
   const DiscussionLikeCommentReply({super.key});
@@ -14,7 +15,7 @@ class _DiscussionLikeCommentReplyState
   bool isFavourite = false;
   int favouriteCount = 11;
   bool isComment = false;
-  int commentCount = 3;
+  // int commentCount = 3;
   bool isReplyComment = false;
 
   void toogleFavourite() {
@@ -29,17 +30,17 @@ class _DiscussionLikeCommentReplyState
     });
   }
 
-  void toogleComment() {
-    setState(() {
-      if (isComment) {
-        commentCount -= 1;
-        isComment = false;
-      } else {
-        commentCount += 1;
-        isComment = true;
-      }
-    });
-  }
+  // void toogleComment() {
+  //   setState(() {
+  //     if (isComment) {
+  //       commentCount -= 1;
+  //       isComment = false;
+  //     } else {
+  //       commentCount += 1;
+  //       isComment = true;
+  //     }
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -63,13 +64,17 @@ class _DiscussionLikeCommentReplyState
         Row(
           children: [
             GestureDetector(
-              onTap: () => toogleComment(),
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const DiscussionAddComentar(),
+                  )),
               child: SvgPicture.asset(
                 'assets/icons/ChatTeardrop.svg',
               ),
             ),
             const SizedBox(width: 4),
-            Text('$commentCount'),
+            const Text('3'),
           ],
         ),
       ],

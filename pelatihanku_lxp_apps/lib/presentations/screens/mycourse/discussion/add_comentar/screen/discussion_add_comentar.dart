@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/add_comentar/widgets/add_comentar_post.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/widgets/discussion_view_reply.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class AddComentar extends StatefulWidget {
-  const AddComentar({super.key});
+class DiscussionAddComentar extends StatefulWidget {
+  const DiscussionAddComentar({super.key});
 
   @override
-  State<AddComentar> createState() => _AddComentarState();
+  State<DiscussionAddComentar> createState() => _DiscussionAddComentarState();
 }
 
-class _AddComentarState extends State<AddComentar> {
+class _DiscussionAddComentarState extends State<DiscussionAddComentar> {
   bool _isEnabled = false;
   final _rangkuman = TextEditingController();
 
@@ -46,48 +47,16 @@ class _AddComentarState extends State<AddComentar> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Container(
+        child: Padding(
           padding: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ListTile(
-                contentPadding: const EdgeInsets.symmetric(horizontal: 0),
-                leading: const CircleAvatar(
-                  child: CircleAvatar(
-                    radius: 33.0,
-                    backgroundImage:
-                        AssetImage("assets/images/profile_woman.jpg"),
-                  ),
-                ),
-                title: Text(
-                  'Neneng Rohaye',
-                  style: Style.textTitleCourse.copyWith(
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                subtitle: Text(
-                  '12.30',
-                  style: Style.textSks.copyWith(
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                trailing: const Icon(
-                  Icons.more_horiz_outlined,
-                  color: ColorLxp.neutral800,
-                ),
-              ),
-              ListTile(
-                leading: const VerticalDivider(
-                  color: ColorLxp.neutral200,
-                  thickness: 2,
-                ),
-                title: Text(
-                  'Apa yang dimaksud dengan pernyataan "Yang penting kamu mengerti" dalam konteks komunikasi?',
-                  style: Style.textTitleCourse.copyWith(
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
+              const AddComentarPost(),
+              const VerticalDivider(
+                width: 20,
+                color: ColorLxp.neutral200,
+                thickness: 2,
               ),
               const SizedBox(height: 20),
               TextField(
