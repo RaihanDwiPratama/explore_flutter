@@ -3,7 +3,6 @@ import 'package:pelatihanku_lxp_apps/presentations/commons/list_pertemuan_lxp.da
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/screen/discussion_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/module/screen/module_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/quiz/detail_quiz/screen/detail_quiz_page.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/quiz/detail_quiz/screen/detail_quiz_view.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/task/widgets/detail_tugas.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';

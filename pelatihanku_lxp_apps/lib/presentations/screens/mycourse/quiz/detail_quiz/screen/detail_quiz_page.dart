@@ -6,6 +6,6 @@ class DetailQuizPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const DetailQuizView();
+    return DetailQuizView();
   }
 }
