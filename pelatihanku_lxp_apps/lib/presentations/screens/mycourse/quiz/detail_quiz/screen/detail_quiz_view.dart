@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/quiz/detail_quiz/widgets/bottom_navigation_quiz.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/quiz/detail_quiz/widgets/row_icon_text.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
@@ -119,52 +120,7 @@ class DetailQuizView extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              'Kesempatan Mengerjakan Tersisa : 3X',
-              style: Style.textSks.copyWith(
-                color: ColorLxp.infoNormal,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-            Container(
-              height: 48,
-              margin: const EdgeInsets.only(top: 8.0),
-              width: double.infinity,
-              decoration: Style.btnBlue,
-              child: Center(
-                child: Text(
-                  'Mulai Quiz',
-                  style: Style.textTitleCourse.copyWith(
-                    color: ColorLxp.white,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              height: 48,
-              margin: const EdgeInsets.only(top: 16.0),
-              width: double.infinity,
-              decoration: Style.borderBlue,
-              child: Center(
-                child: Text(
-                  'Riwayat Quiz',
-                  style: Style.textTitleCourse.copyWith(
-                    color: ColorLxp.primary,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
+      bottomNavigationBar: const BottomNavigationQuiz(),
     );
   }
 }
