@@ -21,7 +21,7 @@ class DetailQuizView extends StatelessWidget {
     'Nilai Kelulusan 80',
     'Max. 3x Pengulangan',
   ];
-  
+
   List<String> iconChecklist = [
     'assets/icons/CheckCircle.svg',
     'assets/icons/CheckCircle.svg',
@@ -116,6 +116,52 @@ class DetailQuizView extends StatelessWidget {
                 text: description[index],
               ),
             ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'Kesempatan Mengerjakan Tersisa : 3X',
+              style: Style.textSks.copyWith(
+                color: ColorLxp.infoNormal,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            Container(
+              height: 48,
+              margin: const EdgeInsets.only(top: 8.0),
+              width: double.infinity,
+              decoration: Style.btnBlue,
+              child: Center(
+                child: Text(
+                  'Mulai Quiz',
+                  style: Style.textTitleCourse.copyWith(
+                    color: ColorLxp.white,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 48,
+              margin: const EdgeInsets.only(top: 16.0),
+              width: double.infinity,
+              decoration: Style.borderBlue,
+              child: Center(
+                child: Text(
+                  'Riwayat Quiz',
+                  style: Style.textTitleCourse.copyWith(
+                    color: ColorLxp.primary,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
