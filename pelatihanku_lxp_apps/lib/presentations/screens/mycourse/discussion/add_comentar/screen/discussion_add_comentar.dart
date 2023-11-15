@@ -54,10 +54,11 @@ class _DiscussionAddComentarState extends State<DiscussionAddComentar> {
             children: [
               const AddComentarPost(),
               const SizedBox(height: 20),
-              Row(crossAxisAlignment: CrossAxisAlignment.start,
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.asset(
-                    'assets/images/fauzi.png',
+                    'assets/images/sumar.png',
                     width: 40,
                   ),
                   Flexible(
@@ -75,14 +76,20 @@ class _DiscussionAddComentarState extends State<DiscussionAddComentar> {
                           });
                         }
                       },
-                      decoration: Style.nonBorder,
+                      decoration: _isEnabled
+                          ? Style.nonBorder.copyWith(
+                              contentPadding: const EdgeInsets.only(left: 12.0),
+                            )
+                          : Style.nonBorder.copyWith(
+                              contentPadding: const EdgeInsets.all(12.0),
+                            ),
                     ),
                   ),
                 ],
               ),
               const SizedBox(height: 20),
               SizedBox(
-                height: MediaQuery.of(context).size.height / 4,
+                height: MediaQuery.of(context).size.height / 5,
                 child: ListView.builder(
                   itemCount: content.length,
                   itemBuilder: (context, index) {

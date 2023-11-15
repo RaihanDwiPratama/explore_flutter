@@ -122,11 +122,13 @@ class Style {
   );
 
   static InputDecoration nonBorder = InputDecoration(
-    contentPadding: const EdgeInsets.all(12),
     hintText: 'Buat rangkuman...',
     hintStyle: Style.textTitleCourse.copyWith(
       color: ColorLxp.neutral500,
       fontWeight: FontWeight.w500,
+    ),
+    floatingLabelStyle: Style.textTitleCourse.copyWith(
+      fontWeight: FontWeight.w400,
     ),
     border: InputBorder.none,
   );

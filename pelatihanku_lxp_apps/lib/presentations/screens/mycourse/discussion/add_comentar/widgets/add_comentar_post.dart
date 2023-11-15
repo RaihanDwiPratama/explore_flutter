@@ -56,6 +56,7 @@ class AddComentarPost extends StatelessWidget {
                   ),
                 ],
               ),
+              const SizedBox(height: 10),
               Text(
                 'Apa yang dimaksud dengan pernyataan "Yang penting kamu mengerti" dalam konteks komunikasi?',
                 maxLines: 3,
