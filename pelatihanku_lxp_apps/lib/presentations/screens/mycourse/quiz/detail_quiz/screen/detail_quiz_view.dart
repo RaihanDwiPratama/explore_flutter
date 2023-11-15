@@ -21,6 +21,20 @@ class DetailQuizView extends StatelessWidget {
     'Nilai Kelulusan 80',
     'Max. 3x Pengulangan',
   ];
+  
+  List<String> iconChecklist = [
+    'assets/icons/CheckCircle.svg',
+    'assets/icons/CheckCircle.svg',
+    'assets/icons/CheckCircle.svg',
+    'assets/icons/CheckCircle.svg',
+  ];
+
+  List<String> description = [
+    'Kerjakan Dengan Jujur',
+    'Dilarang Bekerjasama',
+    'Apabila Keluar dari App, Waktu Quiz tetap berjalan',
+    'Percobaan Quiz Terakhir merupakan Nilai Dipakai ',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -72,26 +86,36 @@ class DetailQuizView extends StatelessWidget {
                 text: text[index],
               ),
             ),
-            // const RowIconText(
-            //   image: 'assets/icons/ListNumbers.svg',
-            //   text: '10 Soal',
-            // ),
-            // const SizedBox(height: 8),
-            // const RowIconText(
-            //   image: 'assets/icons/Timer.svg',
-            //   text: '10 Soal',
-            // ),
-            // const SizedBox(height: 8),
-            // const RowIconText(
-            //   image: 'assets/icons/Exam2.svg',
-            //   text: '10 Soal',
-            // ),
-            // const SizedBox(height: 8),
-            // const RowIconText(
-            //   image: 'assets/icons/ClockCounterClockwise.svg',
-            //   text: '10 Soal',
-            // ),
-            // const SizedBox(height: 8),
+            const SizedBox(height: 8),
+            Text(
+              'Deskripsi',
+              style: Style.textTitleCourse.copyWith(
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Quiz ini bertujuan untuk menguji pengetahuan Anda tentang materi yang telah dipelajari di pertemuan ini.',
+              style: Style.textSks.copyWith(
+                fontWeight: FontWeight.w400,
+                color: ColorLxp.grayModern,
+              ),
+            ),
+            const SizedBox(height: 16),
+            Text(
+              'Peraturan Quiz',
+              style: Style.textTitleCourse.copyWith(
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const SizedBox(height: 8),
+            ...List.generate(
+              icon.length,
+              (index) => RowIconText(
+                image: iconChecklist[index],
+                text: description[index],
+              ),
+            ),
           ],
         ),
       ),
