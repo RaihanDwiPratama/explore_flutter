@@ -14,7 +14,10 @@ class Question extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.only(
+        top: 32.0,
+        bottom: 8.0,
+      ),
       child: Text(
         questionText,
         style: Style.textButtonBlank.copyWith(
