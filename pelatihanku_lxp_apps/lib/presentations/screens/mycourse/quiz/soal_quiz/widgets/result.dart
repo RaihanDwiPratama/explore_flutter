@@ -29,12 +29,8 @@ class Result extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(resultPhrase),
-          Text('Score : $resultScore'),
-        ],
+      child: Text(
+        '$resultPhrase, \nScore : $resultScore',
       ),
     );
   }
