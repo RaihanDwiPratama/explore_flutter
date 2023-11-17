@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/quiz/soal_quiz/widgets/quiz.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/quiz/soal_quiz/widgets/result.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -127,7 +128,10 @@ class _SoalQuizViewState extends State<SoalQuizView> {
                     questionIndex: _questionIndex,
                     questions: _questions,
                   )
-                : Text('data'),
+                : Result(
+                    resultScore: _totalScore,
+                    resetHandler: _resetQuiz,
+                  ),
           ],
         ),
       ),
