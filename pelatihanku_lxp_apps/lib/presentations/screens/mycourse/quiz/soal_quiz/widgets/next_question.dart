@@ -25,13 +25,7 @@ class NextQuestion extends StatelessWidget {
           Container(
             width: 42,
             height: 42,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(21),
-              border: Border.all(
-                width: 2,
-                color: ColorLxp.primary,
-              ),
-            ),
+            decoration: Style.btnIcon,
             child: const Icon(
               Icons.chevron_right,
               color: ColorLxp.primary,

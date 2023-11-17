@@ -120,6 +120,13 @@ class Style {
       color: ColorLxp.primary,
     ),
   );
+  
+  static BoxDecoration borderNeutral = BoxDecoration(
+    borderRadius: BorderRadius.circular(8),
+    border: Border.all(
+      color: ColorLxp.neutral200,
+    ),
+  );
 
   static InputDecoration nonBorder = InputDecoration(
     hintText: 'Buat rangkuman...',
@@ -131,5 +138,13 @@ class Style {
       fontWeight: FontWeight.w400,
     ),
     border: InputBorder.none,
+  );
+
+  static BoxDecoration btnIcon = BoxDecoration(
+    borderRadius: BorderRadius.circular(21),
+    border: Border.all(
+      width: 2,
+      color: ColorLxp.primary,
+    ),
   );
 }

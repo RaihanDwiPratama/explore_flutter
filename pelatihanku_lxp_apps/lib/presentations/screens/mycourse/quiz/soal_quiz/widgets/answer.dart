@@ -1,10 +1,8 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-// ignore: must_be_immutable
 class Answer extends StatefulWidget {
   final Function selectHandler;
   final String answerText;
@@ -22,30 +20,24 @@ class Answer extends StatefulWidget {
 }
 
 class _AnswerState extends State<Answer> {
-  bool isColor = false;
+  bool isSelected = false;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        widget.selectHandler();
-
         setState(() {
-          isColor = !isColor;
+          isSelected = !isSelected;
         });
-        widget.voidCallback?.call();
+        // widget.voidCallback;
+        // widget.selectHandler();
       },
       child: Container(
         width: double.infinity,
         padding: const EdgeInsets.all(16.0),
         margin: const EdgeInsets.only(bottom: 16.0),
-        decoration: BoxDecoration(
-          color: isColor ? ColorLxp.primaryLight : null,
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(
-            color: ColorLxp.neutral200,
-            width: 1.0,
-          ),
+        decoration: Style.borderNeutral.copyWith(
+          color: isSelected ? ColorLxp.primaryLight : null,
         ),
         child: Text(
           widget.answerText,
