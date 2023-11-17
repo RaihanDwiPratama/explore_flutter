@@ -54,7 +54,28 @@ class _SoalQuizViewState extends State<SoalQuizView> {
           'score': -20,
         },
       ]
-    }
+    },
+    {
+      'questionText': 'Apa yang dimaksud dengan komunikasi nonverbal?',
+      'answers': [
+        {
+          'text': 'A. Komunikasi melalui kata-kata tertulis',
+          'score': -20,
+        },
+        {
+          'text': 'B.  bahasa tubuh, mimik  dan nada suara',
+          'score': 20,
+        },
+        {
+          'text': 'C.  Komunikasi melalui kata-kata lisan',
+          'score': -20,
+        },
+        {
+          'text': 'D. Komunikasi melalui surat elektronik',
+          'score': -20,
+        },
+      ]
+    },
   ];
 
   var _questionIndex = 0;
@@ -181,7 +202,6 @@ class _SoalQuizViewState extends State<SoalQuizView> {
                 children: [
                   Row(
                     children: [
-                      
                       Container(
                         width: 42,
                         height: 42,
@@ -198,21 +218,22 @@ class _SoalQuizViewState extends State<SoalQuizView> {
                           size: 25,
                         ),
                       ),
-                                            const SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       Text(
                         'Soal Sebelumnya',
                         style: Style.textTitleCourse.copyWith(
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-
                     ],
                   ),
                   Container(
                     width: 134,
                     height: 42,
                     decoration: BoxDecoration(
-                      color: ColorLxp.primary,
+                      color: _questionIndex == _questions.length - 1
+                          ? ColorLxp.primary
+                          : ColorLxp.neutral02,
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Center(
@@ -220,7 +241,9 @@ class _SoalQuizViewState extends State<SoalQuizView> {
                         'Selesai',
                         style: Style.textTitleCourse.copyWith(
                           fontWeight: FontWeight.w500,
-                          color: ColorLxp.white,
+                          color: _questionIndex == _questions.length - 1
+                          ? ColorLxp.white
+                          : ColorLxp.neutral05,
                         ),
                       ),
                     ),
