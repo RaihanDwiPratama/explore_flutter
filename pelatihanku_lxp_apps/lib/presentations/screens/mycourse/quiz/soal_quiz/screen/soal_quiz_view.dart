@@ -136,23 +136,52 @@ class _SoalQuizViewState extends State<SoalQuizView> {
         ),
       ),
       bottomNavigationBar: _questionIndex == 0
-          ? Row(
-              children: [
-                const Spacer(),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    bottom: 20.0,
-                    right: 16.0,
+          ? Padding(
+              padding: const EdgeInsets.only(
+                bottom: 20.0,
+                right: 16.0,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    'Soal Berikutnya',
+                    style: Style.textTitleCourse.copyWith(
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                  child: Row(
-                    children: [
-                      Text(
-                        'Soal Berikutnya',
-                        style: Style.textTitleCourse.copyWith(
-                          fontWeight: FontWeight.w500,
-                        ),
+                  const SizedBox(width: 8),
+                  Container(
+                    width: 42,
+                    height: 42,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(21),
+                      border: Border.all(
+                        width: 2,
+                        color: ColorLxp.primary,
                       ),
-                      const SizedBox(width: 8),
+                    ),
+                    child: const Icon(
+                      Icons.chevron_right,
+                      color: ColorLxp.primary,
+                      size: 25,
+                    ),
+                  )
+                ],
+              ),
+            )
+          : Padding(
+              padding: const EdgeInsets.only(
+                bottom: 20.0,
+                right: 16.0,
+                left: 16.0,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      
                       Container(
                         width: 42,
                         height: 42,
@@ -164,17 +193,41 @@ class _SoalQuizViewState extends State<SoalQuizView> {
                           ),
                         ),
                         child: const Icon(
-                          Icons.chevron_right,
+                          Icons.chevron_left,
                           color: ColorLxp.primary,
                           size: 25,
                         ),
-                      )
+                      ),
+                                            const SizedBox(width: 8),
+                      Text(
+                        'Soal Sebelumnya',
+                        style: Style.textTitleCourse.copyWith(
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+
                     ],
                   ),
-                ),
-              ],
-            )
-          : null,
+                  Container(
+                    width: 134,
+                    height: 42,
+                    decoration: BoxDecoration(
+                      color: ColorLxp.primary,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Selesai',
+                        style: Style.textTitleCourse.copyWith(
+                          fontWeight: FontWeight.w500,
+                          color: ColorLxp.white,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
     );
   }
 }
