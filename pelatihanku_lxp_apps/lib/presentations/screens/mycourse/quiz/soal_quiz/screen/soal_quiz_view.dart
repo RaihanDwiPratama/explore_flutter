@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/quiz/soal_quiz/widgets/quiz.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -58,14 +59,14 @@ class _SoalQuizViewState extends State<SoalQuizView> {
   var _questionIndex = 0;
   var _totalScore = 0;
 
-  void resetQuiz() {
+  void _resetQuiz() {
     setState(() {
       _questionIndex = 0;
       _totalScore = 0;
     });
   }
 
-  void answerQuestion(int score) {
+  void _answerQuestion(int score) {
     _totalScore += score;
 
     setState(() {
@@ -120,6 +121,13 @@ class _SoalQuizViewState extends State<SoalQuizView> {
               ),
               minHeight: 10,
             ),
+            _questionIndex < _questions.length
+                ? Quiz(
+                    answerQuestion: _answerQuestion,
+                    questionIndex: _questionIndex,
+                    questions: _questions,
+                  )
+                : Text('data'),
           ],
         ),
       ),
