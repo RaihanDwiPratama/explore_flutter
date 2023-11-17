@@ -113,10 +113,14 @@ class _SoalQuizViewState extends State<SoalQuizView> {
 
   void _answerQuestion(int score) {
     _totalScore += score;
+  }
 
-    setState(() {
-      _questionIndex = _questionIndex + 1;
-    });
+  void _nextQuestion() {
+    if (_questionIndex < _questions.length - 1) {
+      setState(() {
+        _questionIndex++;
+      });
+    }
   }
 
   @override
@@ -171,6 +175,7 @@ class _SoalQuizViewState extends State<SoalQuizView> {
                     answerQuestion: _answerQuestion,
                     questionIndex: _questionIndex,
                     questions: _questions,
+                    nextQuestion: _nextQuestion,
                   )
                 : Result(
                     resultScore: _totalScore,
@@ -180,7 +185,9 @@ class _SoalQuizViewState extends State<SoalQuizView> {
         ),
       ),
       bottomNavigationBar: _questionIndex == 0
-          ? const NextQuestion()
+          ? NextQuestion(
+              nextQuestionCallback: _nextQuestion,
+            )
           : PreviousQuestion(
               colorBtn: _questionIndex == _questions.length - 1
                   ? ColorLxp.primary

@@ -3,7 +3,12 @@ import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
 class NextQuestion extends StatelessWidget {
-  const NextQuestion({super.key});
+  final Function nextQuestionCallback;
+
+  const NextQuestion({
+    super.key,
+    required this.nextQuestionCallback,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,27 +17,32 @@ class NextQuestion extends StatelessWidget {
         bottom: 20.0,
         right: 16.0,
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Text(
-            'Soal Berikutnya',
-            style: Style.textTitleCourse.copyWith(
-              fontWeight: FontWeight.w500,
+      child: GestureDetector(
+        onTap: () {
+          nextQuestionCallback();
+        },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Text(
+              'Soal Berikutnya',
+              style: Style.textTitleCourse.copyWith(
+                fontWeight: FontWeight.w500,
+              ),
             ),
-          ),
-          const SizedBox(width: 8),
-          Container(
-            width: 42,
-            height: 42,
-            decoration: Style.btnIcon,
-            child: const Icon(
-              Icons.chevron_right,
-              color: ColorLxp.primary,
-              size: 25,
-            ),
-          )
-        ],
+            const SizedBox(width: 8),
+            Container(
+              width: 42,
+              height: 42,
+              decoration: Style.btnIcon,
+              child: const Icon(
+                Icons.chevron_right,
+                color: ColorLxp.primary,
+                size: 25,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

@@ -6,13 +6,13 @@ import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 class Answer extends StatefulWidget {
   final Function selectHandler;
   final String answerText;
-  final VoidCallback? voidCallback;
+  // final VoidCallback? voidCallback;
 
   const Answer({
     Key? key,
     required this.selectHandler,
     required this.answerText,
-    required this.voidCallback,
+    // required this.voidCallback,
   }) : super(key: key);
 
   @override
