@@ -18,19 +18,19 @@ class _SoalQuizViewState extends State<SoalQuizView> {
       'answers': [
         {
           'text': 'A. Komunikasi melalui kata-kata tertulis',
-          'score': -1,
+          'score': -20,
         },
         {
           'text': 'B.  bahasa tubuh, mimik  dan nada suara',
-          'score': 1,
+          'score': 20,
         },
         {
           'text': 'C.  Komunikasi melalui kata-kata lisan',
-          'score': -1,
+          'score': -20,
         },
         {
           'text': 'D. Komunikasi melalui surat elektronik',
-          'score': -1,
+          'score': -20,
         },
       ]
     },
@@ -39,19 +39,19 @@ class _SoalQuizViewState extends State<SoalQuizView> {
       'answers': [
         {
           'text': 'A. Mengirim pesan kepada seseorang',
-          'score': -1,
+          'score': -20,
         },
         {
           'text': 'B. Membagi informasi secara acak',
-          'score': 1,
+          'score': 20,
         },
         {
           'text': 'C. Berbicara dengan volume tinggi',
-          'score': -1,
+          'score': -20,
         },
         {
           'text': 'D. Respon terhadap pesan yang diterima',
-          'score': -1,
+          'score': -20,
         },
       ]
     }
@@ -135,6 +135,46 @@ class _SoalQuizViewState extends State<SoalQuizView> {
           ],
         ),
       ),
+      bottomNavigationBar: _questionIndex == 0
+          ? Row(
+              children: [
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 20.0,
+                    right: 16.0,
+                  ),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Soal Berikutnya',
+                        style: Style.textTitleCourse.copyWith(
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Container(
+                        width: 42,
+                        height: 42,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(21),
+                          border: Border.all(
+                            width: 2,
+                            color: ColorLxp.primary,
+                          ),
+                        ),
+                        child: const Icon(
+                          Icons.chevron_right,
+                          color: ColorLxp.primary,
+                          size: 25,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            )
+          : null,
     );
   }
 }

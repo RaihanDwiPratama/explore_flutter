@@ -18,6 +18,7 @@ class Quiz extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Question(
           questionText: questions[questionIndex]['questionText'].toString(),
@@ -26,7 +27,8 @@ class Quiz extends StatelessWidget {
             .map((answer) {
           return Answer(
               selectHandler: () => answerQuestion(answer['score']),
-              answerText: answer['text'].toString());
+              answerText: answer['text'].toString(),
+              voidCallback: () {});
         }).toList()
       ],
     );

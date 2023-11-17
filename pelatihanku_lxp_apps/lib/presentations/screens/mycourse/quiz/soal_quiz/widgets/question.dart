@@ -16,7 +16,7 @@ class Question extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.only(
         top: 32.0,
-        bottom: 8.0,
+        bottom: 24.0,
       ),
       child: Text(
         questionText,
