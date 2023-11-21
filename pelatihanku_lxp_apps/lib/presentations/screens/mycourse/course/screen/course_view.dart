@@ -44,7 +44,7 @@ class CourseView extends StatelessWidget {
             leading: GestureDetector(
               onTap: () => Navigator.pushNamed(context, '/'),
               child: const Icon(
-                Icons.chevron_left,
+                Icons.arrow_back,
                 color: ColorLxp.neutral800,
               ),
             ),

@@ -22,13 +22,6 @@ class CourseAllList extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: const Icon(
-            Icons.chevron_left,
-            color: ColorLxp.neutral800,
-          ),
-        ),
         forceMaterialTransparency: true,
       ),
       body: Container(

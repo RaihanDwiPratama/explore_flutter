@@ -16,10 +16,6 @@ class ModuleAllVideo extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: const Icon(Icons.chevron_left),
-        ),
       ),
       body: const Column(
         children: [
