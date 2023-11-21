@@ -18,10 +18,6 @@ class DiscussionViewReply extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: const Icon(Icons.chevron_left),
-        ),
         forceMaterialTransparency: true,
       ),
       body: SingleChildScrollView(

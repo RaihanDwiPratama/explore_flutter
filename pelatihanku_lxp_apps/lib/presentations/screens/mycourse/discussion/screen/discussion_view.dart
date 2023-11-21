@@ -17,17 +17,13 @@ class DiscussionView extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: const Icon(Icons.chevron_left),
-        ),
       ),
       body: Center(
         child: GestureDetector(
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => DiscussionViewReply(),
+              builder: (context) => const DiscussionViewReply(),
             ),
           ),
           child: Text(

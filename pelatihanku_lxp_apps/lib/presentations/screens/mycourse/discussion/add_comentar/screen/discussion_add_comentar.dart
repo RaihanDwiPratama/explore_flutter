@@ -41,10 +41,6 @@ class _DiscussionAddComentarState extends State<DiscussionAddComentar> {
           ),
         ),
         centerTitle: true,
-        leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: const Icon(Icons.chevron_left),
-        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
