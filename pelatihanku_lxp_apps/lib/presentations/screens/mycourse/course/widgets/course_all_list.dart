@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/list_pertemuan_lxp.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/screen/discussion_page.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/exploration_reflection/screen/exploration_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/module/screen/module_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/quiz/detail_quiz/screen/detail_quiz_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/task/widgets/detail_tugas.dart';
@@ -63,6 +64,30 @@ class CourseAllList extends StatelessWidget {
                   );
                 },
                 onTapDiskusi: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const DiscussionPage(),
+                    ),
+                  );
+                },
+                onTapMentoring: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const DiscussionPage(),
+                    ),
+                  );
+                },
+                onTapEksplorasi: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ExplorationPage(),
+                    ),
+                  );
+                },
+                onTapPengajar: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(

@@ -116,9 +116,21 @@ class _SoalQuizViewState extends State<SoalQuizView> {
   }
 
   void _nextQuestion() {
-    if (_questionIndex < _questions.length - 1) {
-      setState(() {
-        _questionIndex++;
+    if (_questionIndex < _questions.length) {
+      Future.delayed(Duration(seconds: 2), () async {
+        setState(() {
+          _questionIndex++;
+        });
+      });
+    }
+  }
+
+  void _previousQuestion() {
+    if (_questionIndex > 0) {
+      Future.delayed(Duration(seconds: 2), () async {
+        setState(() {
+          _questionIndex--;
+        });
       });
     }
   }
@@ -186,9 +198,14 @@ class _SoalQuizViewState extends State<SoalQuizView> {
       ),
       bottomNavigationBar: _questionIndex == 0
           ? NextQuestion(
-              nextQuestionCallback: _nextQuestion,
+              nextQuestionCallback: () {
+                setState(() {
+                  _nextQuestion();
+                });
+              },
             )
           : PreviousQuestion(
+              previousQuestionCallback: _previousQuestion,
               colorBtn: _questionIndex == _questions.length - 1
                   ? ColorLxp.primary
                   : ColorLxp.neutral02,
