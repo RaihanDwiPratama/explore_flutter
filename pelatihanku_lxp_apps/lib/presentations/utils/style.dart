@@ -100,6 +100,15 @@ class Style {
         color: ColorLxp.neutral200,
       ),
     ),
+    enabledBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(
+        Radius.circular(5),
+      ),
+      gapPadding: 6.0,
+      borderSide: BorderSide(
+        color: ColorLxp.neutral200,
+      ),
+    ),
   );
 
   static ButtonStyle btnCourse = ElevatedButton.styleFrom(
