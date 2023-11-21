@@ -41,12 +41,6 @@ class DetailQuizView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: const Icon(Icons.chevron_left),
-        ),
         title: Text(
           'Quiz - Pertemuan 1',
           style: Style.title.copyWith(
