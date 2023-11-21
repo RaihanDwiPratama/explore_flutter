@@ -4,7 +4,7 @@ import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/s
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/exploration_reflection/screen/exploration_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/module/screen/module_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/quiz/detail_quiz/screen/detail_quiz_page.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/task/widgets/detail_tugas.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/task/screen/task_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -52,7 +52,7 @@ class CourseAllList extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const DetailTugas(),
+                      builder: (context) => const TaskPage(),
                     ),
                   );
                 },
