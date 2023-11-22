@@ -351,11 +351,8 @@ class _TaskViewState extends State<TaskView> {
         },
         child: Container(
           height: 48.0,
-          margin: const EdgeInsets.all(24.0),
-          decoration: BoxDecoration(
-            color: ColorLxp.primary,
-            borderRadius: BorderRadius.circular(8),
-          ),
+          margin: const EdgeInsets.all(16.0),
+          decoration: Style.btnBlue,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
