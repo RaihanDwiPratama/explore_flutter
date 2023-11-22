@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/exploration_reflection/screen/exploration_view.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/live_mentoring/screen/mentoring_view.dart';
 
-class ExplorationPage extends StatelessWidget {
-  const ExplorationPage({super.key});
+class LiveMentoringPage extends StatelessWidget {
+  const LiveMentoringPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const ExplorationView();
+    return const LiveMentoringView();
   }
 }

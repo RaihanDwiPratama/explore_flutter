@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class ExplorationView extends StatelessWidget {
-  const ExplorationView({super.key});
+class TeacherAssignmentView extends StatelessWidget {
+  const TeacherAssignmentView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Refleksi Explorasi',
+          'Penilaian Pengajar',
           style: Style.title.copyWith(
             fontWeight: FontWeight.w600,
           ),

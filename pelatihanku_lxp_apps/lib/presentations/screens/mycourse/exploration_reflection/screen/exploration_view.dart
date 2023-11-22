@@ -87,6 +87,7 @@ class _ExplorationViewState extends State<ExplorationView> {
                 hintStyle: Style.textSks.copyWith(
                   fontWeight: FontWeight.w400,
                 ),
+                
               ),
             ),
           ],
@@ -108,7 +109,7 @@ class _ExplorationViewState extends State<ExplorationView> {
           ),
           child: Center(
             child: Text(
-              'Simpan',
+              'Kirim Tanggapan',
               style: Style.textButtonBlank.copyWith(
                 color: _eksplorasi.text.length >= 10
                     ? ColorLxp.white

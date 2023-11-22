@@ -129,7 +129,7 @@ class Style {
       color: ColorLxp.primary,
     ),
   );
-  
+
   static BoxDecoration borderNeutral = BoxDecoration(
     borderRadius: BorderRadius.circular(8),
     border: Border.all(
