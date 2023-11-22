@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/teacher_assessment/widgets/question_teacher.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -48,16 +49,24 @@ class TeacherAssignmentView extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        margin: const EdgeInsets.all(16.0),
-        height: 48.0,
-        decoration: Style.btnBlue,
-        child: Center(
-          child: Text(
-            'Mulai',
-            style: Style.textButtonBlank.copyWith(
-              fontWeight: FontWeight.w500,
-              color: ColorLxp.white,
+      bottomNavigationBar: GestureDetector(
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const QuestionTeacher(),
+          ),
+        ),
+        child: Container(
+          margin: const EdgeInsets.all(16.0),
+          height: 48.0,
+          decoration: Style.btnBlue,
+          child: Center(
+            child: Text(
+              'Mulai',
+              style: Style.textButtonBlank.copyWith(
+                fontWeight: FontWeight.w500,
+                color: ColorLxp.white,
+              ),
             ),
           ),
         ),
