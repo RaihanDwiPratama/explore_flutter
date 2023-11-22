@@ -2,13 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class ExplorationView extends StatelessWidget {
+class ExplorationView extends StatefulWidget {
   const ExplorationView({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final eksplorasi = TextEditingController();
+  State<ExplorationView> createState() => _ExplorationViewState();
+}
 
+class _ExplorationViewState extends State<ExplorationView> {
+  final _eksplorasi = TextEditingController();
+  Color _buttonColor = ColorLxp.neutral200;
+  bool isFilled = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _eksplorasi.addListener(checkCharacter);
+  }
+
+  void checkCharacter() {
+    setState(() {
+      if (_eksplorasi.text.length >= 10) {
+        _buttonColor = ColorLxp.primary;
+      } else {
+        _buttonColor = ColorLxp.neutral200;
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -57,7 +80,7 @@ class ExplorationView extends StatelessWidget {
               ),
             ),
             TextField(
-              controller: eksplorasi,
+              controller: _eksplorasi,
               maxLines: 5,
               decoration: Style.inputSummary.copyWith(
                 hintText: 'Masukkan tanggapan anda...',
@@ -69,19 +92,29 @@ class ExplorationView extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        height: 48.0,
-        margin: const EdgeInsets.all(24.0),
-        decoration: BoxDecoration(
-          color: Colors.amber,
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Center(
-          child: Text(
-            'Simpan',
-            style: Style.textButtonBlank.copyWith(
-              color: ColorLxp.white,
-              fontWeight: FontWeight.w500,
+      bottomNavigationBar: GestureDetector(
+        // onTap: () {
+
+        // },
+        child: Container(
+          height: 48.0,
+          margin: const EdgeInsets.symmetric(
+            vertical: 24.0,
+            horizontal: 16.0,
+          ),
+          decoration: BoxDecoration(
+            color: _buttonColor,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Center(
+            child: Text(
+              'Simpan',
+              style: Style.textButtonBlank.copyWith(
+                color: _eksplorasi.text.length >= 10
+                    ? ColorLxp.white
+                    : ColorLxp.neutral400,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
         ),
