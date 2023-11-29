@@ -7,15 +7,23 @@ import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 class ListPertemuanLxp extends StatefulWidget {
   final String pertemuan;
   final VoidCallback onTapModul;
+  final VoidCallback onTapKuis;
   final VoidCallback onTapTugas;
   final VoidCallback onTapDiskusi;
+  final VoidCallback onTapMentoring;
+  final VoidCallback onTapEksplorasi;
+  final VoidCallback onTapPengajar;
 
   const ListPertemuanLxp({
     super.key,
     required this.pertemuan,
     required this.onTapModul,
+    required this.onTapKuis,
     required this.onTapTugas,
     required this.onTapDiskusi,
+    required this.onTapMentoring,
+    required this.onTapEksplorasi,
+    required this.onTapPengajar,
   });
 
   @override
@@ -99,20 +107,23 @@ class _ListPertemuanLxpState extends State<ListPertemuanLxp> {
                 height: 1.0,
               ),
               const SizedBox(height: 16),
-              Padding(
-                padding: const EdgeInsets.only(left: 24.0),
-                child: Row(
-                  children: [
-                    SvgPicture.asset('assets/icons/Exam.svg'),
-                    const SizedBox(width: 8),
-                    Text(
-                      'Quiz',
-                      style: Style.textTitleCourse.copyWith(
-                        color: ColorLxp.neutral500,
-                        fontWeight: FontWeight.w500,
+              GestureDetector(
+                onTap: widget.onTapKuis,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 24.0),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset('assets/icons/Exam.svg'),
+                      const SizedBox(width: 8),
+                      Text(
+                        'Quiz',
+                        style: Style.textTitleCourse.copyWith(
+                          color: ColorLxp.neutral500,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(height: 16),
@@ -156,6 +167,81 @@ class _ListPertemuanLxpState extends State<ListPertemuanLxp> {
                       const SizedBox(width: 8),
                       Text(
                         'Diskusi',
+                        style: Style.textTitleCourse.copyWith(
+                          color: ColorLxp.neutral500,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              const Divider(
+                color: ColorLxp.neutral200,
+                height: 1.0,
+              ),
+              const SizedBox(height: 16),
+              GestureDetector(
+                onTap: widget.onTapMentoring,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 24.0),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset('assets/icons/ChalkboardTeacher.svg'),
+                      const SizedBox(width: 8),
+                      Text(
+                        'Live Mentoring',
+                        style: Style.textTitleCourse.copyWith(
+                          color: ColorLxp.neutral500,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              const Divider(
+                color: ColorLxp.neutral200,
+                height: 1.0,
+              ),
+              const SizedBox(height: 16),
+              GestureDetector(
+                onTap: widget.onTapEksplorasi,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 24.0),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset('assets/icons/Shapes.svg'),
+                      const SizedBox(width: 8),
+                      Text(
+                        'Refleksi Eksplorasi',
+                        style: Style.textTitleCourse.copyWith(
+                          color: ColorLxp.neutral500,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              const Divider(
+                color: ColorLxp.neutral200,
+                height: 1.0,
+              ),
+              const SizedBox(height: 16),
+              GestureDetector(
+                onTap: widget.onTapPengajar,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 24.0),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset('assets/icons/Sidebar.svg'),
+                      const SizedBox(width: 8),
+                      Text(
+                        'Penilaian Pengajar',
                         style: Style.textTitleCourse.copyWith(
                           color: ColorLxp.neutral500,
                           fontWeight: FontWeight.w500,

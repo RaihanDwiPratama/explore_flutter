@@ -100,6 +100,15 @@ class Style {
         color: ColorLxp.neutral200,
       ),
     ),
+    enabledBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(
+        Radius.circular(5),
+      ),
+      gapPadding: 6.0,
+      borderSide: BorderSide(
+        color: ColorLxp.neutral200,
+      ),
+    ),
   );
 
   static ButtonStyle btnCourse = ElevatedButton.styleFrom(
@@ -117,6 +126,33 @@ class Style {
   static BoxDecoration borderBlue = BoxDecoration(
     borderRadius: BorderRadius.circular(8),
     border: Border.all(
+      color: ColorLxp.primary,
+    ),
+  );
+
+  static BoxDecoration borderNeutral = BoxDecoration(
+    borderRadius: BorderRadius.circular(8),
+    border: Border.all(
+      color: ColorLxp.neutral200,
+    ),
+  );
+
+  static InputDecoration nonBorder = InputDecoration(
+    hintText: 'Buat rangkuman...',
+    hintStyle: Style.textTitleCourse.copyWith(
+      color: ColorLxp.neutral500,
+      fontWeight: FontWeight.w500,
+    ),
+    floatingLabelStyle: Style.textTitleCourse.copyWith(
+      fontWeight: FontWeight.w400,
+    ),
+    border: InputBorder.none,
+  );
+
+  static BoxDecoration btnIcon = BoxDecoration(
+    borderRadius: BorderRadius.circular(21),
+    border: Border.all(
+      width: 2,
       color: ColorLxp.primary,
     ),
   );

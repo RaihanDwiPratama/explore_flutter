@@ -17,10 +17,6 @@ class ModuleListSummary extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: const Icon(Icons.chevron_left),
-        ),
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0),

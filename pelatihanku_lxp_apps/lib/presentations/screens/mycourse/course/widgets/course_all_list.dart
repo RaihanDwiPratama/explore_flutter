@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:pelatihanku_lxp_apps/presentations/commons/list_pertemuan_lxp.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/screen/discussion_page.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/exploration_reflection/screen/exploration_page.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/live_mentoring/screen/mentoring_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/module/screen/module_page.dart';
-import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/task/widgets/detail_tugas.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/quiz/detail_quiz/screen/detail_quiz_page.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/task/screen/task_page.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/teacher_assessment/screen/teacher_page.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
@@ -20,13 +24,6 @@ class CourseAllList extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: const Icon(
-            Icons.chevron_left,
-            color: ColorLxp.neutral800,
-          ),
-        ),
         forceMaterialTransparency: true,
       ),
       body: Container(
@@ -45,11 +42,19 @@ class CourseAllList extends StatelessWidget {
                     ),
                   );
                 },
+                onTapKuis: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const DetailQuizPage(),
+                    ),
+                  );
+                },
                 onTapTugas: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const DetailTugas(),
+                      builder: (context) => const TaskPage(),
                     ),
                   );
                 },
@@ -58,6 +63,30 @@ class CourseAllList extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => const DiscussionPage(),
+                    ),
+                  );
+                },
+                onTapMentoring: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LiveMentoringPage(),
+                    ),
+                  );
+                },
+                onTapEksplorasi: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ExplorationPage(),
+                    ),
+                  );
+                },
+                onTapPengajar: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const TeacherAssignmentPage(),
                     ),
                   );
                 },

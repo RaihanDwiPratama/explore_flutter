@@ -15,6 +15,8 @@ class ColorLxp {
   static const Color warningNormal = Color(0xffE19E05);
   static const Color dangerNormal = Color(0xffDB342C);
   static const Color purple = Color(0xff806EC0);
+  static const Color neutral02 = Color(0xffE5E5E5);
+  static const Color neutral05 = Color(0xffA3A3A3);
   static const Color neutral100 = Color(0xff242424);
   static const Color neutral200 = Color(0xffE3E8EF);
   static const Color neutral300 = Color(0xffCDD5DF);

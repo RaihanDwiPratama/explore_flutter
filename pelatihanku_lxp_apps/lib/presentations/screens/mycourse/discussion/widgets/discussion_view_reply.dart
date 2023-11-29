@@ -1,45 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/widgets/discussion_comentar.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/widgets/discussion_header.dart';
+import 'package:pelatihanku_lxp_apps/presentations/screens/mycourse/discussion/widgets/discussion_reply.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class DiscussionViewReply extends StatefulWidget {
+class DiscussionViewReply extends StatelessWidget {
   const DiscussionViewReply({super.key});
-
-  @override
-  State<DiscussionViewReply> createState() => _DiscussionViewReplyState();
-}
-
-class _DiscussionViewReplyState extends State<DiscussionViewReply> {
-  bool isFavourite = false;
-  int favouriteCount = 11;
-  bool isComment = false;
-  int commentCount = 3;
-  bool isReplyComment = false;
-
-  void toogleFavourite() {
-    setState(() {
-      if (isFavourite) {
-        favouriteCount -= 1;
-        isFavourite = false;
-      } else {
-        favouriteCount += 1;
-        isFavourite = true;
-      }
-    });
-  }
-
-  void toogleComment() {
-    setState(() {
-      if (isComment) {
-        commentCount -= 1;
-        isComment = false;
-      } else {
-        commentCount += 1;
-        isComment = true;
-      }
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,10 +18,6 @@ class _DiscussionViewReplyState extends State<DiscussionViewReply> {
           ),
         ),
         centerTitle: true,
-        leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: const Icon(Icons.chevron_left),
-        ),
         forceMaterialTransparency: true,
       ),
       body: SingleChildScrollView(
@@ -64,88 +26,26 @@ class _DiscussionViewReplyState extends State<DiscussionViewReply> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ListTile(
-                contentPadding: const EdgeInsets.symmetric(horizontal: 0),
-                leading: Image.asset("assets/images/neneng.png"),
-                title: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      'Neneng Rohaye, S.Kom',
-                      style: Style.textTitleCourse.copyWith(
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    Text(
-                      'Pengajar',
-                      style: Style.textSks.copyWith(
-                        color: ColorLxp.neutral800,
-                      ),
-                    ),
-                    Text(
-                      '23 September 2023, 12.30',
-                      style: Style.textSks.copyWith(
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-                trailing: const Icon(
-                  Icons.more_horiz_outlined,
-                  color: ColorLxp.neutral800,
-                ),
+              const DiscussionHeader(),
+              const DiscussionReply(),
+              DiscussionComentar(
+                image: "assets/images/owen.png",
+                name: 'Owen Arya',
+                job: 'Siswa',
+                date: '23 September 2023, 16.30',
+                imgComment: "",
+                comment:
+                    'Pernyataan ini menekankan bahwa dalam sebuah interaksi komunikasi, tujuan utama bukan hanya sekadar berbicara atau menyampaikan pesan, tetapi juga memastikan bahwa pendengar atau penerima pesan benar-benar memahami apa yang ingin disampaikan oleh pembicara.',
               ),
-              const SizedBox(height: 10),
-              Image.asset(
-                'assets/images/img_diskusi.png',
-                width: 340,
+              DiscussionComentar(
+                image: "assets/images/bob.png",
+                name: 'Bob Marley',
+                job: 'Admin',
+                date: '23 September 2023, 16.30',
+                imgComment: 'assets/images/img_reply_person.png',
+                comment:
+                    'Dengan kata lain, pesan ini menggambarkan bahwa tidak hanya berbicara yang penting, tetapi juga memastikan bahwa apa yang telah disampaikan oleh pembicara telah dipahami dengan benar oleh pendengar.',
               ),
-              const SizedBox(height: 20),
-              Text(
-                'Apa yang dimaksud dengan pernyataan "Yang penting kamu mengerti" dalam konteks komunikasi?',
-                style: Style.textTitleCourse.copyWith(
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              const SizedBox(height: 16.0),
-              Row(
-                children: [
-                  Row(
-                    children: [
-                      GestureDetector(
-                        onTap: () => toogleFavourite(),
-                        child: SvgPicture.asset(
-                          isFavourite
-                              ? 'assets/icons/Heart.svg'
-                              : 'assets/icons/HeartRed.svg',
-                        ),
-                      ),
-                      const SizedBox(width: 4),
-                      Text('$favouriteCount'),
-                    ],
-                  ),
-                  const SizedBox(width: 24),
-                  Row(
-                    children: [
-                      GestureDetector(
-                        onTap: () => toogleComment(),
-                        child: SvgPicture.asset(
-                          'assets/icons/ChatTeardrop.svg',
-                        ),
-                      ),
-                      const SizedBox(width: 4),
-                      Text('$commentCount'),
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-              const Divider(
-                color: ColorLxp.neutral200,
-                thickness: 1,
-              ),
-              const SizedBox(height: 10),
             ],
           ),
         ),

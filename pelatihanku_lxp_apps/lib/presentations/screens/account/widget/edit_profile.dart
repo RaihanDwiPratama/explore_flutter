@@ -6,7 +6,7 @@ class EditProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const String assetName = 'assets/images/profile_woman.jpg';
+    const String assetName = 'assets/images/neneng.png';
 
     return Stack(
       clipBehavior: Clip.none,

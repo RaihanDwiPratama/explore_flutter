@@ -46,10 +46,6 @@ class _ModuleSummaryState extends State<ModuleSummary> {
         ),
         centerTitle: true,
         forceMaterialTransparency: true,
-        leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: const Icon(Icons.chevron_left),
-        ),
       ),
       body: SingleChildScrollView(
         child: Padding(

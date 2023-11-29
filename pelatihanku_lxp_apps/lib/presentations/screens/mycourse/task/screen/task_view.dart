@@ -4,14 +4,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/color.dart';
 import 'package:pelatihanku_lxp_apps/presentations/utils/style.dart';
 
-class DetailTugas extends StatefulWidget {
-  const DetailTugas({super.key});
+class TaskView extends StatefulWidget {
+  const TaskView({super.key});
 
   @override
-  State<DetailTugas> createState() => _DetailTugasState();
+  State<TaskView> createState() => _TaskViewState();
 }
 
-class _DetailTugasState extends State<DetailTugas> {
+class _TaskViewState extends State<TaskView> {
   FilePickerResult? result;
   List<PlatformFile> files = [];
 
@@ -51,10 +51,6 @@ class _DetailTugasState extends State<DetailTugas> {
           ),
         ),
         centerTitle: true,
-        leading: GestureDetector(
-          onTap: () => Navigator.pop(context),
-          child: const Icon(Icons.chevron_left),
-        ),
         forceMaterialTransparency: true,
       ),
       body: Padding(
@@ -355,11 +351,8 @@ class _DetailTugasState extends State<DetailTugas> {
         },
         child: Container(
           height: 48.0,
-          margin: const EdgeInsets.all(24.0),
-          decoration: BoxDecoration(
-            color: ColorLxp.primary,
-            borderRadius: BorderRadius.circular(8),
-          ),
+          margin: const EdgeInsets.all(16.0),
+          decoration: Style.btnBlue,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
