@@ -8,16 +8,20 @@ part 'timer_event.dart';
 part 'timer_state.dart';
 
 class TimerBloc extends Bloc<TimerEvent, TimerState> {
-  final Ticker _ticker;
-  static const int _duration = 60;
-
-  StreamSubscription<int>? _tickerSubcription;
-
   TimerBloc({required Ticker ticker})
       : _ticker = ticker,
         super(const TimerInitial(_duration)) {
     on<TimerStarted>(_onStarted);
+    on<TimerPaused>(_onPaused);
+    on<TimerResumed>(_onResumed);
+    on<TimerReset>(_onReset);
+    on<TimerTicked>(_onTicked);
   }
+
+  final Ticker _ticker;
+  static const int _duration = 60;
+
+  StreamSubscription<int>? _tickerSubcription;
 
   @override
   Future<void> close() {
