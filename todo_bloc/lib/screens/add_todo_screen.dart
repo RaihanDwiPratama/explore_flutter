@@ -41,6 +41,7 @@ class _AddTodoScreenState extends State<AddTodoScreen> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
               controller: _titleController,
